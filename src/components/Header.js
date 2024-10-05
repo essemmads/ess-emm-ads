@@ -12,7 +12,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import CallIcon from "@mui/icons-material/Call";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link, useMediaQuery, Card, CardContent, Button } from '@mui/material';
+import { Link, useMediaQuery, Card, CardContent, Button } from "@mui/material";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -152,54 +152,63 @@ export default function Header() {
           <CloseIcon />
         </IconButton>
 
-        <Card variant="outlined" sx={{ marginTop: '50px'}}>
-        <CardContent sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px !important'}}>
-          <Button 
-            variant="contained" 
-            onClick={toggleDrawer(true)} 
-            sx={{ width: '90%'}}
+        <Card variant="outlined" sx={{ marginTop: "50px" }}>
+          <CardContent
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "20px !important",
+            }}
           >
-            Get Quote
-          </Button>
-        </CardContent>
-      </Card>
-
-        <Card sx={{marginBottom: '30px', padding: '15px', marginTop: '50px' }}>
-          <CardContent>
-          <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-              >
-                <CallIcon />
-              </IconButton>
-              <Link href="tel:+919876543210" underline="none" color="black">
-                +91 1234567890
-              </Link><br/>
-              <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-              >
-                <EmailIcon />
-              </IconButton>
-              <Link
-                href="mailto:essemm@gmail.com"
-                underline="none"
-                color="black"
-              >
-                essemm@gmail.com
-              </Link>
+            <Button
+              variant="contained"
+              onClick={toggleDrawer(true)}
+              sx={{ width: "90%" }}
+            >
+              Get Quote
+            </Button>
           </CardContent>
         </Card>
 
-        <Card sx={{marginBottom: '30px', padding: '15px' }}>
+        <Card sx={{ marginBottom: "30px", padding: "15px", marginTop: "50px" }}>
+          <CardContent>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+            >
+              <CallIcon />
+            </IconButton>
+            <Link href="tel:+919876543210" underline="none" color="black">
+              +91 1234567890
+            </Link>
+            <br />
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+            >
+              <EmailIcon />
+            </IconButton>
+            <Link href="mailto:essemm@gmail.com" underline="none" color="black">
+              essemm@gmail.com
+            </Link>
+          </CardContent>
+        </Card>
+
+        <Card sx={{ marginBottom: "30px", padding: "15px" }}>
           <CardContent>
             <Box display="flex" justifyContent="space-around">
               {socialLinks.map(({ icon, label }, index) => (
-                <IconButton key={label} size="small " color="inherit" aria-label={label}>
+                <IconButton
+                  key={label}
+                  size="small "
+                  color="inherit"
+                  aria-label={label}
+                >
                   {icon}
                 </IconButton>
               ))}

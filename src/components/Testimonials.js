@@ -1,8 +1,7 @@
-import React from 'react';
-import { Card, CardContent, Typography, Box } from '@mui/material';
-import Slider from 'react-slick';
-import styled from '@emotion/styled'
-
+import React from "react";
+import { Card, CardContent, Typography, Box } from "@mui/material";
+import Slider from "react-slick";
+import styled from "@emotion/styled";
 
 const Container = styled.div`
   .slick-prev:before,
@@ -21,22 +20,22 @@ export default function Testimonials() {
     {
       name: "John Doe",
       designation: "CEO, Company A",
-      feedback: "This is an amazing service! Highly recommend."
+      feedback: "This is an amazing service! Highly recommend.",
     },
     {
       name: "Jane Smith",
       designation: "Manager, Company B",
-      feedback: "Fantastic experience! Will use again."
+      feedback: "Fantastic experience! Will use again.",
     },
     {
       name: "Michael Brown",
       designation: "Developer, Company C",
-      feedback: "Very satisfied with the service and support."
+      feedback: "Very satisfied with the service and support.",
     },
     {
       name: "Emily Davis",
       designation: "Designer, Company D",
-      feedback: "A game changer for our business!"
+      feedback: "A game changer for our business!",
     },
   ];
 
@@ -51,20 +50,28 @@ export default function Testimonials() {
     autoplaySpeed: 3000,
   };
 
-  
   return (
     <Container>
-      <Box sx={{ padding: '40px 0', backgroundColor: '#f0f0f0', textAlign: 'center' }}>
-        <Typography variant="h4" align="center" sx={{ marginBottom: '20px' }}>
+      <Box
+        sx={{
+          padding: "40px 0",
+          backgroundColor: "#f0f0f0",
+          textAlign: "center",
+        }}
+      >
+        <Typography variant="h4" align="center" sx={{ marginBottom: "20px" }}>
           What Our Clients Say
         </Typography>
-        <Box sx={{ width: '70%', margin: '0 auto' }}>
+        <Box sx={{ width: "70%", margin: "0 auto" }}>
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
-              <Card key={index} sx={{ padding: '20px', margin: '0 auto' }}>
+              <Card key={index} sx={{ padding: "20px", margin: "0 auto" }}>
                 <CardContent>
                   <Typography variant="h6">{testimonial.name}</Typography>
-                  <Typography variant="subtitle1" sx={{ fontStyle: 'italic', marginBottom: '16px' }}>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontStyle: "italic", marginBottom: "16px" }}
+                  >
                     {testimonial.designation}
                   </Typography>
                   <Typography variant="body2">
