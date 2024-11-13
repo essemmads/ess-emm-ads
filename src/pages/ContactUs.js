@@ -1,201 +1,140 @@
 import * as React from "react";
-import {
-  Typography,
-  Box,
-  Container,
-  Grid,
-  TextField,
-  Button,
-  Link,
-  Card,
-} from "@mui/material";
-import contactImage from "../images/contact-us.jpg"; // Replace with your actual image path
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PhoneIcon from "@mui/icons-material/Phone";
-import MailIcon from "@mui/icons-material/Mail";
+import { Typography, Box, Container, Grid } from "@mui/material";
+import contactImage from "../images/contact-us.png";
+import GetInTouch from "./GetInTouch";
+import CardSection from "./CardSection";
 import styled from "@emotion/styled";
-import emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import VideoMarquee from "../components/VideoMarquee";
 
-const CardContainer = styled.div`
-  display: flex;
+const ImageContainer = styled(Box)`
+  position: relative;
   width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+s
+  @media (max-width: 900px) {
+    height: 300px;
+  }
 
-  @media only screen and (max-width: 600px) {
-    flex-direction: column;
-    align-items: center;
+  @media (max-width: 600px) {
+    height: 250px;
+  }
+`;
+
+const BannerImage = styled(Box)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const OverlayText = styled(Box)`
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: black;
+  text-align: left;
+
+  @media (max-width: 900px) {
+    top: 40%;
+    left: 5%;
+  }
+
+  @media (max-width: 750px) {
+    left: 5%;
+    font-size: 0.9rem;
+  }
+`;
+
+const LineTextContainer = styled(Box)`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 40px;
+    background-color: black;
+    margin-right: 10px;
   }
 `;
 
 export default function ContactUs() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Name: ", event.target.name.value);
-
-    const formData = {
-      to_name: "Ess Emm Ads",
-      from_name: event.target.name.value,
-      email: event.target.email.value,
-      phone: event.target.phone.value,
-      message: event.target.message.value,
-    };
-
-    emailjs
-      .send(
-        "service_urq47dg",
-        "template_dhlalip",
-        formData,
-        "GXytm2qy1at-uutUj"
-      )
-      .then(
-        (response) => {
-          console.log("Email sent successfully:", response);
-          toast.success("Message sent successfully!");
-        },
-        (error) => {
-          console.error("Error sending email:", error);
-          toast.error("Error sending message.");
-        }
-      );
-  };
-
   return (
     <div style={{ backgroundColor: "#f0f0f0" }}>
-      <Box
-        component="img"
-        src={contactImage}
-        alt="Banner"
-        sx={{
-          width: "100%",
-          height: "auto",
-          marginBottom: "40px",
-        }}
-      />
-      <Container maxWidth="lg">
-        <Card
-          sx={{
-            padding: "20px",
-            boxShadow: 3,
-            borderRadius: "8px",
-            marginBottom: "40px",
-          }}
-        >
-          <Grid container spacing={2} sx={{ justifyContent: "space-between" }}>
-            <CardContainer>
-              <Grid item xs={4} sx={{ textAlign: "center" }}>
-                <Link
-                  href="https://www.google.com/maps?q=1234+Railway+St,+City,+Country"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <LocationOnIcon
-                    sx={{ width: "50px", height: "50px", marginBottom: "10px" }}
-                  />
-                </Link>
-                <Typography variant="h6">Our Location</Typography>
-                <Typography variant="body1">
-                  1234 Railway St, City, Country
-                </Typography>
-              </Grid>
-
-              <Grid item xs={4} sx={{ textAlign: "center" }}>
-                <Link href="tel:+1234567890">
-                  <PhoneIcon
-                    sx={{ width: "50px", height: "50px", marginBottom: "10px" }}
-                  />
-                </Link>
-
-                <Typography variant="h6">Call Us</Typography>
-                <Typography variant="body1">+1 (234) 567-890</Typography>
-              </Grid>
-
-              <Grid item xs={4} sx={{ textAlign: "center" }}>
-                <Link href="mailto:contact@railwayads.com">
-                  <MailIcon
-                    sx={{ width: "50px", height: "50px", marginBottom: "10px" }}
-                  />
-                </Link>
-                <Typography variant="h6">Email Us</Typography>
-                <Typography variant="body1">contact@railwayads.com</Typography>
-              </Grid>
-            </CardContainer>
-          </Grid>
-        </Card>
-        <Box sx={{ margin: "40px" }}>
+      <ImageContainer>
+        <BannerImage component="img" src={contactImage} alt="Banner" />
+        <OverlayText>
+          <LineTextContainer>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                fontWeight: 300,
+                color: "black",
+                fontSize: { xs: '0.8rem', sm: '1.5rem' },
+              }}
+            >
+              Contact us
+            </Typography>
+          </LineTextContainer>
           <Typography
             variant="h4"
-            align="center"
-            sx={{ fontWeight: "bold", color: "#000", marginBottom: "20px" }}
+            sx={{
+              fontWeight: 700,
+              color: "black",
+              fontSize: { xs: '1.2rem', sm: '2rem'},
+            }}
           >
-            Hire us & get in touch
+            We Look Forward To<br />Assisting You
           </Typography>
-          <Typography
-            variant="body1"
-            align="center"
-            sx={{ color: "#000", marginBottom: "40px" }}
-          >
-            Contact us today to start your railway advertising campaign.
-          </Typography>
-          <form onSubmit={handleSubmit}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  label="Name"
-                  name="name" // Ensure this matches what you're trying to access
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  label="Email"
-                  name="email" // Ensure this matches what you're trying to access
-                  variant="outlined"
-                  fullWidth
-                  required
-                  type="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  label="Phone Number"
-                  name="phone" // Ensure this matches what you're trying to access
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  label="Message"
-                  name="message" // Ensure this matches what you're trying to access
-                  variant="outlined"
-                  multiline
-                  rows={4}
-                  fullWidth
-                  required
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button variant="contained" color="primary" type="submit">
-                  Send Message
-                </Button>
-              </Grid>
-            </Grid>
-          </form>
-        </Box>
+        </OverlayText>
+      </ImageContainer>
+
+      <Container maxWidth="lg" style={{ padding: "0" }}>
+        <CardSection />
       </Container>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={true}
-        closeOnClick
-        pauseOnHover
-        draggable
-        pauseOnFocusLoss
-      />{" "}
+
+      <Grid
+        container
+        spacing={1}
+        justifyContent="space-around"
+        sx={{ margin: "10% auto", width: "100%" }}
+      >
+        <Grid item xs={12} md={4}>
+          <ImageContainer component="img" src={contactImage} alt="Contact Illustration" />
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <Box
+            sx={{
+              padding: '20px',
+              backgroundColor: '#1976D2',
+              borderRadius: '25px',
+              position: 'relative',
+              overflow: 'visible',
+              boxShadow: 3,
+            }}
+          >
+            <Box
+              sx={{
+                position: 'absolute',
+                bottom: '-60px',
+                right: 0,
+                borderLeft: '80px solid transparent',
+                borderRight: '5px solid transparent',
+                borderTop: '100px solid #1976D2',
+              }}
+            />
+            <GetInTouch isContactUsSection={true} />
+          </Box>
+        </Grid>
+      </Grid>
+      <VideoMarquee />
     </div>
   );
 }

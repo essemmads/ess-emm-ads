@@ -5,7 +5,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import EmailIcon from "@mui/icons-material/Email";
-import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -22,7 +21,6 @@ export default function Header() {
 
   const socialLinks = [
     { icon: <FacebookRoundedIcon />, label: "Facebook" },
-    { icon: <XIcon />, label: "Twitter" },
     { icon: <InstagramIcon />, label: "Instagram" },
     { icon: <LinkedInIcon />, label: "LinkedIn" },
     { icon: <YouTubeIcon />, label: "YouTube" },
@@ -33,7 +31,7 @@ export default function Header() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, color: "#1976D2" }}>
       <AppBar position="static">
         <Toolbar>
           {isMobile && (
@@ -58,7 +56,7 @@ export default function Header() {
                 <CallIcon />
               </IconButton>
               <Link href="tel:+919876543210" underline="none" color="white">
-                +91 1234567890
+                0452 - 2362201
               </Link>
               <IconButton
                 size="large"
@@ -70,11 +68,11 @@ export default function Header() {
                 <EmailIcon />
               </IconButton>
               <Link
-                href="mailto:essemm@gmail.com"
+                href="mailto:essarrads@gmail.com"
                 underline="none"
                 color="white"
               >
-                essemm@gmail.com
+                essarrads@gmail.com
               </Link>
               <Typography
                 variant="h6"
@@ -89,15 +87,6 @@ export default function Header() {
                 color="inherit"
               >
                 <FacebookRoundedIcon />
-              </IconButton>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                <XIcon />
               </IconButton>
               <IconButton
                 size="large"
@@ -147,7 +136,7 @@ export default function Header() {
       >
         <IconButton
           onClick={toggleDrawer(false)}
-          sx={{ position: "absolute", top: 16, right: 16, color: "black" }} // Position close icon
+          sx={{ position: "absolute", top: 16, right: 16, color: "black" }}
         >
           <CloseIcon />
         </IconButton>
