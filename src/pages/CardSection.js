@@ -1,6 +1,9 @@
 import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { styled } from '@mui/system';
+import PhoneIcon from '../images/phone-icon.png';
+import AddressIcon from '../images/location-icon.png';
+import EmailIcon from '../images/mail-icon.png';
 
 const FadingCard = styled(Card)`
   border-radius: 25px;
@@ -8,12 +11,13 @@ const FadingCard = styled(Card)`
   color: white;
   position: relative;
   z-index: 1;
-  height: 250px;
-  width: 250px;
+  height: 400px;
+  width: 400px;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin: ${({ side }) => (side === 'right' ? '25px -20px 25px 0' : '25px 0 25px -20px')};
 
   &::before {
@@ -32,7 +36,8 @@ const FadingCard = styled(Card)`
   }
 
   @media (max-width: 600px) {
-    width: 100%;
+    width: 80%;
+    height: 45vh;
     margin: 8px 0;
 
     &::before {
@@ -50,16 +55,30 @@ const CenterCard = styled(Card)`
   background-color: #1976D2;
   color: white;
   z-index: 2;
-  height: 300px;
-  width: 300px;
+  height: 450px;
+  width: 450px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (max-width: 600px) {
-    width: 100%;
-    margin: 10px 0;
+    width: 90%;
+    height: 45vh;
+    margin: -25px 0;
   }
+`;
+
+const StyledIcon = styled('img')`
+  width: 50px;
+  height: auto;
+  margin-top: 20%;
+`;
+
+const StyledCenterIcon = styled('img')`
+  width: 50px;
+  height: auto;
+  margin-top: 5%;
 `;
 
 const CardSection = () => {
@@ -74,28 +93,29 @@ const CardSection = () => {
         alignItems: 'center',
       }}
     >
-    
       <FadingCard side="right">
-        <CardContent sx={{ textAlign: 'center' }}>
-          <Typography variant="h5" fontWeight={700}>Phone Number</Typography>
-          <Typography variant="body1">98421 08493</Typography>
+        <StyledIcon src={PhoneIcon} alt="Phone Icon" />
+        <CardContent sx={{ textAlign: 'center', marginTop: "20px" }}>
+          <Typography variant="h5">Phone Number</Typography>
+          <Typography variant="h5" marginTop={1}>98421 08493</Typography>
         </CardContent>
       </FadingCard>
 
-    
       <CenterCard>
-        <CardContent sx={{ textAlign: 'center' }}>
-          <Typography variant="h5" fontWeight={700}>Address</Typography>
-          <Typography variant="body1">
-            2, Shanmugam Pillai Thoppu 2nd Street, West Ponnagaram Main Road. Madurai - 625 016.
+        <StyledCenterIcon src={AddressIcon} alt="Address Icon" />
+        <CardContent sx={{ textAlign: 'center', marginTop: "20px" }}>
+          <Typography variant="h5">Address</Typography>
+          <Typography variant="h5" marginTop={2}>
+            2, Shanmugam Pillai Thoppu 2nd Street,<br/> West Ponnagaram Main Road. Madurai - 625 016.
           </Typography>
         </CardContent>
       </CenterCard>
 
       <FadingCard side="left">
-        <CardContent sx={{ textAlign: 'center' }}>
-          <Typography variant="h5" fontWeight={700}>Email</Typography>
-          <Typography variant="body1">essarrads@gmail.com</Typography>
+        <StyledIcon src={EmailIcon} alt="Email Icon" />
+        <CardContent sx={{ textAlign: 'center', marginTop: "20px" }}>
+          <Typography variant="h5">Email Address</Typography>
+          <Typography variant="h5" marginTop={1}>essarrads@gmail.com</Typography>
         </CardContent>
       </FadingCard>
     </Box>

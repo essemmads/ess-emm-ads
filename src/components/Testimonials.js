@@ -9,16 +9,25 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Global, css } from '@emotion/react';
 
 const Container = styled.div`
+  padding: 80px 0;
   .slick-prev:before,
   .slick-next:before {
-    color: black; /* Change arrow color to black */
+    color: black;
   }
 
   .slick-prev,
   .slick-next {
-    z-index: 1; /* Ensure arrows are above the slides */
+    z-index: 1;
   }
 `;
+
+const Title = styled(Typography)`
+  padding-bottom: 80px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+`;
+
 
 export default function Testimonials() {
   const testimonials = [
@@ -80,14 +89,12 @@ export default function Testimonials() {
           font-size: 0;
         }
   
-        /* Show dots only on mobile view */
         @media (max-width: 750px) {
           .slick-dots {
             display: block !important;
           }
         }
   
-        /* Hide dots on larger screens */
         @media (min-width: 751px) {
           .slick-dots {
             display: none !important;
@@ -96,20 +103,12 @@ export default function Testimonials() {
       `}
     />
   );
-  
-  
+
 
   return (
     <Container>
-      <Box
-        sx={{
-          padding: "40px 0",
-          textAlign: "center",
-        }}
-      >
-        <Typography variant="h4" align="center" sx={{ marginBottom: "20px" }}>
-          What Our Clients Say
-        </Typography>
+      <Box sx={{textAlign: "center"}}>
+        <Title>Client Testimonials</Title>
         <Box sx={{ width: "70%", margin: "0 auto" }}>
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (

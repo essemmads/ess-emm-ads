@@ -18,6 +18,8 @@ const Container = styled(Box)`
 const Title = styled(Typography)`
   padding-bottom: 80px;
   text-align: center;
+  font-size: 32px;
+  font-weight: bold;
 `;
 
 const StyledMarquee = styled(Marquee)`
@@ -50,7 +52,7 @@ const ClientImage = styled("img")`
 export default function Clients() {
   return (
     <Container>
-      <Title variant="h4">Our Clients</Title>
+      <Title>Our Clients</Title>
 
       <StyledMarquee speed={50} pauseOnHover>
         {imagesRow1.map((src, index) => (

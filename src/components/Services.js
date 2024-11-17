@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Container = styled.div`
   background-color: #f0f0f0;
-  padding: 120px 0;
+  padding: 0 0 120px 0;
 `;
 
 const ServicesWrapper = styled.div`
@@ -125,6 +125,13 @@ const ArrowButton = styled(Button)`
   padding: 0;
 `;
 
+const Title = styled(Typography)`
+  padding: 80px 0;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+`;
+
 export default function Services() {
   const navigate = useNavigate();
 
@@ -140,10 +147,8 @@ export default function Services() {
   };
 
   return (
-    <Container>
-      <Typography variant="h4" align="center" sx={{ marginBottom: "20px" }}>
-        Our Services
-      </Typography>
+    <Container id="ourServices">
+      <Title> Our Services </Title>
       <ServicesWrapper>
         {services.map((service) => (
           <CardContainer key={service.id}>
@@ -210,7 +215,7 @@ export default function Services() {
               <MainCardHangingButton
                 variant="contained"
                 color="primary"
-                onClick={() => handleViewMore(1)}
+                onClick={() => handleViewMore("TRAIN BRANDING")}
               >
                 <Typography fontWeight={700}>View More</Typography>
               </MainCardHangingButton>

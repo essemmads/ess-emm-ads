@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Typography, Box, Container, Grid } from "@mui/material";
-import contactImage from "../images/contact-us.png";
+import contactImage from "../images/contact-us-banner.jpg";
+import contactUsIllustrator from "../images/contact-us-illustrator.png";
 import GetInTouch from "./GetInTouch";
 import CardSection from "./CardSection";
 import styled from "@emotion/styled";
@@ -14,7 +15,7 @@ const ImageContainer = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: center;
-s
+
   @media (max-width: 900px) {
     height: 300px;
   }
@@ -64,9 +65,29 @@ const LineTextContainer = styled(Box)`
   }
 `;
 
+const IllustratorContainer = styled(Box)`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+
+`;
+
 export default function ContactUs() {
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
-    <div style={{ backgroundColor: "#f0f0f0" }}>
+    <div>
       <ImageContainer>
         <BannerImage component="img" src={contactImage} alt="Banner" />
         <OverlayText>
@@ -95,6 +116,14 @@ export default function ContactUs() {
         </OverlayText>
       </ImageContainer>
 
+      <Typography
+        variant="h4"
+        align="center"
+        sx={{ color: "#1976D2", marginBottom: "40px", fontWeight: 700 }}
+      >
+        CONTACT US
+      </Typography>
+
       <Container maxWidth="lg" style={{ padding: "0" }}>
         <CardSection />
       </Container>
@@ -105,8 +134,8 @@ export default function ContactUs() {
         justifyContent="space-around"
         sx={{ margin: "10% auto", width: "100%" }}
       >
-        <Grid item xs={12} md={4}>
-          <ImageContainer component="img" src={contactImage} alt="Contact Illustration" />
+        <Grid item xs={12} md={4} style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
+          <IllustratorContainer component="img" src={contactUsIllustrator} alt="Contact Illustration" />
         </Grid>
 
         <Grid item xs={12} md={6}>
@@ -126,7 +155,6 @@ export default function ContactUs() {
                 bottom: '-60px',
                 right: 0,
                 borderLeft: '80px solid transparent',
-                borderRight: '5px solid transparent',
                 borderTop: '100px solid #1976D2',
               }}
             />

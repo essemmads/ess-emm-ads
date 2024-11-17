@@ -5,6 +5,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import styled from '@emotion/styled';
+import { useNavigate } from "react-router-dom";
+
 
 const FooterContainer = styled.div`
   display: flex;
@@ -14,23 +16,19 @@ const FooterContainer = styled.div`
   padding: 20px 0;
   margin-top: 40px;
   overflow: hidden;
+  flex-direction: column;
 
   @media (max-width: 750px) {
     padding: 20px 10px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  @media (max-width: 600px) {
-    margin-top: 100%;
   }
 `;
-
 
 const ColumnContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 80%;
+  flex-direction: row;
+  align-self: center;
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -49,7 +47,7 @@ const Column = styled.div`
     text-align: left;
     padding: 10px 0;
     width: 100%;
-    border-bottom: 1px solid #444; // Adding a separator line
+    border-bottom: 1px solid #444;
   }
 `;
 
@@ -57,6 +55,7 @@ const SocialIcons = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-top: 10px;
+  margin-left: 10%;
 
   @media (max-width: 750px) {
     justify-content: center;
@@ -67,19 +66,27 @@ const SocialIcons = styled.div`
 `;
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    document.getElementById(path)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  
   return (
     <FooterContainer>
       <ColumnContainer>
-        <Column>
+        <Column style={{display: "flex", flexDirection: "column", justifyContent:"space-between"}}>
           <Typography variant="body1">| About ESS ARR ADS</Typography>
         </Column>
 
         <Column>
           <Typography variant="body1">| Quick Links</Typography>
-          <Typography variant="body2" sx={{ marginTop: '10px', marginBottom: '10px' }}>Home</Typography>
-          <Typography variant="body2" sx={{ marginBottom: '10px' }}>About Us</Typography>
-          <Typography variant="body2" sx={{ marginBottom: '10px' }}>Our Services</Typography>
-          <Typography variant="body2" sx={{ marginBottom: '10px' }}>Contact Us</Typography>
+          <Typography variant="body2" sx={{ marginTop: '10px', marginBottom: '10px', cursor: 'pointer' }} onClick={() => handleNavigation("header")}>Home</Typography>
+          <Typography variant="body2" sx={{ marginBottom: '10px', cursor: 'pointer' }} onClick={() => handleNavigation("aboutUsSection")}>About Us</Typography>
+          <Typography variant="body2" sx={{ marginBottom: '10px', cursor: 'pointer' }}  onClick={() => handleNavigation("ourServices")}>Our Services</Typography>
+          <Typography variant="body2" sx={{ marginBottom: '10px', cursor: 'pointer' }}  onClick={() => handleNavigation("contactUsSection")}>Contact Us</Typography>
         </Column>
 
         <Column>

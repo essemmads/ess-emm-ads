@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useRef } from "react";
 import { Typography, Box } from "@mui/material";
-import contactImage from "../images/outdoor-ad.png";
+import bannerImage from "../images/outdoor-ad.png";
 import VideoMarquee from "../components/VideoMarquee";
 import CustomCard from "./CustomCard";
 import styled from '@emotion/styled';
@@ -16,17 +16,44 @@ const StyledFlexContainer = styled(Box)`
     flex-direction: column;
   }
 `;
+const ImageContainer = styled(Box)`
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+
+  @media only screen and (max-width: 1200px) {
+    height: 60vh;
+  }
+`;
+
+const ImageOverlay = styled(Box)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+`;
 
 const OverlayText = styled(Box)`
   position: absolute;
-  top: 30%;
+  top: 37%;
   left: 10%;
-  color: black;
   text-align: left;
-  z-index: 2;
+  padding: 20px;
+  background-color: rgba(25, 118, 210, 0.5);
+
+  @media (max-width: 900px) {
+    top: 30%;
+    left: 8%;
+    padding: 15px;
+  }
 
   @media (max-width: 600px) {
+    top: 25%;
     left: 5%;
+    padding: 10px;
+    width: 80%;
   }
 `;
 
@@ -40,20 +67,15 @@ const LineTextContainer = styled(Box)`
     display: inline-block;
     width: 4px;
     height: 40px;
-    background-color: black;
+    background-color: white;
     margin-right: 10px;
+
+    @media (max-width: 600px) {
+      height: 30px;
+    }
   }
 `;
 
-const ImageOverlay = styled(Box)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  z-index: 1;
-`;
 
 export default function OutdoorAdvertising() {
   const pathwayRef = useRef(null);
@@ -62,6 +84,10 @@ export default function OutdoorAdvertising() {
   const fourSidePoleRef = useRef(null);
   const poleKioskRef = useRef(null);
   const railwayCrossingRef = useRef(null);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const cardData = [
     {
@@ -108,66 +134,62 @@ export default function OutdoorAdvertising() {
       },
   ];
 
+  const TypographyText = {
+    subtitle1: {
+      fontWeight: 300,
+      color: "white",
+      fontSize: { xs: "0.8rem", sm: "1.2rem", md: "1.5rem" },
+    },
+    h4: {
+      fontWeight: 700,
+      color: "white",
+      fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2rem" },
+      paddingTop: "20px",
+    },
+    h6: {
+      color: "white",
+      fontSize: { xs: "0.8rem", sm: "1rem", md: "1.3rem" },
+    },
+  };
+
   return (
-    <div style={{ backgroundColor: "#f0f0f0", position: "relative" }}>
-      <Box
-        component="div"
-        sx={{
-          position: "relative",
-          width: "100%",
-          height: "auto",
-          marginBottom: "40px",
-          overflow: "hidden",
-        }}
-      >
+    <div style={{ backgroundColor: "#f0f0f0" }}>
+      <ImageContainer>
         <Box
           component="img"
-          src={contactImage}
+          src={bannerImage}
           alt="Banner"
           sx={{
             width: "100%",
-            height: "auto",
+            height: "100%",
+            objectFit: "cover",
           }}
         />
         <ImageOverlay />
         <OverlayText>
           <LineTextContainer>
-            <Typography
-              variant="subtitle1"
-              sx={{
-                fontWeight: 300,
-                color: "black",
-                fontSize: { xs: '0.8rem', sm: '1.5rem' },
-              }}
-            >
+            <Typography variant="subtitle1" sx={TypographyText.subtitle1}>
               Our services
             </Typography>
           </LineTextContainer>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 700,
-              color: "black",
-              fontSize: { xs: '1.2rem', sm: '2rem' },
-              paddingTop: "40px"
-            }}
-          >
-            High-Impact Outdoor Advertising
+
+          <Typography variant="h4" sx={TypographyText.h4}>
+            Platform Branding That Captures Attention
           </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              color: "black",
-              fontSize: { xs: '0.8rem', sm: '1.3rem' },
-            }}
-          >
-           Stand out in busy railway environments with vibrant 
-           and compelling outdoor advertisements.
+
+          <Typography variant="h6" sx={TypographyText.h6}>
+            Strategically placed ads on platforms enhance brand recognition and{" "}
+            <br />
+            engagement among passengers.
           </Typography>
         </OverlayText>
-      </Box>
+      </ImageContainer>
 
-      <Typography variant="h4" align="center" sx={{ color: "#1976D2", marginBottom: "40px", fontWeight: 700 }}>
+      <Typography
+        variant="h4"
+        align="center"
+        sx={{ color: "#1976D2", marginBottom: "40px", fontWeight: 700 }}
+      >
         OUTDOOR ADVERTISING
       </Typography>
 
@@ -182,22 +204,46 @@ export default function OutdoorAdvertising() {
         ))}
       </StyledFlexContainer>
 
-      <Typography ref={pathwayRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={pathwayRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Pathway
       </Typography>
-      <Typography ref={billboardsRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={billboardsRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Billboards
       </Typography>
-      <Typography ref={entranceArchRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={entranceArchRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Entrance Arch
       </Typography>
-      <Typography ref={fourSidePoleRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={fourSidePoleRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Four Side Pole
       </Typography>
-      <Typography ref={poleKioskRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={poleKioskRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Pole Kiosk
       </Typography>
-      <Typography ref={railwayCrossingRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={railwayCrossingRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Railway Crossing
       </Typography>
 

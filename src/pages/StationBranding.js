@@ -1,15 +1,19 @@
 import * as React from "react";
 import { useRef } from "react";
 import { Typography, Box } from "@mui/material";
-import contactImage from "../images/station-branding.png";
+import bannerImage from "../images/station-branding.png";
 import VideoMarquee from "../components/VideoMarquee";
 import CustomCard from "./CustomCard";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
+
+  @media only screen and (max-width: 1200px) {
+    height: 60vh;
+  }
 `;
 
 const ImageOverlay = styled(Box)`
@@ -36,11 +40,21 @@ const OverlayText = styled(Box)`
   position: absolute;
   top: 37%;
   left: 10%;
-  color: black;
   text-align: left;
+  padding: 20px;
+  background-color: rgba(25, 118, 210, 0.5);
+
+  @media (max-width: 900px) {
+    top: 30%;
+    left: 8%;
+    padding: 15px;
+  }
 
   @media (max-width: 600px) {
+    top: 25%;
     left: 5%;
+    padding: 10px;
+    width: 80%;
   }
 `;
 
@@ -54,8 +68,12 @@ const LineTextContainer = styled(Box)`
     display: inline-block;
     width: 4px;
     height: 40px;
-    background-color: black;
+    background-color: white;
     margin-right: 10px;
+
+    @media (max-width: 600px) {
+      height: 30px;
+    }
   }
 `;
 
@@ -63,29 +81,53 @@ export default function StationBranding() {
   const stationBuildingRef = useRef(null);
   const reservationCounterRef = useRef(null);
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const cardData = [
     {
       title: "Station Building",
-      description: "Description for Station Building goes here. This can include key features, specifications, etc.",
+      description:
+        "Description for Station Building goes here. This can include key features, specifications, etc.",
       onViewMore: () => {
         stationBuildingRef.current?.scrollIntoView({ behavior: "smooth" });
       },
     },
     {
       title: "Reservation Counter",
-      description: "Description for Reservation Counter goes here. This can include key features, specifications, etc.",
+      description:
+        "Description for Reservation Counter goes here. This can include key features, specifications, etc.",
       onViewMore: () => {
         reservationCounterRef.current?.scrollIntoView({ behavior: "smooth" });
       },
     },
   ];
 
+  const TypographyText = {
+    subtitle1: {
+      fontWeight: 300,
+      color: "white",
+      fontSize: { xs: "0.8rem", sm: "1.2rem", md: "1.5rem" },
+    },
+    h4: {
+      fontWeight: 700,
+      color: "white",
+      fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2rem" },
+      paddingTop: "20px",
+    },
+    h6: {
+      color: "white",
+      fontSize: { xs: "0.8rem", sm: "1rem", md: "1.3rem" },
+    },
+  };
+
   return (
     <div style={{ backgroundColor: "#f0f0f0" }}>
       <ImageContainer>
         <Box
           component="img"
-          src={contactImage}
+          src={bannerImage}
           alt="Banner"
           sx={{
             width: "100%",
@@ -96,37 +138,19 @@ export default function StationBranding() {
         <ImageOverlay />
         <OverlayText>
           <LineTextContainer>
-            <Typography
-              variant="subtitle1"
-              sx={{
-                fontWeight: 300,
-                color: "black", // Text color set to black
-                fontSize: { xs: '0.8rem', sm: '1.5rem' }, // Responsive font size
-              }}
-            >
+            <Typography variant="subtitle1" sx={TypographyText.subtitle1}>
               Our services
             </Typography>
           </LineTextContainer>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 700,
-              color: "black", // Text color set to black
-              fontSize: { xs: '1.2rem', sm: '2rem' }, // Responsive font size for title
-              paddingTop: "40px"
-            }}
-          >
+
+          <Typography variant="h4" sx={TypographyText.h4}>
             Advertising Across the Rail Network
           </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              color: "black", // Text color set to black
-              fontSize: { xs: '0.8rem', sm: '1.3rem' }, // Smaller font size on mobile
-            }}
-          >
-           Maximize your brand's visibility with eye-catching ads<br/> 
-           in high-traffic railway hubs.
+
+          <Typography variant="h6" sx={TypographyText.h6}>
+            Maximize your brand's visibility with eye-catching ads
+            <br />
+            in high-traffic railway hubs.
           </Typography>
         </OverlayText>
       </ImageContainer>
@@ -150,11 +174,19 @@ export default function StationBranding() {
         ))}
       </StyledFlexContainer>
 
-      <Typography ref={stationBuildingRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={stationBuildingRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Station Building
       </Typography>
 
-      <Typography ref={reservationCounterRef} variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>
+      <Typography
+        ref={reservationCounterRef}
+        variant="h5"
+        sx={{ fontWeight: 700, padding: "40px" }}
+      >
         Reservation Counter
       </Typography>
 

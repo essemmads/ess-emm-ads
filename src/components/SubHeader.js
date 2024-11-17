@@ -11,7 +11,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import essEmmLogo from "../images/ess-emm.jpg";
+import essArrLogo from "../images/ess-arr-logo.png";
 import styled from "@emotion/styled";
 import { Menu, MenuItem } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -20,37 +20,47 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 20px 20px;
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 900px) {
     justify-content: space-between;
     flex-direction: row-reverse;
+  }
+
+  @media only screen and (max-width: 400px) {
+    padding: 10px 20px;
   }
 `;
 
 const ImageContainer = styled.div`
-  width: 5vw;
   margin-top: 14px;
-
   img {
     width: 100%;
     height: auto;
   }
 
-  @media only screen and (max-width: 750px) {
-    width: 20vw;
+  @media only screen and (max-width: 900px) {
+    width: 50%;
     margin-top: 14px;
   }
 `;
 
 const SideMenuButton = styled(IconButton)`
-  @media (min-width: 751px) {
+  @media (min-width: 901px) {
     display: none;
   }
 `;
 
 const DesktopMenu = styled(Toolbar)`
-  @media (max-width: 750px) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  @media (max-width: 1200px) {
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -60,18 +70,30 @@ const GetAQuoteButton = styled(Button)`
   color: white;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   height: 28px;
   padding: 6px;
+  order: 1;
+
   &:hover {
     background-color: #1976D2;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 16px;
+    text-align: right;
   }
 `;
 
 const TextButton = styled(Button)`
   color: black;
-  font-size: 18px;
+  font-size: 20px;
   text-transform: none;
+  order: 0;
+
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
 `;
 
 export default function SubHeader() {
@@ -95,13 +117,17 @@ export default function SubHeader() {
   };
 
   const handleMenuClick = (service) => {
-    handleServiceClose();
+    setDrawerOpen(false);
+    setServiceMenuAnchor(null);
     const formattedService = service.toLowerCase().replace(/\s+/g, "-");
     navigate(`/${formattedService}`);
   };
 
   const toggleDrawer = (open) => (event) => {
-    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
     setDrawerOpen(open);
@@ -111,9 +137,6 @@ export default function SubHeader() {
     <Box
       sx={{ width: 250, position: "relative" }}
       role="presentation"
-      onClick={(event) => {
-        if (event.target.tagName !== "svg") toggleDrawer(false)(event);
-      }}
       onKeyDown={toggleDrawer(false)}
     >
       <IconButton
@@ -125,12 +148,22 @@ export default function SubHeader() {
 
       <List sx={{ marginTop: 4 }}>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/")}>
+          <ListItemButton
+            onClick={(event) => {
+              if (event.target.tagName !== "svg") toggleDrawer(false)(event);
+              navigate("/");
+            }}
+          >
             <ListItemText primary="Home" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/about-us")}>
+          <ListItemButton
+            onClick={(event) => {
+              if (event.target.tagName !== "svg") toggleDrawer(false)(event);
+              navigate("/about-us");
+            }}
+          >
             <ListItemText primary="About Us" />
           </ListItemButton>
         </ListItem>
@@ -151,13 +184,23 @@ export default function SubHeader() {
           ))}
         </Menu>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/gallery")}>
+          <ListItemButton
+            onClick={(event) => {
+              if (event.target.tagName !== "svg") toggleDrawer(false)(event);
+              navigate("/gallery");
+            }}
+          >
             <ListItemText primary="Gallery" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/contact-us")}>
-            <ListItemText primary="Contact Us"/>
+          <ListItemButton
+            onClick={(event) => {
+              if (event.target.tagName !== "svg") toggleDrawer(false)(event);
+              navigate("/contact-us");
+            }}
+          >
+            <ListItemText primary="Contact Us" />
           </ListItemButton>
         </ListItem>
       </List>
@@ -179,7 +222,7 @@ export default function SubHeader() {
       </Drawer>
 
       <ImageContainer>
-        <img src={essEmmLogo} alt="Ess Emm Railway Ads" />
+        <img src={essArrLogo} alt="Ess Emm Railway Ads" style={{cursor: 'pointer'}} onClick={() => navigate("/")}/>
       </ImageContainer>
 
       <DesktopMenu>
@@ -194,17 +237,24 @@ export default function SubHeader() {
           onClose={handleServiceClose}
         >
           {serviceOptions.map((item) => (
-            <MenuItem key={item} onClick={() => handleMenuClick(item)}>
+            <MenuItem key={item} onClick={() => handleMenuClick(item)} sx={{ fontSize: "18px" }}>
               {item}
             </MenuItem>
           ))}
         </Menu>
         <TextButton onClick={() => navigate("/gallery")}>Gallery</TextButton>
-        <TextButton onClick={() => navigate("/contact-us")} >Contact us</TextButton>
-        
+        <TextButton onClick={() => navigate("/contact-us")}>Contact us</TextButton>
+
         <GetAQuoteButton
-          onClick={() => navigate("/get-a-quote")}
-          sx={{ marginLeft: '40px' }}
+          onClick={() => {
+            navigate("/");
+            setTimeout(() => {
+              document.getElementById("contactUsSection")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }, 300);
+          }}
+          sx={{ marginLeft: "40px" }}
         >
           GET A QUOTE
         </GetAQuoteButton>

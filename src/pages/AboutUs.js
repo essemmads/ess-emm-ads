@@ -54,6 +54,11 @@ const LineTextContainer = styled(Box)`
 `;
 
 export default function AboutUs() {
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div style={{ backgroundColor: "#f0f0f0" }}>
       <ImageContainer>
@@ -108,7 +113,7 @@ export default function AboutUs() {
         align="center"
         sx={{ color: "#1976D2", marginBottom: "40px", fontWeight: 700 }}
       >
-        About Us
+        ABOUT US
       </Typography>
 
       <Typography variant="h5" sx={{ fontWeight: 700, padding: '40px' }}>

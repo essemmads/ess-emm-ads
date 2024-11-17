@@ -4,16 +4,17 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import EmailIcon from "@mui/icons-material/Email";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import CallIcon from "@mui/icons-material/Call";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useMediaQuery, Card, CardContent, Button } from "@mui/material";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import CloseIcon from "@mui/icons-material/Close";
+import CallIcon from "../images/phone-sm-icon.png";
+import EmailIcon from "../images/mail-sm-icon.png";
+
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -31,7 +32,7 @@ export default function Header() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, color: "#1976D2" }}>
+    <Box sx={{ flexGrow: 1, color: "#1976D2" }} id="header">
       <AppBar position="static">
         <Toolbar>
           {isMobile && (
@@ -53,7 +54,7 @@ export default function Header() {
                 color="inherit"
                 aria-label="menu"
               >
-                <CallIcon />
+                <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
               </IconButton>
               <Link href="tel:+919876543210" underline="none" color="white">
                 0452 - 2362201
@@ -65,7 +66,9 @@ export default function Header() {
                 aria-label="menu"
                 sx={{ ml: "20px" }}
               >
-                <EmailIcon />
+              
+              <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
+
               </IconButton>
               <Link
                 href="mailto:essarrads@gmail.com"
@@ -168,7 +171,9 @@ export default function Header() {
               color="inherit"
               aria-label="menu"
             >
-              <CallIcon />
+            
+            <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
+                
             </IconButton>
             <Link href="tel:+919876543210" underline="none" color="black">
               +91 1234567890
@@ -180,7 +185,7 @@ export default function Header() {
               color="inherit"
               aria-label="menu"
             >
-              <EmailIcon />
+             <img src={EmailIcon} alt="Ess Emm Railway Ads Email"/>
             </IconButton>
             <Link href="mailto:essemm@gmail.com" underline="none" color="black">
               essemm@gmail.com

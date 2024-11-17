@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
+import * as React from "react";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -25,9 +26,9 @@ function App() {
       <Router>
         <div className="App" style={{ width: "100%" }}>
           <Header />
-          <SubHeader />
+          <SubHeader/>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/service1" element={<ServiceDetail serviceId="1" />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/about-us" element={<AboutUs />} />

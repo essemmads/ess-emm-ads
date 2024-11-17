@@ -8,6 +8,11 @@ import Clients from "../components/Clients";
 import ContactSection from "../components/ContactSection";
 
 export default function Home() {
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CarouselCard />
@@ -16,7 +21,7 @@ export default function Home() {
       <VideoMarquee isHome={true}/>
       <Testimonials />
       <Clients />
-      <ContactSection />
+      <ContactSection/>
     </div>
   );
 }

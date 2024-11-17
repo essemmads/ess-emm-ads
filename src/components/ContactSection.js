@@ -1,14 +1,15 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 import GetInTouch from '../pages/GetInTouch';
-import PhoneIcon from '@mui/icons-material/Phone';
-import HomeIcon from '@mui/icons-material/Home';
+import blackPhoneIcon from '../images/black-phone.png';
+import blackMailIcon from '../images/black-mail.png';
+import blackLocationIcon from '../images/black-location.png';
 import styled from '@emotion/styled';
 
 const ContactContainer = styled(Box)`
   display: flex;
   height: 100vh;
-  padding: 15% 15% 0 0;
+  padding: 10% 15% 0 0;
 
   @media (max-width: 1200px) {
   padding: 30% 15% 0 0;
@@ -74,15 +75,18 @@ const InfoItem = styled("div")`
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  padding-left: 20px;
 
   @media (max-width: 830px) {
-  width: inherit;
+    width: inherit;
   }
 `;
 
 const InfoText = styled("div")`
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
 
   span:first-of-type {
     color: black;
@@ -101,30 +105,59 @@ const Title = styled(Typography)`
   }
 `;
 
+const SectionTitle = styled(Typography)`
+  padding: 80px 0;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+`;
+
+const IconContainer = styled.img`
+  width: 10%;
+
+  @media (max-width: 1200px) {
+    width: 15%;
+  }
+
+  @media (max-width: 830px) {
+    width: 5%;
+  }
+  
+   @media (max-width: 600px) {
+    width: 10%;
+  }
+
+  @media (max-width: 350px) {
+    width: 1%;
+  }
+`;
+
 const ContactSection = () => {
   return (
+    <div id="contactUsSection">
+      <SectionTitle>Contact Us</SectionTitle>
     <ContactContainer>
       <BlueContainer>
         <Title variant="h3" align="left" gutterBottom>
-          Don't hesitate to contact us
+          Don't Hesitate To Contact Us
         </Title>
         <div style={{ display: 'flex', flexDirection: 'column', marginTop: '60px' }}>
           <InfoItem>
-            <PhoneIcon style={{ marginRight: '10px', fontSize: '24px', color: 'white' }} />
+            <IconContainer src={blackPhoneIcon} alt="Phone Icon"/>
             <InfoText>
               <span>Phone Number</span>
               <span>98421 08493</span>
             </InfoText>
           </InfoItem>
           <InfoItem>
-            <HomeIcon style={{ marginRight: '10px', fontSize: '24px', color: 'white' }} />
+            <IconContainer src={blackMailIcon} alt="E-Mail Icon"/>
             <InfoText>
               <span>Address</span>
-              <span>2, Shanmugam Pillai Thoppu 2nd Street, West Ponnagaram Main Road, Madurai - 625 016.</span>
+              <span>2, Shanmugam Pillai Thoppu 2nd Street, <br/>West Ponnagaram Main Road, Madurai - 625 016.</span>
             </InfoText>
           </InfoItem>
           <InfoItem>
-            <HomeIcon style={{ marginRight: '10px', fontSize: '24px', color: 'white' }} />
+            <IconContainer src={blackLocationIcon} alt="Location Icon"/>
             <InfoText>
               <span>Email</span>
               <span>essarrads@gmail.com</span>
@@ -139,6 +172,7 @@ const ContactSection = () => {
         </GetInTouchWrapper>
       </GetInTouchContainer>
     </ContactContainer>
+    </div>
   );
 };
 

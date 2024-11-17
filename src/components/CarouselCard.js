@@ -6,9 +6,21 @@ import adImg2 from "../images/carousel-img-2.png";
 import adImg3 from "../images/carousel-img-3.png";
 import adImg4 from "../images/carousel-img-4.png";
 import adImg5 from "../images/carousel-img-5.png";
-import { IconButton } from "@mui/material";
+import { IconButton, Box } from "@mui/material";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import styled from "@emotion/styled";
+
+const CarouselImage = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+
+  // @media (max-width: 900px) {
+  //   height: 50vh;
+  // }
+`;
 
 export default function CarouselCard() {
   const images = [adImg1, adImg2, adImg3, adImg4, adImg5];
@@ -17,7 +29,7 @@ export default function CarouselCard() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, 
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     prevArrow: <CustomPrevArrow />,
@@ -42,13 +54,9 @@ export default function CarouselCard() {
     <div className="carousel-container">
       <Slider {...settings}>
         {images.map((img, index) => (
-          <div key={index}>
-            <img
-              src={img}
-              alt={`Slide ${index}`}
-              style={{ width: "100%", height: "auto", borderRadius: "8px" }}
-            />
-          </div>
+          <Box key={index}>
+            <CarouselImage src={img} alt={`Slide ${index}`} />
+          </Box>
         ))}
       </Slider>
     </div>
