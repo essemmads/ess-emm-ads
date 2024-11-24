@@ -14,7 +14,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div style={{ marginBottom: '100px' }}>
       <CarouselCard />
       <AboutUs />
       <Services />

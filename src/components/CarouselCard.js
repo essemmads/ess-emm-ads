@@ -14,7 +14,6 @@ import styled from "@emotion/styled";
 const CarouselImage = styled.img`
   width: 100%;
   height: auto;
-  border-radius: 8px;
   object-fit: cover;
 
   // @media (max-width: 900px) {

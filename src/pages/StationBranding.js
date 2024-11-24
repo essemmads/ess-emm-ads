@@ -38,23 +38,24 @@ const StyledFlexContainer = styled(Box)`
 
 const OverlayText = styled(Box)`
   position: absolute;
-  top: 37%;
-  left: 10%;
+  top: 30%;
+  left: 8%;
   text-align: left;
   padding: 20px;
   background-color: rgba(25, 118, 210, 0.5);
+  width: 40%;
 
   @media (max-width: 900px) {
     top: 30%;
     left: 8%;
     padding: 15px;
+    width: 60%;
   }
 
   @media (max-width: 600px) {
     top: 25%;
     left: 5%;
     padding: 10px;
-    width: 80%;
   }
 `;
 
@@ -75,6 +76,21 @@ const LineTextContainer = styled(Box)`
       height: 30px;
     }
   }
+`;
+
+const ContentContainer = styled.div`
+  width: 80%;
+  margin: 0 45px;
+`;
+
+const SectionHeading = styled(Typography)`
+  font-weight: 700; 
+  padding: 40px 0px 15px 45px; 
+`;
+
+const ContentText = styled(Typography)`
+  line-height: 1.8;
+  font-size: 20px;
 `;
 
 export default function StationBranding() {
@@ -145,11 +161,10 @@ export default function StationBranding() {
 
           <Typography variant="h4" sx={TypographyText.h4}>
             Advertising Across the Rail Network
-          </Typography>
+          </Typography><br />
 
           <Typography variant="h6" sx={TypographyText.h6}>
             Maximize your brand's visibility with eye-catching ads
-            <br />
             in high-traffic railway hubs.
           </Typography>
         </OverlayText>
@@ -174,21 +189,44 @@ export default function StationBranding() {
         ))}
       </StyledFlexContainer>
 
-      <Typography
-        ref={stationBuildingRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+      <SectionHeading ref={stationBuildingRef} variant="h5">
         Station Building
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Railway station building branding transforms station exteriors and interiors into powerful advertising spaces. 
+          This includes using walls, facades, pillars, and entryways to display large-scale advertisements, logos, or thematic
+          designs. It leverages the station’s high visibility and footfall to maximize brand exposure to a diverse audience of 
+          daily commuters, travelers, and visitors. Station building branding not only promotes businesses but also enhances 
+          the station's aesthetic appeal, creating a visually engaging environment that integrates functionality with impactful marketing. <br/>
 
-      <Typography
-        ref={reservationCounterRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+          Railway station building advertising utilizes the vast and visible spaces of station buildings to promote brands, services, or events. 
+          This includes facades, walls, entry gates, pillars, and rooftops, turning them into dynamic advertising platforms. 
+          With thousands of passengers and visitors passing through daily, station building advertising ensures high visibility and prolonged engagement. 
+          It offers opportunities for creative campaigns, such as large banners, digital displays, or thematic wraps that integrate seamlessly with the station’s design. 
+          This advertising method not only enhances brand recognition but also contributes to the aesthetic appeal of the station, making it visually engaging for commuters. 
+          Its strategic placement ensures that messages reach a diverse audience, maximizing the return on investment for advertisers.
+        </ContentText>
+      </ContentContainer>
+
+      <SectionHeading ref={reservationCounterRef} variant="h5">
         Reservation Counter
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Reservation counter branding involves transforming counters into visually appealing and functional spaces with
+          branded signage, posters, digital displays, and thematic designs. This type of branding 
+          creates a lasting impression on passengers while enhancing their experience at the 
+          reservation counter. It can also integrate sponsor messaging with digital kiosks, seating
+          areas, and interactive displays, providing brands with direct access to a captive audience.<br/>
+
+          A railway reservation counter is a designated area within a station or authorized location where passengers can book, modify, or cancel 
+          train tickets. Staffed by trained personnel, these counters assist travelers with ticketing inquiries, seat availability, train schedules, and fare 
+          details. They are especially valuable for passengers who prefer in-person assistance over online booking options. Reservation counters often 
+          have a digital interface to streamline the ticketing process and improve efficiency. Serving as an essential touchpoint for rail travelers, these
+          counters play a crucial role in ensuring seamless travel planning and accessibility for all passengers.
+        </ContentText>
+      </ContentContainer>
 
       <VideoMarquee />
     </div>

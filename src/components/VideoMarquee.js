@@ -56,7 +56,7 @@ const VideoFrame = styled("iframe")`
 `;
 
 const SectionTitle = styled(Typography)`
-  padding: 80px 0;
+  padding: 80px 0 30px 0;
   text-align: center;
   font-size: 32px;
   font-weight: bold;

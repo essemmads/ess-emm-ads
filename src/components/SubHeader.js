@@ -13,8 +13,9 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import essArrLogo from "../images/ess-arr-logo.png";
 import styled from "@emotion/styled";
-import { Menu, MenuItem } from "@mui/material";
+import { Menu, MenuItem, useMediaQuery } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const Container = styled.div`
   display: flex;
@@ -37,6 +38,7 @@ const ImageContainer = styled.div`
   img {
     width: 100%;
     height: auto;
+    cursor: pointer;
   }
 
   @media only screen and (max-width: 900px) {
@@ -100,6 +102,9 @@ export default function SubHeader() {
   const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [serviceMenuAnchor, setServiceMenuAnchor] = useState(null);
+  const [serviceMenuOpen, setServiceMenuOpen] = useState(false);
+  const isMobile = useMediaQuery("(max-width:900px)");
+
 
   const serviceOptions = [
     "Station Branding",
@@ -131,6 +136,10 @@ export default function SubHeader() {
       return;
     }
     setDrawerOpen(open);
+  };
+
+  const toggleServiceMenu = () => {
+    setServiceMenuOpen((prev) => !prev);
   };
 
   const drawerContent = (
@@ -168,21 +177,19 @@ export default function SubHeader() {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton onClick={handleServiceClick}>
+          <ListItemButton onClick={toggleServiceMenu}>
             <ListItemText primary="Services" />
+            {serviceMenuOpen ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
           </ListItemButton>
         </ListItem>
-        <Menu
-          anchorEl={serviceMenuAnchor}
-          open={Boolean(serviceMenuAnchor)}
-          onClose={handleServiceClose}
-        >
-          {serviceOptions.map((item) => (
-            <MenuItem key={item} onClick={() => handleMenuClick(item)}>
-              {item}
-            </MenuItem>
+        {serviceMenuOpen &&
+          serviceOptions.map((item) => (
+            <ListItem key={item} disablePadding sx={{ pl: 4 }}>
+              <ListItemButton onClick={() => handleMenuClick(item)}>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </ListItem>
           ))}
-        </Menu>
         <ListItem disablePadding>
           <ListItemButton
             onClick={(event) => {
@@ -209,17 +216,21 @@ export default function SubHeader() {
 
   return (
     <Container>
-      <SideMenuButton
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        onClick={toggleDrawer(true)}
-      >
-        <MenuIcon />
-      </SideMenuButton>
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-        {drawerContent}
-      </Drawer>
+      {isMobile && (
+        <>
+          <SideMenuButton
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleDrawer(true)}
+        >
+          <MenuIcon />
+        </SideMenuButton>
+        <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+          {drawerContent}
+        </Drawer>
+      </>
+      )}
 
       <ImageContainer>
         <img src={essArrLogo} alt="Ess Emm Railway Ads" style={{cursor: 'pointer'}} onClick={() => navigate("/")}/>

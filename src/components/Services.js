@@ -42,6 +42,10 @@ const CardContainer = styled.div`
     flex: 1 1 100%;
     width: 300px;
   }
+
+  @media (max-width: 300px) {
+    width: auto;
+  }
 `;
 
 const MainCard = styled(Card)`

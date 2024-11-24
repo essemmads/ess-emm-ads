@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import styled from '@emotion/styled';
@@ -17,9 +17,11 @@ const FooterContainer = styled.div`
   margin-top: 40px;
   overflow: hidden;
   flex-direction: column;
+  min-height: 100px;
 
   @media (max-width: 750px) {
     padding: 20px 10px;
+    margin-top: 50%;
   }
 `;
 
@@ -61,7 +63,8 @@ const SocialIcons = styled.div`
     justify-content: center;
     width: 100%;
     padding-top: 20px;
-    gap: 15px;
+    gap: 20px;
+    margin-left: 0;
   }
 `;
 
@@ -101,7 +104,7 @@ const Footer = () => {
 
       <SocialIcons>
         <FacebookIcon sx={{ cursor: 'pointer' }} />
-        <TwitterIcon sx={{ cursor: 'pointer' }} />
+        <YouTubeIcon sx={{ cursor: 'pointer' }} />
         <InstagramIcon sx={{ cursor: 'pointer' }} />
         <LinkedInIcon sx={{ cursor: 'pointer' }} />
       </SocialIcons>

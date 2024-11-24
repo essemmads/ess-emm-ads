@@ -14,7 +14,40 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import CloseIcon from "@mui/icons-material/Close";
 import CallIcon from "../images/phone-sm-icon.png";
 import EmailIcon from "../images/mail-sm-icon.png";
+import styled from '@emotion/styled';
 
+const StyledCard = styled(Card)`
+  margin-bottom: 30px;
+  padding: 15px;
+  margin-top: 50px;
+  background-color: #1976d2;
+`;
+
+const StyledIconButton = styled(IconButton)`
+  align-self: center;
+  width: 10vw;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  align-self: center;
+  font-size: 1rem;
+
+  @media (max-width: 350px) {
+    align-self: center;
+  }
+`;
+
+const InfoSection = styled(Link)`
+  display: flex;
+  align-self: center;
+  gap: 20px;
+
+  @media (max-width: 350px) {
+    flex-direction: column;
+  }
+`;
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -56,7 +89,7 @@ export default function Header() {
               >
                 <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
               </IconButton>
-              <Link href="tel:+919876543210" underline="none" color="white">
+              <Link href="tel:0452-2362201" underline="none" color="white">
                 0452 - 2362201
               </Link>
               <IconButton
@@ -88,8 +121,9 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
+                sx={{padding: "2px"}}
               >
-                <FacebookRoundedIcon />
+                <FacebookRoundedIcon sx={{ fontSize: "30px" }}/>
               </IconButton>
               <IconButton
                 size="large"
@@ -97,8 +131,9 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
+                sx={{padding: "2px"}}
               >
-                <InstagramIcon />
+                <InstagramIcon sx={{ fontSize: "30px" }}/>
               </IconButton>
               <IconButton
                 size="large"
@@ -106,8 +141,9 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
+                sx={{padding: "2px"}}
               >
-                <LinkedInIcon />
+                <LinkedInIcon sx={{ fontSize: "30px" }}/>
               </IconButton>
               <IconButton
                 size="large"
@@ -115,15 +151,17 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
+                sx={{padding: "2px"}}
               >
-                <YouTubeIcon />
+                <YouTubeIcon sx={{ fontSize: "35px" }} />
               </IconButton>
             </>
           )}
         </Toolbar>
       </AppBar>
 
-      <SwipeableDrawer
+      {isMobile && (
+        <SwipeableDrawer
         anchor="right"
         open={drawerOpen}
         onClose={toggleDrawer(false)}
@@ -163,53 +201,45 @@ export default function Header() {
           </CardContent>
         </Card>
 
-        <Card sx={{ marginBottom: "30px", padding: "15px", marginTop: "50px" }}>
+        <StyledCard>
           <CardContent>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-            >
-            
-            <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
-                
-            </IconButton>
-            <Link href="tel:+919876543210" underline="none" color="black">
-              +91 1234567890
-            </Link>
+            <InfoSection>
+            <StyledIconButton size="large" edge="start" color="inherit" aria-label="phone">
+              <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
+            </StyledIconButton>
+            <StyledLink href="tel:0452-2362201">0452 - 2362201</StyledLink>
+            </InfoSection>
             <br />
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-            >
-             <img src={EmailIcon} alt="Ess Emm Railway Ads Email"/>
-            </IconButton>
-            <Link href="mailto:essemm@gmail.com" underline="none" color="black">
-              essemm@gmail.com
-            </Link>
+            <InfoSection>
+            <StyledIconButton size="large" edge="start" color="inherit" aria-label="email">
+              <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
+            </StyledIconButton>
+            <StyledLink href="mailto:essarrads@gmail.com">essarrads@gmail.com</StyledLink>
+            </InfoSection>
           </CardContent>
-        </Card>
+        </StyledCard>
 
-        <Card sx={{ marginBottom: "30px", padding: "15px" }}>
+        <StyledCard>
           <CardContent>
             <Box display="flex" justifyContent="space-around">
               {socialLinks.map(({ icon, label }, index) => (
                 <IconButton
-                  key={label}
-                  size="small "
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
                   color="inherit"
-                  aria-label={label}
+                  sx={{padding: "2px"}}
+                  label={label}
                 >
                   {icon}
                 </IconButton>
               ))}
             </Box>
           </CardContent>
-        </Card>
+        </StyledCard>
       </SwipeableDrawer>
+      )}
     </Box>
   );
 }

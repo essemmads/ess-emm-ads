@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, useMediaQuery } from '@mui/material';
 import GetInTouch from '../pages/GetInTouch';
 import blackPhoneIcon from '../images/black-phone.png';
 import blackMailIcon from '../images/black-mail.png';
@@ -9,21 +9,22 @@ import styled from '@emotion/styled';
 const ContactContainer = styled(Box)`
   display: flex;
   height: 100vh;
-  padding: 10% 15% 0 0;
+  padding: 0 15% 0 0;
+  margin-bottom: 50px;
 
   @media (max-width: 1200px) {
-  padding: 30% 15% 0 0;
-  height: 80vh;
+    padding: 0 5% 0 0;
   }
 
   @media (max-width: 830px) {
     flex-direction: column;
-    padding: 30% 0 30% 0;
+    padding: 0 0 30% 0;
+    margin: 15px 0 50px 0;
   }
 `;
 
 const BlueContainer = styled(Box)`
-  flex: 0 0 30%;
+  flex: 0 0 35%;
   position: relative;
   bottom: 15%;
   left: 20px;
@@ -33,6 +34,7 @@ const BlueContainer = styled(Box)`
   height: 65vh;
   margin-left: 10%;
   padding: 20px;
+  bottom: 40px;
 
   @media (max-width: 830px) {
     flex: none;
@@ -58,7 +60,7 @@ const GetInTouchContainer = styled(Box)`
   @media (max-width: 830px) {
     flex: none;
     width: 100%;
-    height: auto;
+    height: 60vh;
     margin-left: 0;
   }
 `;
@@ -80,6 +82,12 @@ const InfoItem = styled("div")`
   @media (max-width: 830px) {
     width: inherit;
   }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
 `;
 
 const InfoText = styled("div")`
@@ -87,21 +95,29 @@ const InfoText = styled("div")`
   flex-direction: column;
   gap: 8px;
   padding-left: 20px;
+  padding-right: 30px;
 
   span:first-of-type {
     color: black;
   }
+
+  @media (max-width: 600px) {
+    text-align: center;
+    padding-left: 20px;
+  }
 `;
 
 const Title = styled(Typography)`
-  font-size: 3rem;
+  font-size: 2rem;
+  margin: 10% 0 0 5%;
 
-  @media (max-width: 1024px) {
-    font-size: 2rem;
+  @media (max-width: 1000px) {
+    font-size: 1.8rem;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     text-align: center;
+    margin: 10% 0 0 0;
   }
 `;
 
@@ -120,7 +136,7 @@ const IconContainer = styled.img`
   }
 
   @media (max-width: 830px) {
-    width: 5%;
+    width: 7%;
   }
   
    @media (max-width: 600px) {
@@ -128,20 +144,22 @@ const IconContainer = styled.img`
   }
 
   @media (max-width: 350px) {
-    width: 1%;
+    width: 15%;
   }
 `;
 
 const ContactSection = () => {
+  const isMobile = useMediaQuery("(max-width:830px)");
+
   return (
     <div id="contactUsSection">
       <SectionTitle>Contact Us</SectionTitle>
     <ContactContainer>
       <BlueContainer>
-        <Title variant="h3" align="left" gutterBottom>
-          Don't Hesitate To Contact Us
+        <Title variant="h3" align={isMobile ? "center" : "left"} gutterBottom>
+          Don't Hesitate To <br/>Contact Us
         </Title>
-        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '60px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '60px', justifyContent: "space-between" }}>
           <InfoItem>
             <IconContainer src={blackPhoneIcon} alt="Phone Icon"/>
             <InfoText>
@@ -150,14 +168,14 @@ const ContactSection = () => {
             </InfoText>
           </InfoItem>
           <InfoItem>
-            <IconContainer src={blackMailIcon} alt="E-Mail Icon"/>
+            <IconContainer src={blackLocationIcon} alt="E-Mail Icon"/>
             <InfoText>
               <span>Address</span>
               <span>2, Shanmugam Pillai Thoppu 2nd Street, <br/>West Ponnagaram Main Road, Madurai - 625 016.</span>
             </InfoText>
           </InfoItem>
           <InfoItem>
-            <IconContainer src={blackLocationIcon} alt="Location Icon"/>
+            <IconContainer src={blackMailIcon} alt="Location Icon"/>
             <InfoText>
               <span>Email</span>
               <span>essarrads@gmail.com</span>

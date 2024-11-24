@@ -1,9 +1,41 @@
 import * as React from "react";
 import { useState } from "react";
-import { Typography, Box, Grid, TextField, Button, CircularProgress } from "@mui/material";
+import { Box, Grid, TextField, Button, CircularProgress } from "@mui/material";
 import emailjs from "emailjs-com";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import styled from "@emotion/styled";
+
+
+const Container = styled(Box)`
+  margin: 30px 20px -20px 20px;
+
+   @media (max-width: 750px) {
+    margin: 25px 25px -15px 25px;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  position: relative;
+  top: ${({ isContactUsSection }) => (isContactUsSection ? '120px' : '20px')};
+  left: ${({ isContactUsSection }) => (isContactUsSection ? '0%' : '40%')};
+
+   @media (max-width: 1700px) {
+    top: ${({ isContactUsSection }) => (isContactUsSection ? '60px' : '10px')};
+  }
+`;
+
+const StyledGrid = styled(Grid)`
+  padding-left: ${({ isContactUsSection }) => (isContactUsSection ? '0%' : '15%')};
+
+  @media (max-width: 900px) {
+   padding-left: ${({ isContactUsSection }) => (isContactUsSection ? '0%' : '20%')};
+  }
+
+  @media (max-width: 600px) {
+    padding-left: 0;
+  }
+`;
 
 export default function GetInTouch({ isContactUsSection = false }) {
   const [formValues, setFormValues] = useState({
@@ -82,30 +114,12 @@ export default function GetInTouch({ isContactUsSection = false }) {
 
   return (
     <div>
-      <Box sx={{ margin: "40px" }}>
-        {!isContactUsSection && (
-          <Typography
-            variant="h4"
-            align="center"
-            sx={{ fontWeight: "bold", color: "#000", marginBottom: "20px" }}
-          >
-            Hire us & get in touch
-          </Typography>
-        )}
-        {!isContactUsSection && (
-          <Typography
-            variant="body1"
-            align="center"
-            sx={{ color: "#000", marginBottom: "40px" }}
-          >
-            Contact us today to start your railway advertising campaign.
-          </Typography>
-        )}
+      <Container>
         <form onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+          <StyledGrid container spacing={2} isContactUsSection={isContactUsSection}>
+            <Grid item xs={12} sm={isContactUsSection ? 6 : 9}>
               <TextField
-                placeholder="Name"
+                placeholder="Your Name"
                 name="name"
                 variant="outlined"
                 fullWidth
@@ -114,12 +128,18 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 onChange={handleChange}
                 error={!!formErrors.name}
                 helperText={formErrors.name}
-                sx={{ backgroundColor: "#fff" }}
+                sx={{ backgroundColor: "#fff",  
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      border: "none",
+                    },
+                  }, 
+                }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={isContactUsSection ? 6 : 9}>
               <TextField
-                placeholder="Phone Number"
+                placeholder="Your Phone"
                 name="phone"
                 variant="outlined"
                 fullWidth
@@ -128,12 +148,18 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 onChange={handleChange}
                 error={!!formErrors.phone}
                 helperText={formErrors.phone}
-                sx={{ backgroundColor: "#fff" }}
+                sx={{ backgroundColor: "#fff",  
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      border: "none",
+                    },
+                  }, 
+                }}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={9}>
               <TextField
-                placeholder="Email"
+                placeholder="Your Email"
                 name="email"
                 variant="outlined"
                 fullWidth
@@ -143,10 +169,16 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 onChange={handleChange}
                 error={!!formErrors.email}
                 helperText={formErrors.email}
-                sx={{ backgroundColor: "#fff" }}
+                sx={{ backgroundColor: "#fff",  
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      border: "none",
+                    },
+                  }, 
+                }}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={9}>
               <TextField
                 placeholder="Message"
                 name="message"
@@ -159,30 +191,36 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 onChange={handleChange}
                 error={!!formErrors.message}
                 helperText={formErrors.message}
-                sx={{ backgroundColor: "#fff" }}
+                sx={{ backgroundColor: "#fff",  
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      border: "none",
+                    },
+                  }, 
+                }}
               />
             </Grid>
             <Grid
               item
-              xs={12}
+              xs={isContactUsSection ? 12 : 8}
               sx={{
                 display: isContactUsSection ? "flex" : "block",
                 justifyContent: isContactUsSection ? "center" : "none",
               }}
             >
-              <Button
+              <StyledButton
                 variant="contained"
                 color="primary"
                 type="submit"
-                sx={{ top: isContactUsSection ? "120px" : "0" }}
+                isContactUsSection={isContactUsSection}
                 disabled={loading}
               >
                 {loading ? <CircularProgress size={24} color="inherit" /> : "Send Message"}
-              </Button>
+              </StyledButton>
             </Grid>
-          </Grid>
+          </StyledGrid>
         </form>
-      </Box>
+      </Container>
       <ToastContainer
         position="bottom-center"
         autoClose={5000}

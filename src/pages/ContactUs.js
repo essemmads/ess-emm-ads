@@ -48,6 +48,10 @@ const OverlayText = styled(Box)`
     left: 5%;
     font-size: 0.9rem;
   }
+
+  @media (max-width: 600px) {
+    top: 25%;
+  }
 `;
 
 const LineTextContainer = styled(Box)`
@@ -78,6 +82,30 @@ const IllustratorContainer = styled(Box)`
     display: none;
   }
 
+`;
+
+const StyledBox = styled(Box)`
+  padding: 20px;
+  background-color: #1976D2;
+  border-radius: 12%;
+  position: relative;
+  overflow: visible;
+  box-shadow: 3;
+  width: 80%;
+  height: 40vh;
+
+  @media (max-width: 1200px) {
+    width: 90%;
+    height: auto;
+  }
+
+  @media (max-width: 900px) {
+    width: 70%;
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 export default function ContactUs() {
@@ -138,28 +166,19 @@ export default function ContactUs() {
           <IllustratorContainer component="img" src={contactUsIllustrator} alt="Contact Illustration" />
         </Grid>
 
-        <Grid item xs={12} md={6}>
-          <Box
-            sx={{
-              padding: '20px',
-              backgroundColor: '#1976D2',
-              borderRadius: '25px',
-              position: 'relative',
-              overflow: 'visible',
-              boxShadow: 3,
-            }}
-          >
+        <Grid item xs={12} md={6} paddingRight={1} style={{alignContent: "center", justifyItems: "center"}}>
+          <StyledBox>
             <Box
               sx={{
                 position: 'absolute',
-                bottom: '-60px',
+                bottom: '-50px',
                 right: 0,
                 borderLeft: '80px solid transparent',
                 borderTop: '100px solid #1976D2',
               }}
             />
             <GetInTouch isContactUsSection={true} />
-          </Box>
+          </StyledBox>
         </Grid>
       </Grid>
       <VideoMarquee />

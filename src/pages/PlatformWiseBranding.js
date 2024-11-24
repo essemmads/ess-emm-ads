@@ -22,7 +22,7 @@ const ImageContainer = styled(Box)`
   width: 100%;
   margin-bottom: 40px;
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1400px) {
     height: 60vh;
   }
 `;
@@ -38,23 +38,24 @@ const ImageOverlay = styled(Box)`
 
 const OverlayText = styled(Box)`
   position: absolute;
-  top: 37%;
-  left: 10%;
+  top: 30%;
+  left: 8%;
   text-align: left;
   padding: 20px;
   background-color: rgba(25, 118, 210, 0.5);
+  width: 40%;
 
   @media (max-width: 900px) {
     top: 30%;
     left: 8%;
     padding: 15px;
+    width: 60%;
   }
 
   @media (max-width: 600px) {
     top: 25%;
     left: 5%;
     padding: 10px;
-    width: 80%;
   }
 `;
 
@@ -75,6 +76,21 @@ const LineTextContainer = styled(Box)`
       height: 30px;
     }
   }
+`;
+
+const ContentContainer = styled.div`
+  width: 80%;
+  margin: 0 45px;
+`;
+
+const SectionHeading = styled(Typography)`
+  font-weight: 700; 
+  padding: 40px 0px 15px 45px; 
+`;
+
+const ContentText = styled(Typography)`
+  line-height: 1.8;
+  font-size: 20px;
 `;
 
 export default function PlatformWiseBranding() {
@@ -184,11 +200,10 @@ export default function PlatformWiseBranding() {
 
           <Typography variant="h4" sx={TypographyText.h4}>
             Platform Branding That Captures Attention
-          </Typography>
+          </Typography><br/>
 
           <Typography variant="h6" sx={TypographyText.h6}>
             Strategically placed ads on platforms enhance brand recognition and{" "}
-            <br />
             engagement among passengers.
           </Typography>
         </OverlayText>
@@ -212,53 +227,112 @@ export default function PlatformWiseBranding() {
         ))}
       </StyledFlexContainer>
 
-      <Typography
-        ref={escalatorBrandingRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+      <SectionHeading ref={escalatorBrandingRef} variant="h5">
         Escalator Branding
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Railway escalator advertising makes use of the vertical space on escalators to display eye-catching ads, turning the escalator ride into a branded 
+          experience. This can include wraps on the steps, sides, or overhead panels, as well as digital screens that show dynamic content. With commuters 
+          spending time on escalators, this form of advertising provides continuous exposure, ensuring high visibility for brands. Additionally,  
+          offering passengers a unique, interactive advertising experience as they move through the station.<br/>
 
-      <Typography
-        ref={liftBrandingRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+          Railway escalator branding involves placing advertisements on escalators within railway stations, turning the moving structure into a dynamic marketing space. 
+          Ads can be placed on the sides, steps, or handrails of escalators, ensuring visibility as passengers ride up or down. This form of branding captures attention in 
+          high-traffic areas where commuters are in close proximity and have extended exposure to the messaging. Additionally, digital displays can be integrated into the 
+          escalator for animated ads or promotions, making the advertising more engaging. Escalator branding is an innovative and effective way to connect with a captive 
+          audience as they move through the station.
+        </ContentText>
+      </ContentContainer>
+
+      <SectionHeading ref={liftBrandingRef} variant="h5">
         Lift Branding
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Lift branding utilizes the interior and exterior spaces of elevators in railway stations  to display advertisements. 
+          This can include graphics on the lift doors, walls, buttons, or even the ceiling, making use of the confined space to capture the attention of passengers 
+          during their short ride.  Lift branding provides an opportunity for high-visibility exposure, as commuters often spend several seconds to minutes inside the lift,
+          ensuring that ads are noticed. Additionally, this form of branding can be easily customized and tailored to specific audiences, promoting products, services, 
+          or events to passengers in a highly engaging way.<br/>
 
-      <Typography
-        ref={platformIndicationBoardsRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+          Railway lift branding involves placing advertisements inside and outside elevators within railway stations. Ads can be displayed on the lift doors, walls, ceilings, 
+          or on digital screens inside the lift. As passengers use the lift, they have focused attention on the space, providing a great opportunity for brands to showcase their 
+          messages. This form of branding benefits from the captive audience in a confined, high-traffic environment, ensuring that commuters have extended exposure to the 
+          advertising content. Whether using static decals or interactive digital displays, lift branding is an effective way to create memorable, high-visibility marketing moments 
+          in busy stations.          
+        </ContentText>
+      </ContentContainer>
+
+      <SectionHeading ref={platformIndicationBoardsRef} variant="h5">
         Platform Indication Boards
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Railway platform indication board advertising leverages the prime locations of static platform boards to display brand messages alongside important 
+          train information. These boards, typically used to show arrival and departure times, can be adapted to feature targeted ads, promotions, or services, providing 
+          brands with high visibility among passengers waiting on the platform. With their prominent position and constant exposure, these boards are an effective way to 
+          reach a diverse and captive audience.<br/>
 
-      <Typography
-        ref={roofBoardsRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+          Railway platform indication boards are essential signage systems located on train platforms, displaying crucial information such as train arrival and departure times, 
+          platform numbers, delays, and other important updates for passengers. These boards can be static or digital, with digital boards offering real-time updates, dynamic 
+          schedules, and multi-language support for a diverse audience. Positioned prominently along platforms, these indication boards ensure that passengers can easily access 
+          the information they need, enhancing the overall station experience. Additionally, platform indication boards offer an opportunity for advertising, as brands can place ads 
+          alongside train schedule information, reaching a wide and engaged audience.
+        </ContentText>
+      </ContentContainer>
+
+      <SectionHeading ref={roofBoardsRef} variant="h5">
         Roof Boards
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Roof boards are large advertising boards positioned on the roofs of railway stations visible to passengers both inside the 
+          station and from a distance. These boards can be used for static advertisements and are strategically placed in high-traffic areas to ensure maximum 
+          visibility. Roof boards often capture attention from commuters as they enter or exit the station, and are also visible to those traveling by train or vehicle. Their 
+          elevated position makes them effective for broad-reaching campaigns, providing high-impact exposure to a diverse audience while utilizing unused vertical space.<br/>
 
-      <Typography
-        ref={stationBoardsRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+          Railway roof boards are large advertising panels installed on the roofs of railway stations, typically positioned in areas where they are highly visible to both passengers 
+          inside the station and to people outside. These boards utilize the elevated position to offer maximum exposure, especially to commuters arriving by train or from a distance. 
+          Often designed with large, bold graphics or digital displays, roof boards are an effective way to showcase brand messages, product promotions, or event advertisements. They 
+          are ideal for capturing attention in high-traffic areas, providing broad visibility in a way that traditional ground-level ads may not.
+        </ContentText>
+      </ContentContainer>
+
+      <SectionHeading ref={stationBoardsRef} variant="h5">
         Station Boards
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Station boards advertising refers to the strategic placement of advertisements within railway stations, including those displaying train schedules, 
+          platform directions, and other vital station information. These boards can be static, offering a high-visibility opportunity for brands to reach commuters 
+          as they navigate through the station. By integrating ads directly onto these information boards or using adjacent spaces, station boards ensure that advertisements are 
+          seen frequently by a captive audience.<br/>
 
-      <Typography
-        ref={waterHydrantBoardsRef}
-        variant="h5"
-        sx={{ fontWeight: 700, padding: "40px" }}
-      >
+          Railway station boards are essential signage systems within stations that provide passengers with critical information, such as train schedules, platform numbers, arrival and 
+          departure times, and other station-related updates. These boards can be static, like traditional flip boards, or digital, with the latter offering real-time updates, multilingual support, 
+          and dynamic content. Positioned at strategic locations like entrances, waiting areas, and platforms, station boards ensure that passengers can easily navigate the station and stay informed. 
+          Additionally, these boards can serve as advertising spaces, allowing brands to reach a wide audience by placing ads alongside the essential travel information.
+        </ContentText>
+      </ContentContainer>
+
+      <SectionHeading ref={waterHydrantBoardsRef} variant="h5">
         Water Hydrant Boards
-      </Typography>
+      </SectionHeading>
+      <ContentContainer>
+        <ContentText>
+          Water hydrant boards at railway stations are typically positioned near critical water supply systems for firefighting and emergency use. These boards, often placed in 
+          visible, high-traffic areas, can also serve as effective advertising spaces. Due to their prominent placement, water hydrant boards provide an opportunity for brands to 
+          display ads, safety notices, or sponsorship messages. By utilizing these functional spaces, advertisers can capture the attention of commuters in locations that are less 
+          conventional for marketing, offering a unique chance to engage with passengers while still serving an important safety purpose.<br/>
+
+          Railway water hydrant boards are signage placed near water hydrant systems in railway stations, which are critical for firefighting and emergency response. These boards 
+          typically indicate the location of water hydrants and provide important safety information for station staff and emergency responders. Due to their prominent placement in 
+          key areas of the station, water hydrant boards also serve as potential advertising spaces. Advertisers can use these boards to display brand messages, safety tips, or public 
+          service announcements, ensuring visibility among passengers and station personnel. With their functional and strategic location, water hydrant boards offer a unique and often 
+          underutilized opportunity for targeted, high-visibility advertising.
+        </ContentText>
+      </ContentContainer>
 
       <VideoMarquee />
     </div>
