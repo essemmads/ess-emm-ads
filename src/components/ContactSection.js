@@ -8,9 +8,7 @@ import styled from '@emotion/styled';
 
 const ContactContainer = styled(Box)`
   display: flex;
-  height: 100vh;
   padding: 0 15% 0 0;
-  margin-bottom: 50px;
 
   @media (max-width: 1200px) {
     padding: 0 5% 0 0;
@@ -19,7 +17,8 @@ const ContactContainer = styled(Box)`
   @media (max-width: 830px) {
     flex-direction: column;
     padding: 0 0 30% 0;
-    margin: 15px 0 50px 0;
+    margin: 15px 20px 50px 20px;
+    height: 100vh;
   }
 `;
 

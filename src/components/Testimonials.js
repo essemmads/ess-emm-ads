@@ -28,6 +28,18 @@ const Title = styled(Typography)`
   font-weight: bold;
 `;
 
+const ProfileImage = styled.img`
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+
+  @media (max-width: 600px) {
+    width: 150px;
+    height: 150px;
+  }
+`;
+
 
 export default function Testimonials() {
   const testimonials = [
@@ -114,16 +126,7 @@ export default function Testimonials() {
             {testimonials.map((testimonial, index) => (
                 <div>
                   <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-                    <img
-                      src={testimonial.profileImage}
-                      alt={testimonial.name}
-                      style={{
-                        borderRadius: '50%',
-                        width: '100px',
-                        height: '100px',
-                        objectFit: 'cover',
-                      }}
-                    />
+                    <ProfileImage src={testimonial.profileImage} alt={testimonial.name} />
                   </Box>
                   <Typography variant="h6">{testimonial.name}</Typography>
                   <Typography

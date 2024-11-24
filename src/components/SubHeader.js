@@ -35,6 +35,7 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
   margin-top: 14px;
+  margin-left: 4%;
   img {
     width: 100%;
     height: auto;
@@ -248,7 +249,7 @@ export default function SubHeader() {
           onClose={handleServiceClose}
         >
           {serviceOptions.map((item) => (
-            <MenuItem key={item} onClick={() => handleMenuClick(item)} sx={{ fontSize: "18px" }}>
+            <MenuItem key={item} onClick={() => handleMenuClick(item)} sx={{ fontSize: "18px", color: "black", fontWeight: 500 }}>
               {item}
             </MenuItem>
           ))}

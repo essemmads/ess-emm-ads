@@ -15,6 +15,7 @@ const videoSources = [
 const Container = styled("div")`
   overflow: hidden;
   width: 100%;
+  padding-bottom: 70px;
 `;
 
 const StyledMarquee = styled(Marquee)`

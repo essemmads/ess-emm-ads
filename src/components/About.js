@@ -93,14 +93,14 @@ const Title = styled(Typography)`
 `;
 
 const Description = styled(Typography)`
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 20px;
 `;
 
 const StyledButton = styled(Button)`
   padding: 12px 24px;
-  font-size: 14px;
+  font-size: 18px;
   background-color: #1976D2;
   color: white;
 

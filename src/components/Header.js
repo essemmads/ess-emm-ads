@@ -55,8 +55,8 @@ export default function Header() {
 
   const socialLinks = [
     { icon: <FacebookRoundedIcon />, label: "Facebook" },
-    { icon: <InstagramIcon />, label: "Instagram" },
     { icon: <LinkedInIcon />, label: "LinkedIn" },
+    { icon: <InstagramIcon />, label: "Instagram" },
     { icon: <YouTubeIcon />, label: "YouTube" },
   ];
 
@@ -67,7 +67,7 @@ export default function Header() {
   return (
     <Box sx={{ flexGrow: 1, color: "#1976D2" }} id="header">
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar style={{padding: "0 4%"}}>
           {isMobile && (
             <IconButton
               size="large"
@@ -133,7 +133,7 @@ export default function Header() {
                 color="inherit"
                 sx={{padding: "2px"}}
               >
-                <InstagramIcon sx={{ fontSize: "30px" }}/>
+                <LinkedInIcon sx={{ fontSize: "30px" }}/>
               </IconButton>
               <IconButton
                 size="large"
@@ -143,7 +143,7 @@ export default function Header() {
                 color="inherit"
                 sx={{padding: "2px"}}
               >
-                <LinkedInIcon sx={{ fontSize: "30px" }}/>
+                <InstagramIcon sx={{ fontSize: "30px" }}/>
               </IconButton>
               <IconButton
                 size="large"

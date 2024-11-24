@@ -14,7 +14,6 @@ const FooterContainer = styled.div`
   background-color: #000000;
   color: white;
   padding: 20px 0;
-  margin-top: 40px;
   overflow: hidden;
   flex-direction: column;
   min-height: 100px;
@@ -162,9 +161,9 @@ const Footer = () => {
 
       <SocialIcons>
         <FacebookIcon sx={{ cursor: "pointer" }} />
-        <YouTubeIcon sx={{ cursor: "pointer" }} />
-        <InstagramIcon sx={{ cursor: "pointer" }} />
         <LinkedInIcon sx={{ cursor: "pointer" }} />
+        <InstagramIcon sx={{ cursor: "pointer" }} />
+        <YouTubeIcon sx={{ cursor: "pointer" }} />
       </SocialIcons>
     </FooterContainer>
   );

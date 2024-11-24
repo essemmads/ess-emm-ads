@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card, CardContent, Typography, Button } from "@mui/material";
+import { Card, CardContent, Typography, Button, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -53,7 +53,7 @@ const MainCard = styled(Card)`
   text-align: center;
   transition: 0.3s;
   display: flex;
-  height: 30vh;
+  height: 20vh;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -101,6 +101,7 @@ const HangingButton = styled(Button)`
   z-index: 1;
   border-radius: 50px;
   text-transform: none;
+  width: 50%;
 
   @media (max-width: 1060px) {
     bottom: -15px;
@@ -116,6 +117,7 @@ const MainCardHangingButton = styled(Button)`
   z-index: 1;
   border-radius: 50px;
   text-transform: none;
+  width: 15%;
 
   @media (max-width: 1060px) {
     bottom: -20px;
@@ -137,13 +139,33 @@ const Title = styled(Typography)`
 `;
 
 export default function Services() {
+  const isTab = useMediaQuery("(max-width:600px)");
   const navigate = useNavigate();
+  const [currentItem, setCurrentItem] = React.useState("TRAIN BRANDING");
 
   const services = [
     { id: 1, name: "STATION BRANDING" },
     { id: 2, name: "OUTDOOR ADVERTISING" },
     { id: 3, name: "PLATFORM WISE BRANDING" },
   ];
+
+  const brandingOptions = ["EXTERIOR", "TRAIN BRANDING", "INTERIOR"];
+
+  const handleLeftArrowClick = () => {
+    if(isTab) {
+      const currentIndex = brandingOptions.indexOf(currentItem);
+      const newIndex = (currentIndex - 1 + brandingOptions.length) % brandingOptions.length;
+      setCurrentItem(brandingOptions[newIndex]);
+    }
+  };
+
+  const handleRightArrowClick = () => {
+    if(isTab) {
+      const currentIndex = brandingOptions.indexOf(currentItem);
+      const newIndex = (currentIndex + 1) % brandingOptions.length;
+      setCurrentItem(brandingOptions[newIndex]);
+    }
+  };
 
   const handleViewMore = (service) => {
     const formattedService = service.toLowerCase().replace(/\s+/g, "-");
@@ -161,7 +183,7 @@ export default function Services() {
                 padding: "16px",
                 textAlign: "center",
                 transition: "0.3s",
-                height: "30vh",
+                height: "20vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -205,21 +227,27 @@ export default function Services() {
                 justifyContent: "center",
               }}
             >
-              <ArrowButton>
+              <ArrowButton
+                onClick={handleLeftArrowClick}
+                disabled={currentItem === "EXTERIOR"}
+              >
                 <ArrowBackIosIcon />
               </ArrowButton>
 
               <Typography variant="h6" fontWeight={700}>
-                TRAIN BRANDING
+                {currentItem}
               </Typography>
-              <ArrowButton>
+              <ArrowButton
+                onClick={handleRightArrowClick}
+                disabled={currentItem === "INTERIOR"}
+              >
                 <ArrowForwardIosIcon />
               </ArrowButton>
 
               <MainCardHangingButton
                 variant="contained"
                 color="primary"
-                onClick={() => handleViewMore("TRAIN BRANDING")}
+                onClick={() => handleViewMore(currentItem)}
               >
                 <Typography fontWeight={700}>View More</Typography>
               </MainCardHangingButton>
