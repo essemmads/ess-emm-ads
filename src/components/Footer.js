@@ -80,33 +80,91 @@ const Footer = () => {
   return (
     <FooterContainer>
       <ColumnContainer>
-        <Column style={{display: "flex", flexDirection: "column", justifyContent:"space-between"}}>
+        <Column
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
           <Typography variant="body1">| About ESS ARR ADS</Typography>
         </Column>
 
         <Column>
           <Typography variant="body1">| Quick Links</Typography>
-          <Typography variant="body2" sx={{ marginTop: '10px', marginBottom: '10px', cursor: 'pointer' }} onClick={() => handleNavigation("header")}>Home</Typography>
-          <Typography variant="body2" sx={{ marginBottom: '10px', cursor: 'pointer' }} onClick={() => handleNavigation("aboutUsSection")}>About Us</Typography>
-          <Typography variant="body2" sx={{ marginBottom: '10px', cursor: 'pointer' }}  onClick={() => handleNavigation("ourServices")}>Our Services</Typography>
-          <Typography variant="body2" sx={{ marginBottom: '10px', cursor: 'pointer' }}  onClick={() => handleNavigation("contactUsSection")}>Contact Us</Typography>
+          <Typography
+            variant="body2"
+            sx={{ marginTop: "10px", marginBottom: "10px", cursor: "pointer" }}
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                handleNavigation("header");
+              }, 300);
+            }}
+          >
+            Home
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ marginBottom: "10px", cursor: "pointer" }}
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                handleNavigation("aboutUsSection");
+              }, 300);
+            }}
+          >
+            About Us
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ marginBottom: "10px", cursor: "pointer" }}
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                handleNavigation("ourServices");
+              }, 300);
+            }}
+          >
+            Our Services
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ marginBottom: "10px", cursor: "pointer" }}
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                handleNavigation("contactUsSection");
+              }, 300);
+            }}
+          >
+            Contact Us
+          </Typography>
         </Column>
 
         <Column>
           <Typography variant="body1">| Company</Typography>
-          <Typography variant="body2" sx={{ fontWeight: 'bold', marginTop: '10px' }}>Madurai</Typography>
+          <Typography
+            variant="body2"
+            sx={{ fontWeight: "bold", marginTop: "10px" }}
+          >
+            Madurai
+          </Typography>
           <Typography variant="body2">
-            2, Shanmugam Pillai Thoppu 2nd Street,<br/>West Ponnagaram Main Road, Madurai.
-            <br />625 016
+            2, Shanmugam Pillai Thoppu 2nd Street,
+            <br />
+            West Ponnagaram Main Road, Madurai.
+            <br />
+            625 016
           </Typography>
         </Column>
       </ColumnContainer>
 
       <SocialIcons>
-        <FacebookIcon sx={{ cursor: 'pointer' }} />
-        <YouTubeIcon sx={{ cursor: 'pointer' }} />
-        <InstagramIcon sx={{ cursor: 'pointer' }} />
-        <LinkedInIcon sx={{ cursor: 'pointer' }} />
+        <FacebookIcon sx={{ cursor: "pointer" }} />
+        <YouTubeIcon sx={{ cursor: "pointer" }} />
+        <InstagramIcon sx={{ cursor: "pointer" }} />
+        <LinkedInIcon sx={{ cursor: "pointer" }} />
       </SocialIcons>
     </FooterContainer>
   );
