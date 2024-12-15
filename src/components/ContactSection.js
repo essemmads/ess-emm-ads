@@ -1,10 +1,10 @@
-import React from 'react';
-import { Typography, Box, useMediaQuery } from '@mui/material';
-import GetInTouch from '../pages/GetInTouch';
-import blackPhoneIcon from '../images/black-phone.png';
-import blackMailIcon from '../images/black-mail.png';
-import blackLocationIcon from '../images/black-location.png';
-import styled from '@emotion/styled';
+import React from "react";
+import { Typography, Box, useMediaQuery } from "@mui/material";
+import GetInTouch from "../pages/GetInTouch";
+import blackPhoneIcon from "../images/icons/black-phone.png";
+import blackMailIcon from "../images/icons/black-mail.png";
+import blackLocationIcon from "../images/icons/black-location.png";
+import styled from "@emotion/styled";
 
 const ContactContainer = styled(Box)`
   display: flex;
@@ -137,8 +137,8 @@ const IconContainer = styled.img`
   @media (max-width: 830px) {
     width: 7%;
   }
-  
-   @media (max-width: 600px) {
+
+  @media (max-width: 600px) {
     width: 10%;
   }
 
@@ -153,42 +153,53 @@ const ContactSection = () => {
   return (
     <div id="contactUsSection">
       <SectionTitle>Contact Us</SectionTitle>
-    <ContactContainer>
-      <BlueContainer>
-        <Title variant="h3" align={isMobile ? "center" : "left"} gutterBottom>
-          Don't Hesitate To <br/>Contact Us
-        </Title>
-        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '60px', justifyContent: "space-between" }}>
-          <InfoItem>
-            <IconContainer src={blackPhoneIcon} alt="Phone Icon"/>
-            <InfoText>
-              <span>Phone Number</span>
-              <span>98421 08493</span>
-            </InfoText>
-          </InfoItem>
-          <InfoItem>
-            <IconContainer src={blackLocationIcon} alt="E-Mail Icon"/>
-            <InfoText>
-              <span>Address</span>
-              <span>2, Shanmugam Pillai Thoppu 2nd Street, <br/>West Ponnagaram Main Road, Madurai - 625 016.</span>
-            </InfoText>
-          </InfoItem>
-          <InfoItem>
-            <IconContainer src={blackMailIcon} alt="Location Icon"/>
-            <InfoText>
-              <span>Email</span>
-              <span>essarrads@gmail.com</span>
-            </InfoText>
-          </InfoItem>
-        </div>
-      </BlueContainer>
+      <ContactContainer>
+        <BlueContainer>
+          <Title variant="h3" align={isMobile ? "center" : "left"} gutterBottom>
+            Don't Hesitate To <br />
+            Contact Us
+          </Title>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "60px",
+              justifyContent: "space-between",
+            }}
+          >
+            <InfoItem>
+              <IconContainer src={blackPhoneIcon} alt="Phone Icon" />
+              <InfoText>
+                <span>Phone Number</span>
+                <span>98421 08493</span>
+              </InfoText>
+            </InfoItem>
+            <InfoItem>
+              <IconContainer src={blackLocationIcon} alt="E-Mail Icon" />
+              <InfoText>
+                <span>Address</span>
+                <span>
+                  2, Shanmugam Pillai Thoppu 2nd Street, <br />
+                  West Ponnagaram Main Road, Madurai - 625 016.
+                </span>
+              </InfoText>
+            </InfoItem>
+            <InfoItem>
+              <IconContainer src={blackMailIcon} alt="Location Icon" />
+              <InfoText>
+                <span>Email</span>
+                <span>essarrads@gmail.com</span>
+              </InfoText>
+            </InfoItem>
+          </div>
+        </BlueContainer>
 
-      <GetInTouchContainer>
-        <GetInTouchWrapper>
-          <GetInTouch />
-        </GetInTouchWrapper>
-      </GetInTouchContainer>
-    </ContactContainer>
+        <GetInTouchContainer>
+          <GetInTouchWrapper>
+            <GetInTouch />
+          </GetInTouchWrapper>
+        </GetInTouchContainer>
+      </ContactContainer>
     </div>
   );
 };

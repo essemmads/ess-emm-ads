@@ -69,7 +69,7 @@ const DesktopMenu = styled(Toolbar)`
 `;
 
 const GetAQuoteButton = styled(Button)`
-  background-color: #1976D2;
+  background-color: #1976d2;
   color: white;
   border-radius: 5px;
   font-weight: 600;
@@ -79,7 +79,7 @@ const GetAQuoteButton = styled(Button)`
   order: 1;
 
   &:hover {
-    background-color: #1976D2;
+    background-color: #1976d2;
   }
 
   @media (max-width: 1200px) {
@@ -105,7 +105,6 @@ export default function SubHeader() {
   const [serviceMenuAnchor, setServiceMenuAnchor] = useState(null);
   const [serviceMenuOpen, setServiceMenuOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
-
 
   const serviceOptions = [
     "Station Branding",
@@ -220,21 +219,26 @@ export default function SubHeader() {
       {isMobile && (
         <>
           <SideMenuButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          onClick={toggleDrawer(true)}
-        >
-          <MenuIcon />
-        </SideMenuButton>
-        <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-          {drawerContent}
-        </Drawer>
-      </>
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+          >
+            <MenuIcon />
+          </SideMenuButton>
+          <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+            {drawerContent}
+          </Drawer>
+        </>
       )}
 
       <ImageContainer>
-        <img src={essArrLogo} alt="Ess Emm Railway Ads" style={{cursor: 'pointer'}} onClick={() => navigate("/")}/>
+        <img
+          src={essArrLogo}
+          alt="Ess Emm Railway Ads"
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/")}
+        />
       </ImageContainer>
 
       <DesktopMenu>
@@ -249,13 +253,19 @@ export default function SubHeader() {
           onClose={handleServiceClose}
         >
           {serviceOptions.map((item) => (
-            <MenuItem key={item} onClick={() => handleMenuClick(item)} sx={{ fontSize: "18px", color: "black", fontWeight: 500 }}>
+            <MenuItem
+              key={item}
+              onClick={() => handleMenuClick(item)}
+              sx={{ fontSize: "18px", color: "black", fontWeight: 500 }}
+            >
               {item}
             </MenuItem>
           ))}
         </Menu>
         <TextButton onClick={() => navigate("/gallery")}>Gallery</TextButton>
-        <TextButton onClick={() => navigate("/contact-us")}>Contact us</TextButton>
+        <TextButton onClick={() => navigate("/contact-us")}>
+          Contact us
+        </TextButton>
 
         <GetAQuoteButton
           onClick={() => {

@@ -12,9 +12,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useMediaQuery, Card, CardContent, Button } from "@mui/material";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import CloseIcon from "@mui/icons-material/Close";
-import CallIcon from "../images/phone-sm-icon.png";
-import EmailIcon from "../images/mail-sm-icon.png";
-import styled from '@emotion/styled';
+import CallIcon from "../images/icons/phone-sm-icon.png";
+import EmailIcon from "../images/icons/mail-sm-icon.png";
+import styled from "@emotion/styled";
 
 const StyledCard = styled(Card)`
   margin-bottom: 30px;
@@ -67,7 +67,7 @@ export default function Header() {
   return (
     <Box sx={{ flexGrow: 1, color: "#1976D2" }} id="header">
       <AppBar position="static">
-        <Toolbar style={{padding: "0 4%"}}>
+        <Toolbar style={{ padding: "0 4%" }}>
           {isMobile && (
             <IconButton
               size="large"
@@ -99,9 +99,7 @@ export default function Header() {
                 aria-label="menu"
                 sx={{ ml: "20px" }}
               >
-              
-              <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
-
+                <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
               </IconButton>
               <Link
                 href="mailto:essarrads@gmail.com"
@@ -121,9 +119,9 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
-                sx={{padding: "2px"}}
+                sx={{ padding: "2px" }}
               >
-                <FacebookRoundedIcon sx={{ fontSize: "30px" }}/>
+                <FacebookRoundedIcon sx={{ fontSize: "30px" }} />
               </IconButton>
               <IconButton
                 size="large"
@@ -131,9 +129,9 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
-                sx={{padding: "2px"}}
+                sx={{ padding: "2px" }}
               >
-                <LinkedInIcon sx={{ fontSize: "30px" }}/>
+                <LinkedInIcon sx={{ fontSize: "30px" }} />
               </IconButton>
               <IconButton
                 size="large"
@@ -141,9 +139,9 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
-                sx={{padding: "2px"}}
+                sx={{ padding: "2px" }}
               >
-                <InstagramIcon sx={{ fontSize: "30px" }}/>
+                <InstagramIcon sx={{ fontSize: "30px" }} />
               </IconButton>
               <IconButton
                 size="large"
@@ -151,7 +149,7 @@ export default function Header() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
-                sx={{padding: "2px"}}
+                sx={{ padding: "2px" }}
               >
                 <YouTubeIcon sx={{ fontSize: "35px" }} />
               </IconButton>
@@ -162,83 +160,95 @@ export default function Header() {
 
       {isMobile && (
         <SwipeableDrawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
-        sx={{
-          "& .MuiDrawer-paper": {
-            width: "100%",
-            height: "100%",
-            padding: 2,
-            boxSizing: "border-box",
-          },
-        }}
-      >
-        <IconButton
-          onClick={toggleDrawer(false)}
-          sx={{ position: "absolute", top: 16, right: 16, color: "black" }}
+          anchor="right"
+          open={drawerOpen}
+          onClose={toggleDrawer(false)}
+          onOpen={toggleDrawer(true)}
+          sx={{
+            "& .MuiDrawer-paper": {
+              width: "100%",
+              height: "100%",
+              padding: 2,
+              boxSizing: "border-box",
+            },
+          }}
         >
-          <CloseIcon />
-        </IconButton>
-
-        <Card variant="outlined" sx={{ marginTop: "50px" }}>
-          <CardContent
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "20px !important",
-            }}
+          <IconButton
+            onClick={toggleDrawer(false)}
+            sx={{ position: "absolute", top: 16, right: 16, color: "black" }}
           >
-            <Button
-              variant="contained"
-              onClick={toggleDrawer(true)}
-              sx={{ width: "90%" }}
+            <CloseIcon />
+          </IconButton>
+
+          <Card variant="outlined" sx={{ marginTop: "50px" }}>
+            <CardContent
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "20px !important",
+              }}
             >
-              Get Quote
-            </Button>
-          </CardContent>
-        </Card>
+              <Button
+                variant="contained"
+                onClick={toggleDrawer(true)}
+                sx={{ width: "90%" }}
+              >
+                Get Quote
+              </Button>
+            </CardContent>
+          </Card>
 
-        <StyledCard>
-          <CardContent>
-            <InfoSection>
-            <StyledIconButton size="large" edge="start" color="inherit" aria-label="phone">
-              <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
-            </StyledIconButton>
-            <StyledLink href="tel:0452-2362201">0452 - 2362201</StyledLink>
-            </InfoSection>
-            <br />
-            <InfoSection>
-            <StyledIconButton size="large" edge="start" color="inherit" aria-label="email">
-              <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
-            </StyledIconButton>
-            <StyledLink href="mailto:essarrads@gmail.com">essarrads@gmail.com</StyledLink>
-            </InfoSection>
-          </CardContent>
-        </StyledCard>
-
-        <StyledCard>
-          <CardContent>
-            <Box display="flex" justifyContent="space-around">
-              {socialLinks.map(({ icon, label }, index) => (
-                <IconButton
+          <StyledCard>
+            <CardContent>
+              <InfoSection>
+                <StyledIconButton
                   size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
+                  edge="start"
                   color="inherit"
-                  sx={{padding: "2px"}}
-                  label={label}
+                  aria-label="phone"
                 >
-                  {icon}
-                </IconButton>
-              ))}
-            </Box>
-          </CardContent>
-        </StyledCard>
-      </SwipeableDrawer>
+                  <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
+                </StyledIconButton>
+                <StyledLink href="tel:0452-2362201">0452 - 2362201</StyledLink>
+              </InfoSection>
+              <br />
+              <InfoSection>
+                <StyledIconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="email"
+                >
+                  <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
+                </StyledIconButton>
+                <StyledLink href="mailto:essarrads@gmail.com">
+                  essarrads@gmail.com
+                </StyledLink>
+              </InfoSection>
+            </CardContent>
+          </StyledCard>
+
+          <StyledCard>
+            <CardContent>
+              <Box display="flex" justifyContent="space-around">
+                {socialLinks.map(({ icon, label }, index) => (
+                  <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    color="inherit"
+                    sx={{ padding: "2px" }}
+                    label={label}
+                  >
+                    {icon}
+                  </IconButton>
+                ))}
+              </Box>
+            </CardContent>
+          </StyledCard>
+        </SwipeableDrawer>
       )}
     </Box>
   );

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, Button, Typography, Box } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import styled from '@emotion/styled';
+import React from "react";
+import { Card, CardContent, CardHeader, Button, Box } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import styled from "@emotion/styled";
 
 const CardContainer = styled(Box)`
   display: flex;
@@ -16,7 +16,7 @@ const StyledCard = styled(Card)`
 `;
 
 const StyledCardHeader = styled(CardHeader)`
-  background-color: #1976D2;
+  background-color: #1976d2;
   color: white;
   text-align: center;
   position: relative;
@@ -40,18 +40,19 @@ const StyledCardHeader = styled(CardHeader)`
 `;
 
 const CardContentWrapper = styled(CardContent)`
-  background-color: #D9D9D9;
-  padding-top: 20px;
+  background-color: #d9d9d9;
   position: relative;
   z-index: 0;
   border-radius: 0 0 10px 10px;
+  padding: 0px; /* Ensure no padding is applied */
+  padding-bottom: 0 !important; /* Explicitly override the default padding-bottom */
+  height: 20vh;
 `;
-
 
 const MoreDetailsButton = styled(Button)`
   border-radius: 50px;
-  border-color: #1976D2;
-  color: #1976D2;
+  border-color: #1976d2;
+  color: #1976d2;
   border-width: 2px;
   font-weight: bold;
   display: flex;
@@ -68,21 +69,23 @@ const ButtonContainer = styled(Box)`
   margin-top: 16px;
 `;
 
-const CustomCard = ({ title, description, onViewMore }) => {
+const CustomCard = ({ title, image, description, onViewMore }) => {
   return (
     <CardContainer>
       <StyledCard>
         <StyledCardHeader title={title} />
         <CardContentWrapper>
-          <Typography variant="body2" sx={{ textAlign: 'center' }}>
-            {description}
-          </Typography>
+          <img
+            src={image}
+            alt={description}
+            style={{ width: "100%", height: "100%" }}
+          />
         </CardContentWrapper>
       </StyledCard>
 
       <ButtonContainer>
         <MoreDetailsButton variant="outlined" onClick={onViewMore}>
-          More details <KeyboardArrowDownIcon style={{ paddingLeft: '5px' }} />
+          More details <KeyboardArrowDownIcon style={{ paddingLeft: "5px" }} />
         </MoreDetailsButton>
       </ButtonContainer>
     </CardContainer>

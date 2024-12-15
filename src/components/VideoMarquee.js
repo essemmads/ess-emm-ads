@@ -1,9 +1,8 @@
-import React from 'react';
-import Marquee from 'react-fast-marquee';
+import React from "react";
+import Marquee from "react-fast-marquee";
 import { Typography, Button } from "@mui/material";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
-
 
 const videoSources = [
   "https://www.youtube.com/embed/WAM3E91iKWM?si=WG_k9gUf4cRlLGSZ",
@@ -29,7 +28,7 @@ const StyledMarquee = styled(Marquee)`
 const Title = styled(Typography)`
   font-weight: 400;
   padding: 40px;
-  text-align: ${({ isHome }) => (isHome ? 'center' : 'left')};
+  text-align: ${({ isHome }) => (isHome ? "center" : "left")};
 `;
 
 const StyledButton = styled(Button)`
@@ -67,29 +66,25 @@ export default function VideoMarquee({ isHome = false }) {
   const navigate = useNavigate();
   return (
     <Container>
+      {!isHome && <Title variant="h5">Get Started Now!</Title>}
+
       {!isHome && (
-        <Title variant="h5">Get Started Now!</Title>
-      )}
-      
-      {!isHome && (
-        <StyledButton variant="contained" color="primary" onClick={() => navigate("/contact-us")}>
+        <StyledButton
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/contact-us")}
+        >
           REQUEST A QUOTE
         </StyledButton>
       )}
-      
+
       {!isHome && (
-      <Title variant="h5" isHome={isHome}>
-        Watch Latest videos!
-      </Title>
+        <Title variant="h5" isHome={isHome}>
+          Watch Latest videos!
+        </Title>
       )}
 
-    {isHome && (
-      <SectionTitle>
-        Watch Videos
-      </SectionTitle>
-    )}
-
-
+      {isHome && <SectionTitle>Watch Videos</SectionTitle>}
 
       <StyledMarquee speed={50} pauseOnHover>
         {videoSources.map((src, index) => (

@@ -1,36 +1,84 @@
-import React from 'react';
-import Marquee from 'react-fast-marquee';
-import { Box, Card, CardContent, Typography } from '@mui/material';
-import styled from '@emotion/styled';
-import client_logo_1 from '../images/client_logo_1.png';
-import client_logo_2 from '../images/client_logo_2.png';
-import client_logo_3 from '../images/client_logo_3.png';
-import client_logo_4 from '../images/client_logo_4.png';
-import client_logo_5 from '../images/client_logo_5.png';
-import client_logo_6 from '../images/client_logo_6.png';
-import client_logo_7 from '../images/client_logo_7.png';
-import client_logo_8 from '../images/client_logo_8.png';
-import client_logo_9 from '../images/client_logo_9.png';
-import client_logo_10 from '../images/client_logo_10.png';
-import client_logo_11 from '../images/client_logo_11.png';
-import client_logo_12 from '../images/client_logo_12.png';
-import client_logo_13 from '../images/client_logo_13.png';
-import client_logo_14 from '../images/client_logo_14.png';
-import client_logo_15 from '../images/client_logo_15.png';
-import client_logo_16 from '../images/client_logo_16.png';
-import client_logo_17 from '../images/client_logo_17.png';
-import client_logo_18 from '../images/client_logo_18.png';
-import client_logo_19 from '../images/client_logo_19.png';
-import client_logo_20 from '../images/client_logo_20.jpg';
-import client_logo_21 from '../images/client_logo_21.png';
-import client_logo_22 from '../images/client_logo_22.jpg';
-import client_logo_23 from '../images/client_logo_23.png';
-import client_logo_24 from '../images/client_logo_24.png';
-import client_logo_25 from '../images/client_logo_25.png';
+import React from "react";
+import Marquee from "react-fast-marquee";
+import { Box, Card, CardContent, Typography } from "@mui/material";
+import styled from "@emotion/styled";
+import client_logo_1 from "../images/client-logo/client_logo_1.png";
+import client_logo_2 from "../images/client-logo/client_logo_2.png";
+import client_logo_3 from "../images/client-logo/client_logo_3.png";
+import client_logo_4 from "../images/client-logo/client_logo_4.png";
+import client_logo_5 from "../images/client-logo/client_logo_5.png";
+import client_logo_6 from "../images/client-logo/client_logo_6.png";
+import client_logo_7 from "../images/client-logo/client_logo_7.png";
+import client_logo_8 from "../images/client-logo/client_logo_8.png";
+import client_logo_9 from "../images/client-logo/client_logo_9.png";
+import client_logo_10 from "../images/client-logo/client_logo_10.png";
+import client_logo_11 from "../images/client-logo/client_logo_11.png";
+import client_logo_12 from "../images/client-logo/client_logo_12.png";
+import client_logo_13 from "../images/client-logo/client_logo_13.png";
+import client_logo_14 from "../images/client-logo/client_logo_14.png";
+import client_logo_15 from "../images/client-logo/client_logo_15.png";
+import client_logo_16 from "../images/client-logo/client_logo_16.png";
+import client_logo_17 from "../images/client-logo/client_logo_17.png";
+import client_logo_18 from "../images/client-logo/client_logo_18.png";
+import client_logo_19 from "../images/client-logo/client_logo_19.png";
+import client_logo_20 from "../images/client-logo/client_logo_20.jpg";
+import client_logo_21 from "../images/client-logo/client_logo_21.png";
+import client_logo_22 from "../images/client-logo/client_logo_22.jpg";
+import client_logo_23 from "../images/client-logo/client_logo_23.png";
+import client_logo_24 from "../images/client-logo/client_logo_24.png";
+import client_logo_25 from "../images/client-logo/client_logo_25.png";
 
-const imagesRow1 = [client_logo_1, client_logo_2, client_logo_3, client_logo_4, client_logo_5, client_logo_6, client_logo_7, client_logo_8, client_logo_1, client_logo_2, client_logo_3, client_logo_4, client_logo_5, client_logo_6, client_logo_7];
-const imagesRow2 = [client_logo_9, client_logo_10, client_logo_11, client_logo_12, client_logo_13, client_logo_14, client_logo_15, client_logo_16, client_logo_9, client_logo_10, client_logo_11, client_logo_12, client_logo_13, client_logo_14, client_logo_15];
-const imagesRow3 = [client_logo_17, client_logo_18, client_logo_19, client_logo_20, client_logo_21, client_logo_22, client_logo_23, client_logo_24, client_logo_25, client_logo_17, client_logo_18, client_logo_19, client_logo_20, client_logo_21, client_logo_22];
+const imagesRow1 = [
+  client_logo_1,
+  client_logo_2,
+  client_logo_3,
+  client_logo_4,
+  client_logo_5,
+  client_logo_6,
+  client_logo_7,
+  client_logo_8,
+  client_logo_1,
+  client_logo_2,
+  client_logo_3,
+  client_logo_4,
+  client_logo_5,
+  client_logo_6,
+  client_logo_7,
+];
+const imagesRow2 = [
+  client_logo_9,
+  client_logo_10,
+  client_logo_11,
+  client_logo_12,
+  client_logo_13,
+  client_logo_14,
+  client_logo_15,
+  client_logo_16,
+  client_logo_9,
+  client_logo_10,
+  client_logo_11,
+  client_logo_12,
+  client_logo_13,
+  client_logo_14,
+  client_logo_15,
+];
+const imagesRow3 = [
+  client_logo_17,
+  client_logo_18,
+  client_logo_19,
+  client_logo_20,
+  client_logo_21,
+  client_logo_22,
+  client_logo_23,
+  client_logo_24,
+  client_logo_25,
+  client_logo_17,
+  client_logo_18,
+  client_logo_19,
+  client_logo_20,
+  client_logo_21,
+  client_logo_22,
+];
 
 const Container = styled(Box)`
   background-color: #f0f0f0;

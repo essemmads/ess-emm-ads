@@ -2,11 +2,11 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import Slider from "react-slick";
 import styled from "@emotion/styled";
-import defaultProfileImage from "../images/profile-icon.png"
+import defaultProfileImage from "../images/icons/profile-icon.png";
 import { IconButton } from "@mui/material";
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Global, css } from '@emotion/react';
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Global, css } from "@emotion/react";
 
 const Container = styled.div`
   padding: 80px 0;
@@ -39,7 +39,6 @@ const ProfileImage = styled.img`
     height: 150px;
   }
 `;
-
 
 export default function Testimonials() {
   const testimonials = [
@@ -100,13 +99,13 @@ export default function Testimonials() {
         .slick-dots li button:before {
           font-size: 0;
         }
-  
+
         @media (max-width: 750px) {
           .slick-dots {
             display: block !important;
           }
         }
-  
+
         @media (min-width: 751px) {
           .slick-dots {
             display: none !important;
@@ -116,29 +115,35 @@ export default function Testimonials() {
     />
   );
 
-
   return (
     <Container>
-      <Box sx={{textAlign: "center"}}>
+      <Box sx={{ textAlign: "center" }}>
         <Title>Client Testimonials</Title>
         <Box sx={{ width: "70%", margin: "0 auto" }}>
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
-                <div>
-                  <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-                    <ProfileImage src={testimonial.profileImage} alt={testimonial.name} />
-                  </Box>
-                  <Typography variant="h6">{testimonial.name}</Typography>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ fontStyle: "italic", marginBottom: "16px" }}
-                  >
-                    {testimonial.designation}
-                  </Typography>
-                  <Typography variant="body2">
-                    {testimonial.feedback}
-                  </Typography>
-                </div>
+              <div>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginBottom: "16px",
+                  }}
+                >
+                  <ProfileImage
+                    src={testimonial.profileImage}
+                    alt={testimonial.name}
+                  />
+                </Box>
+                <Typography variant="h6">{testimonial.name}</Typography>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontStyle: "italic", marginBottom: "16px" }}
+                >
+                  {testimonial.designation}
+                </Typography>
+                <Typography variant="body2">{testimonial.feedback}</Typography>
+              </div>
             ))}
           </Slider>
           <GlobalSlickDotsStyles />
@@ -164,11 +169,11 @@ const CustomPrevArrow = (props) => {
           backgroundColor: "black",
         },
         "@media (max-width: 750px)": {
-          display: "none"
+          display: "none",
         },
       }}
     >
-      <ChevronLeftIcon sx={{ color: 'white', fontSize: '2rem' }} />
+      <ChevronLeftIcon sx={{ color: "white", fontSize: "2rem" }} />
     </IconButton>
   );
 };
@@ -189,11 +194,11 @@ const CustomNextArrow = (props) => {
           backgroundColor: "black",
         },
         "@media (max-width: 750px)": {
-          display: "none"
+          display: "none",
         },
       }}
     >
-      <ChevronRightIcon sx={{ color: 'white', fontSize: '2rem' }} />
+      <ChevronRightIcon sx={{ color: "white", fontSize: "2rem" }} />
     </IconButton>
   );
 };

@@ -81,12 +81,11 @@ const IllustratorContainer = styled(Box)`
   @media (max-width: 900px) {
     display: none;
   }
-
 `;
 
 const StyledBox = styled(Box)`
   padding: 20px;
-  background-color: #1976D2;
+  background-color: #1976d2;
   border-radius: 12%;
   position: relative;
   overflow: visible;
@@ -109,11 +108,10 @@ const StyledBox = styled(Box)`
 `;
 
 export default function ContactUs() {
-
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <div>
       <ImageContainer>
@@ -125,7 +123,7 @@ export default function ContactUs() {
               sx={{
                 fontWeight: 300,
                 color: "black",
-                fontSize: { xs: '0.8rem', sm: '1.5rem' },
+                fontSize: { xs: "0.8rem", sm: "1.5rem" },
               }}
             >
               Contact us
@@ -136,10 +134,12 @@ export default function ContactUs() {
             sx={{
               fontWeight: 700,
               color: "black",
-              fontSize: { xs: '1.2rem', sm: '2rem'},
+              fontSize: { xs: "1.2rem", sm: "2rem" },
             }}
           >
-            We Look Forward To<br />Assisting You
+            We Look Forward To
+            <br />
+            Assisting You
           </Typography>
         </OverlayText>
       </ImageContainer>
@@ -162,19 +162,38 @@ export default function ContactUs() {
         justifyContent="space-around"
         sx={{ margin: "10% auto", width: "100%" }}
       >
-        <Grid item xs={12} md={4} style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
-          <IllustratorContainer component="img" src={contactUsIllustrator} alt="Contact Illustration" />
+        <Grid
+          item
+          xs={12}
+          md={4}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <IllustratorContainer
+            component="img"
+            src={contactUsIllustrator}
+            alt="Contact Illustration"
+          />
         </Grid>
 
-        <Grid item xs={12} md={6} paddingRight={1} style={{alignContent: "center", justifyItems: "center"}}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          paddingRight={1}
+          style={{ alignContent: "center", justifyItems: "center" }}
+        >
           <StyledBox>
             <Box
               sx={{
-                position: 'absolute',
-                bottom: '-50px',
+                position: "absolute",
+                bottom: "-50px",
                 right: 0,
-                borderLeft: '80px solid transparent',
-                borderTop: '100px solid #1976D2',
+                borderLeft: "80px solid transparent",
+                borderTop: "100px solid #1976D2",
               }}
             />
             <GetInTouch isContactUsSection={true} />

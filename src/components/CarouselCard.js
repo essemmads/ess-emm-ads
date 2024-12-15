@@ -1,14 +1,14 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import adImg1 from "../images/carousel-img-1.png";
-import adImg2 from "../images/carousel-img-2.png";
-import adImg3 from "../images/carousel-img-3.png";
-import adImg4 from "../images/carousel-img-4.png";
-import adImg5 from "../images/carousel-img-5.png";
+import adImg1 from "../images/carousel/carousel-img-1.png";
+import adImg2 from "../images/carousel/carousel-img-2.png";
+import adImg3 from "../images/carousel/carousel-img-3.png";
+import adImg4 from "../images/carousel/carousel-img-4.png";
+import adImg5 from "../images/carousel/carousel-img-5.png";
 import { IconButton, Box } from "@mui/material";
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import styled from "@emotion/styled";
 
 const CarouselImage = styled.img`
@@ -80,7 +80,7 @@ const CustomPrevArrow = (props) => {
         },
       }}
     >
-      <ChevronLeftIcon sx={{ color: 'black', fontSize: '2rem' }} />
+      <ChevronLeftIcon sx={{ color: "black", fontSize: "2rem" }} />
     </IconButton>
   );
 };
@@ -103,7 +103,7 @@ const CustomNextArrow = (props) => {
         },
       }}
     >
-      <ChevronRightIcon sx={{ color: 'black', fontSize: '2rem' }} />
+      <ChevronRightIcon sx={{ color: "black", fontSize: "2rem" }} />
     </IconButton>
   );
 };

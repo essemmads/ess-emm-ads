@@ -4,7 +4,6 @@ import * as React from "react";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import ServiceDetail from "./pages/ServiceDetail";
 import ContactUs from "./pages/ContactUs";
 import SubHeader from "./components/SubHeader";
 import AboutUs from "./pages/AboutUs";
@@ -13,6 +12,7 @@ import OutdoorAdvertising from "./pages/OutdoorAdvertising";
 import PlatformWiseBranding from "./pages/PlatformWiseBranding";
 import TrainBranding from "./pages/TrainBranding";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Gallery from "./pages/Gallery";
 
 const theme = createTheme({
   typography: {
@@ -26,10 +26,9 @@ function App() {
       <Router>
         <div className="App" style={{ width: "100%" }}>
           <Header />
-          <SubHeader/>
+          <SubHeader />
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/service1" element={<ServiceDetail serviceId="1" />} />
+            <Route path="/" element={<Home />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/station-branding" element={<StationBranding />} />
@@ -42,6 +41,7 @@ function App() {
               element={<PlatformWiseBranding />}
             />
             <Route path="/train-branding" element={<TrainBranding />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
           <Footer />
         </div>

@@ -1,5 +1,11 @@
 import * as React from "react";
-import { Card, CardContent, Typography, Button, useMediaQuery } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  useMediaQuery,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -152,15 +158,16 @@ export default function Services() {
   const brandingOptions = ["EXTERIOR", "TRAIN BRANDING", "INTERIOR"];
 
   const handleLeftArrowClick = () => {
-    if(isTab) {
+    if (isTab) {
       const currentIndex = brandingOptions.indexOf(currentItem);
-      const newIndex = (currentIndex - 1 + brandingOptions.length) % brandingOptions.length;
+      const newIndex =
+        (currentIndex - 1 + brandingOptions.length) % brandingOptions.length;
       setCurrentItem(brandingOptions[newIndex]);
     }
   };
 
   const handleRightArrowClick = () => {
-    if(isTab) {
+    if (isTab) {
       const currentIndex = brandingOptions.indexOf(currentItem);
       const newIndex = (currentIndex + 1) % brandingOptions.length;
       setCurrentItem(brandingOptions[newIndex]);
