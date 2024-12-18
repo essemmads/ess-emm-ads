@@ -6,17 +6,18 @@ import VideoMarquee from "../components/VideoMarquee";
 import CustomCard from "./CustomCard";
 import styled from "@emotion/styled";
 import buildingImage from "../images/card-images/entrance-arch-card.png";
-import escalatorCard from "../images/card-images/escalator-card.png";
+import escalatorCard from "../images/card-images/escalator-branding-card.jpg";
 import liftcard from "../images/card-images/lift-card.png";
 import platformIndicationCard from "../images/card-images/platform-indication-card.png";
-import roofBoardCard from "../images/card-images/roof-board-card.png";
 import stationBoardCard from "../images/card-images/station-board-card.png";
 import waterHydrantBoardCard from "../images/card-images/water-hydrant-card.png";
-import escalatorBranding1 from "../images/escalator-branding/escalator-2.png";
-import escalatorBranding2 from "../images/escalator-branding/escalator-3.png";
-import escalatorBranding3 from "../images/escalator-branding/escalator-4.png";
-import escalatorBranding4 from "../images/escalator-branding/escalator-5.png";
-import escalatorBranding5 from "../images/escalator-branding/escalator-6.png";
+import escalatorBranding1 from "../images/escalator-branding/escalator-1.png";
+import escalatorBranding2 from "../images/escalator-branding/escalator-2.png";
+import escalatorBranding3 from "../images/escalator-branding/escalator-3.png";
+import escalatorBranding4 from "../images/escalator-branding/escalator-4.png";
+import escalatorBranding5 from "../images/escalator-branding/escalator-5.png";
+import escalatorBranding6 from "../images/escalator-branding/escalator-6.png";
+
 import liftBranding1 from "../images/lift-branding/lift-1.png";
 import liftBranding2 from "../images/lift-branding/lift-2.png";
 import liftBranding3 from "../images/lift-branding/lift-3.png";
@@ -45,12 +46,20 @@ import waterHydrant4 from "../images/water-hydrant-boards/water-hydrant-4.png";
 import waterHydrant5 from "../images/water-hydrant-boards/water-hydrant-5.png";
 import waterHydrant6 from "../images/water-hydrant-boards/water-hydrant-6.png";
 
+import platformBranding1 from "../images/platform-branding/platform-1.png";
+import platformBranding2 from "../images/platform-branding/platform-2.png";
+import platformBranding3 from "../images/platform-branding/platform-3.png";
+import platformBranding4 from "../images/platform-branding/platform-4.png";
+import platformBranding5 from "../images/platform-branding/platform-5.png";
+import platformBranding6 from "../images/platform-branding/platform-6.png";
+
+
 import ImageGrid from "../components/ImageGrid";
 
 const StyledFlexContainer = styled(Box)`
   display: flex;
   flex-wrap: wrap;
-  gap: 20%;
+  gap: 10%;
   justify-content: center;
 
   @media only screen and (max-width: 1000px) {
@@ -66,15 +75,6 @@ const ImageContainer = styled(Box)`
   @media only screen and (max-width: 1400px) {
     height: 60vh;
   }
-`;
-
-const ImageOverlay = styled(Box)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
 `;
 
 const OverlayText = styled(Box)`
@@ -120,7 +120,7 @@ const LineTextContainer = styled(Box)`
 `;
 
 const ContentContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0 45px;
 `;
 
@@ -132,6 +132,7 @@ const SectionHeading = styled(Typography)`
 const ContentText = styled(Typography)`
   line-height: 1.8;
   font-size: 20px;
+  text-align: justify;
 `;
 
 export default function PlatformWiseBranding() {
@@ -156,6 +157,7 @@ export default function PlatformWiseBranding() {
         escalatorBranding3,
         escalatorBranding4,
         escalatorBranding5,
+        escalatorBranding6,
       ],
       description:
         "Description for Station Building goes here. This can include key features, specifications, etc.",
@@ -184,11 +186,12 @@ export default function PlatformWiseBranding() {
       title: "Platform Indication Boards",
       image: platformIndicationCard,
       images: [
-        buildingImage,
-        buildingImage,
-        buildingImage,
-        buildingImage,
-        buildingImage,
+        platformBranding1,
+        platformBranding2,
+        platformBranding3,
+        platformBranding4,
+        platformBranding5,
+        platformBranding6,
       ],
       description:
         "Description for Reservation Counter goes here. This can include key features, specifications, etc.",
@@ -200,7 +203,7 @@ export default function PlatformWiseBranding() {
     },
     {
       title: "Roof Boards",
-      image: roofBoardCard,
+      image: roofBranding4,
       images: [
         roofBranding1,
         roofBranding2,
@@ -282,7 +285,6 @@ export default function PlatformWiseBranding() {
             objectFit: "cover",
           }}
         />
-        <ImageOverlay />
         <OverlayText>
           <LineTextContainer>
             <Typography variant="subtitle1" sx={TypographyText.subtitle1}>

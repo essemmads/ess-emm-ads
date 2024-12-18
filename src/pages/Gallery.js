@@ -102,7 +102,7 @@ const DefaultTallImage = styled.img`
 `;
 
 const GalleryPage = () => {
-  const isTab = useMediaQuery("(max-width:1800px)");
+  const isTab = useMediaQuery("(max-width:1200px)");
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <div style={{ margin: "40px 0" }}>

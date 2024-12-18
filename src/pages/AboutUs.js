@@ -11,6 +11,8 @@ import AboutUsImg6 from "../images/about-us/about-us-6.png";
 import AboutUsImg7 from "../images/about-us/about-us-7.png";
 import AboutUsImg8 from "../images/about-us/about-us-8.png";
 import AboutUsImg9 from "../images/about-us/about-us-9.png";
+import essArrLogo from "../images/ess-arr-logo-white.png";
+
 
 const StyledTextGridContainer = styled(Grid)`
   margin-top: 20px;
@@ -110,6 +112,23 @@ const StyledImage = styled("img")`
   width: 100%;
 `;
 
+const LogoContainer = styled("div")`
+display: flex;
+justify-content: center;
+margin-top: 20px;
+  img {
+    width: 20%;
+    height: auto;
+
+    @media (max-width: 950px) {
+     width: 40%;
+    }
+    @media (max-width: 600px) {
+     width: 60%;
+    }
+  }
+`;
+
 export default function AboutUs() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -126,17 +145,13 @@ export default function AboutUs() {
       </Typography>
 
       <Box sx={{ backgroundColor: "#1976D2", padding: "20px" }}>
-        <Typography
-          variant="h5"
-          sx={{
-            color: "#1A2E5D",
-            fontWeight: 600,
-            textAlign: "center",
-            marginBottom: "20px",
-          }}
-        >
-          ESS ARR ADS
-        </Typography>
+      <LogoContainer>
+        <img
+          src={essArrLogo}
+          alt="Ess Emm Railway Ads"
+          style={{ cursor: "pointer" }}
+        />
+      </LogoContainer>
 
         <StyledTextGridContainer container spacing={4}>
           <StyledLeftGrid item xs={12} md={5}>

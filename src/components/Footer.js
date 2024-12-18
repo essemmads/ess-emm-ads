@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Link, Box } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -26,9 +26,10 @@ const FooterContainer = styled.div`
 const ColumnContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
   flex-direction: row;
   align-self: center;
+  gap: 10%;
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -55,7 +56,7 @@ const SocialIcons = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-top: 10px;
-  margin-left: 10%;
+  margin-left: 5%;
 
   @media (max-width: 750px) {
     justify-content: center;
@@ -148,21 +149,63 @@ const Footer = () => {
           >
             Madurai
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body2" sx={{marginTop: "12px" }}>
             2, Shanmugam Pillai Thoppu 2nd Street,
             <br />
             West Ponnagaram Main Road, Madurai.
             <br />
             625 016
           </Typography>
+
+          <Typography
+            variant="body2"
+            sx={{ fontWeight: "bold", marginTop: "10px" }}
+          >
+            Trichy
+          </Typography>
+          <Typography variant="body2" sx={{marginTop: "12px" }}>
+            17, Arockiasamy Pillai Street, 
+            <br />
+            Crawford Colony, Trichy.
+            <br />
+            620012
+          </Typography>
+
+        </Column>
+
+        <Column>
+          <Typography variant="body1">| Associate company</Typography>
+          <Typography
+            variant="body2"
+            sx={{ fontWeight: "bold", marginTop: "12px" }}
+          >
+            Ess Emm Advertising
+          </Typography>
+          <Box display="flex" alignItems="center" sx={{ marginTop: "12px" }}>
+            <Typography variant="body2" sx={{ marginRight: "8px" }}> 
+              Email: 
+            </Typography>
+            <Link href="mailto:essemmadvertisings@gmail.com" color="#fff" underline="none" variant="body2">
+              essemmadvertisings@gmail.com
+            </Link>
+          </Box>
+
+          <Box display="flex" alignItems="center" sx={{ marginTop: "12px" }}>
+            <Typography variant="body2" sx={{ marginRight: "8px" }}> 
+              Phone no :
+            </Typography>
+            <Link href="tel:+919791235939" color="#fff" underline="none" variant="body2">
+            97912 35939
+            </Link>
+          </Box>
         </Column>
       </ColumnContainer>
 
       <SocialIcons>
-        <FacebookIcon sx={{ cursor: "pointer" }} />
-        <LinkedInIcon sx={{ cursor: "pointer" }} />
-        <InstagramIcon sx={{ cursor: "pointer" }} />
-        <YouTubeIcon sx={{ cursor: "pointer" }} />
+        <FacebookIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.linkedin.com/company/105284338/admin/dashboard/", "_blank")}/>
+        <LinkedInIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.linkedin.com/company/105284338/admin/dashboard/", "_blank")}/>
+        <InstagramIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.instagram.com/ess_arr_ads/", "_blank")}/>
+        <YouTubeIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.youtube.com/@EssArrAds", "_blank")}/>
       </SocialIcons>
     </FooterContainer>
   );

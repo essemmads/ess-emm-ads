@@ -31,19 +31,10 @@ const ImageContainer = styled(Box)`
   }
 `;
 
-const ImageOverlay = styled(Box)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-`;
-
 const StyledFlexContainer = styled(Box)`
   display: flex;
   flex-wrap: wrap;
-  gap: 20%;
+  gap: 10%;
   justify-content: center;
 
   @media only screen and (max-width: 1000px) {
@@ -94,7 +85,7 @@ const LineTextContainer = styled(Box)`
 `;
 
 const ContentContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0 45px;
 `;
 
@@ -106,6 +97,7 @@ const SectionHeading = styled(Typography)`
 const ContentText = styled(Typography)`
   line-height: 1.8;
   font-size: 20px;
+  text-align: justify;
 `;
 
 export default function StationBranding() {
@@ -184,7 +176,6 @@ export default function StationBranding() {
             objectFit: "cover",
           }}
         />
-        <ImageOverlay />
         <OverlayText>
           <LineTextContainer>
             <Typography variant="subtitle1" sx={TypographyText.subtitle1}>

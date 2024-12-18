@@ -16,8 +16,8 @@ const Container = styled(Box)`
 
 const StyledButton = styled(Button)`
   position: relative;
-  top: ${({ isContactUsSection }) => (isContactUsSection ? "120px" : "20px")};
-  left: ${({ isContactUsSection }) => (isContactUsSection ? "0%" : "40%")};
+  width: auto;
+  top: ${({ isContactUsSection }) => (isContactUsSection ? "120px" : "")};
 
   @media (max-width: 1700px) {
     top: ${({ isContactUsSection }) => (isContactUsSection ? "60px" : "10px")};
@@ -132,7 +132,12 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 helperText={formErrors.name}
                 sx={{
                   backgroundColor: "#fff",
+                  borderRadius: `${isContactUsSection ? "12px": "0px"}`,
                   "& .MuiOutlinedInput-root": {
+                    "& input::placeholder": {
+                        color: "black",
+                        opacity: 1,
+                      },
                     "& fieldset": {
                       border: "none",
                     },
@@ -153,7 +158,12 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 helperText={formErrors.phone}
                 sx={{
                   backgroundColor: "#fff",
+                  borderRadius: `${isContactUsSection ? "12px": "0px"}`,
                   "& .MuiOutlinedInput-root": {
+                    "& input::placeholder": {
+                        color: "black",
+                        opacity: 1,
+                      },
                     "& fieldset": {
                       border: "none",
                     },
@@ -175,7 +185,12 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 helperText={formErrors.email}
                 sx={{
                   backgroundColor: "#fff",
+                  borderRadius: `${isContactUsSection ? "12px": "0px"}`,
                   "& .MuiOutlinedInput-root": {
+                    "& input::placeholder": {
+                        color: "black",
+                        opacity: 1,
+                      },
                     "& fieldset": {
                       border: "none",
                     },
@@ -198,7 +213,12 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 helperText={formErrors.message}
                 sx={{
                   backgroundColor: "#fff",
+                  borderRadius: `${isContactUsSection ? "12px": "0px"}`,
                   "& .MuiOutlinedInput-root": {
+                    "& textarea::placeholder": {
+                      color: "black",
+                      opacity: 1,
+                    },
                     "& fieldset": {
                       border: "none",
                     },
@@ -206,14 +226,10 @@ export default function GetInTouch({ isContactUsSection = false }) {
                 }}
               />
             </Grid>
-            <Grid
-              item
-              xs={isContactUsSection ? 12 : 8}
-              sx={{
-                display: isContactUsSection ? "flex" : "block",
-                justifyContent: isContactUsSection ? "center" : "none",
-              }}
-            >
+            <Grid item xs={12} sm={isContactUsSection ? 12 : 9} sx={{
+                display: isContactUsSection ? "flex" : "flex",
+                justifyContent: isContactUsSection ? "center" : "center",
+              }}>
               <StyledButton
                 variant="contained"
                 color="primary"

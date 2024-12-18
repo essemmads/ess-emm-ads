@@ -9,11 +9,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/react";
-import interiorMirrorCard from "../images/card-images/int-mirror-card.png";
-import interiorPanelCard from "../images/card-images/int-panel-card.png";
-import glassdoorCard from "../images/card-images/glassdoor-card.png";
+import interiorMirrorCard from "../images/card-images/mirror-branding-card.png";
+import interiorPanelCard from "../images/card-images/panel-branding-card.png";
+import glassdoorCard from "../images/card-images/glassdoor-branding-card.png";
 import foodTrayCard from "../images/card-images/food-tray-card.png";
-import trainWrappingCard from "../images/card-images/train-ext-wrapping-card.png";
+import trainWrappingCard from "../images/card-images/train-wrapping-card.png";
 import trainEnginePaintingCard from "../images/card-images/train-engine-painting-card.png";
 
 import mirrorBranding1 from "../images/mirror-branding/mirror-1.png";
@@ -111,15 +111,6 @@ const ImageContainer = styled(Box)`
   }
 `;
 
-const ImageOverlay = styled(Box)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-`;
-
 const OverlayText = styled(Box)`
   position: absolute;
   top: 30%;
@@ -198,8 +189,8 @@ const GlobalSlickDotsStyles = () => (
 );
 
 const ContentContainer = styled.div`
-  width: 80%;
-  margin: 0 45px;
+  width: 90%;
+  margin: 0 6%;
 `;
 
 const SectionHeading = styled(Typography)`
@@ -210,6 +201,7 @@ const SectionHeading = styled(Typography)`
 const ContentText = styled(Typography)`
   line-height: 1.8;
   font-size: 20px;
+  text-align: justify;
 `;
 
 export default function TrainBranding() {
@@ -386,7 +378,6 @@ export default function TrainBranding() {
             objectFit: "cover",
           }}
         />
-        <ImageOverlay />
         <OverlayText>
           <LineTextContainer>
             <Typography variant="subtitle1" sx={TypographyText.subtitle1}>
@@ -454,7 +445,7 @@ export default function TrainBranding() {
               flex: "1 0 30%",
               minWidth: "200px",
               maxWidth: "300px",
-              margin: "0 auto",
+              margin: "0 8%",
               gridColumn: index === 3 ? "1 / 4" : "auto",
             }}
           >
@@ -480,7 +471,7 @@ export default function TrainBranding() {
               flex: "1 0 30%",
               minWidth: "200px",
               maxWidth: "300px",
-              margin: "0 auto",
+              margin: "0 8%",
               gridColumn: index === 3 ? "1 / 4" : "auto",
             }}
           >
@@ -501,10 +492,11 @@ export default function TrainBranding() {
         Interior Train Branding
       </Typography>
 
+
+      <ContentContainer>
       <SectionHeading ref={interiorMirrorBrandingRef} variant="h5">
         Interior Mirror Branding
       </SectionHeading>
-      <ContentContainer>
         <ContentText>
           Train interior mirror branding involves placing advertisements on or
           around mirrors inside train compartments, such as in restrooms, near
@@ -530,13 +522,11 @@ export default function TrainBranding() {
           offering a unique advertising opportunity within the train
           environment.
         </ContentText>
-      </ContentContainer>
       <ImageGrid images={interiorTrainBrandingCardData[0].images} />
 
       <SectionHeading ref={interiorPanelBrandingRef} variant="h5">
         Interior Panel Branding
       </SectionHeading>
-      <ContentContainer>
         <ContentText>
           Interior panel branding involves placing advertisements on the
           interior surfaces of trains, such as wall panels, luggage racks, and
@@ -559,13 +549,11 @@ export default function TrainBranding() {
           overall aesthetic appeal, ensuring long-lasting visibility for brands
           throughout the ride.
         </ContentText>
-      </ContentContainer>
       <ImageGrid images={interiorTrainBrandingCardData[1].images} />
 
       <SectionHeading ref={interiorGlassdoorBrandingRef} variant="h5">
         Interior Glassdoor Branding
       </SectionHeading>
-      <ContentContainer>
         <ContentText>
           Interior glass door branding involves applying advertisements or
           designs to the glass doors inside trains, such as compartment
@@ -591,13 +579,11 @@ export default function TrainBranding() {
           that would otherwise remain empty, making it an innovative and
           engaging advertising medium.
         </ContentText>
-      </ContentContainer>
       <ImageGrid images={interiorTrainBrandingCardData[2].images} />
 
       <SectionHeading ref={foodTraybrandingRef} variant="h5">
         Food Tray Branding
       </SectionHeading>
-      <ContentContainer>
         <ContentText>
           Interior food tray advertising involves placing branded messages or
           visuals on the food trays used in trains, particularly in premium or
@@ -622,8 +608,10 @@ export default function TrainBranding() {
           way to promote products or services while enhancing the overall
           passenger experience.
         </ContentText>
-      </ContentContainer>
       <ImageGrid images={interiorTrainBrandingCardData[3].images} />
+
+      </ContentContainer>
+
 
       <Typography
         variant="h5"
@@ -632,10 +620,11 @@ export default function TrainBranding() {
         Exterior Train Branding
       </Typography>
 
+      <ContentContainer>
+
       <SectionHeading ref={trainWrappingRef} variant="h5">
         Train Wrapping
       </SectionHeading>
-      <ContentContainer>
         <ContentText>
           Train wrapping is a high-impact advertising method where the outer
           surfaces of trains are covered with vibrant, eye-catching vinyl
@@ -660,13 +649,11 @@ export default function TrainBranding() {
           elements, making it a versatile and impactful medium for both
           short-term promotions and long-term brand awareness.
         </ContentText>
-      </ContentContainer>
       <ImageGrid images={exteriorTrainBrandingCardData[0].images} />
 
       <SectionHeading ref={trainEnginePaintingRef} variant="h5">
         Train Engine Painting
       </SectionHeading>
-      <ContentContainer>
         <ContentText>
           Train engine painting involves customizing the locomotive’s exterior
           with branded designs, logos, or vibrant themes. This form of
@@ -692,8 +679,9 @@ export default function TrainBranding() {
           medium for brand promotion and creating a memorable impression among
           commuters and bystanders.
         </ContentText>
-      </ContentContainer>
       <ImageGrid images={exteriorTrainBrandingCardData[1].images} />
+      </ContentContainer>
+
 
       <VideoMarquee />
     </ResponsiveBackground>

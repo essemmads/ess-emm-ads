@@ -5,10 +5,12 @@ import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 
 const videoSources = [
-  "https://www.youtube.com/embed/WAM3E91iKWM?si=WG_k9gUf4cRlLGSZ",
-  "https://www.youtube.com/embed/WAM3E91iKWM?si=WG_k9gUf4cRlLGSZ",
-  "https://www.youtube.com/embed/WAM3E91iKWM?si=WG_k9gUf4cRlLGSZ",
-  "https://www.youtube.com/embed/WAM3E91iKWM?si=WG_k9gUf4cRlLGSZ",
+  "https://www.youtube.com/embed/sAAx2pOpIdM?si=85Qti1S0xLwjvtDC",
+  "https://www.youtube.com/embed/9rzykhqRmjA?si=ijRF6yNEm8FAaVYl",
+  "https://www.youtube.com/embed/yn3nHbkAD4M?si=78rdVx0pZl0tcWBM",
+  "https://www.youtube.com/embed/y65h9CcRjzM?si=KMsRoDLLy3XoCfDy",
+  "https://www.youtube.com/embed/maEP-gxd1j8?si=oysw818pp7wjxmgN",
+  "https://www.youtube.com/embed/4ln7e5lCJMg?si=qxx-Xnp5jE3fM1F-",
 ];
 
 const Container = styled("div")`

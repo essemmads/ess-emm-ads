@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, useMediaQuery } from "@mui/material";
+import { Typography, Box, useMediaQuery, Link } from "@mui/material";
 import GetInTouch from "../pages/GetInTouch";
 import blackPhoneIcon from "../images/icons/black-phone.png";
 import blackMailIcon from "../images/icons/black-mail.png";
@@ -79,12 +79,9 @@ const InfoItem = styled("div")`
   padding-left: 20px;
 
   @media (max-width: 830px) {
-    width: inherit;
-  }
-
-  @media (max-width: 600px) {
-    display: flex;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
     padding-left: 0;
   }
 `;
@@ -93,6 +90,7 @@ const InfoText = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  text-align: left;
   padding-left: 20px;
   padding-right: 30px;
 
@@ -100,11 +98,13 @@ const InfoText = styled("div")`
     color: black;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 830px) {
     text-align: center;
-    padding-left: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 `;
+
 
 const Title = styled(Typography)`
   font-size: 2rem;
@@ -171,7 +171,7 @@ const ContactSection = () => {
               <IconContainer src={blackPhoneIcon} alt="Phone Icon" />
               <InfoText>
                 <span>Phone Number</span>
-                <span>98421 08493</span>
+                <Link href="tel:+919842108493" underline="none" color="white">98421 08493</Link>
               </InfoText>
             </InfoItem>
             <InfoItem>
@@ -180,15 +180,17 @@ const ContactSection = () => {
                 <span>Address</span>
                 <span>
                   2, Shanmugam Pillai Thoppu 2nd Street, <br />
-                  West Ponnagaram Main Road, Madurai - 625 016.
+                  West Ponnagaram Main Road, Madurai&nbsp;-&nbsp;625&nbsp;016.
                 </span>
               </InfoText>
             </InfoItem>
             <InfoItem>
               <IconContainer src={blackMailIcon} alt="Location Icon" />
               <InfoText>
-                <span>Email</span>
-                <span>essarrads@gmail.com</span>
+                <span >Email</span>
+                <Link href="mailto:essarrads@gmail.com" color="#fff" underline="none">
+                essarrads@gmail.com
+              </Link>
               </InfoText>
             </InfoItem>
           </div>

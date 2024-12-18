@@ -86,16 +86,15 @@ const IllustratorContainer = styled(Box)`
 const StyledBox = styled(Box)`
   padding: 20px;
   background-color: #1976d2;
-  border-radius: 12%;
+  border-radius: 13%;
   position: relative;
   overflow: visible;
   box-shadow: 3;
-  width: 80%;
-  height: 40vh;
+  width: 70%;
+  height: auto;
 
   @media (max-width: 1200px) {
     width: 90%;
-    height: auto;
   }
 
   @media (max-width: 900px) {
@@ -104,6 +103,7 @@ const StyledBox = styled(Box)`
 
   @media (max-width: 600px) {
     width: 90%;
+    height: auto;
   }
 `;
 
@@ -190,10 +190,10 @@ export default function ContactUs() {
             <Box
               sx={{
                 position: "absolute",
-                bottom: "-50px",
+                bottom: "-85px",
                 right: 0,
-                borderLeft: "80px solid transparent",
-                borderTop: "100px solid #1976D2",
+                borderLeft: "70px solid transparent",
+                borderTop: "140px solid #1976D2",
               }}
             />
             <GetInTouch isContactUsSection={true} />

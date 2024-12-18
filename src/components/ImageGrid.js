@@ -6,7 +6,8 @@ const GridContainer = styled(Box)`
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(3, 1fr);
-  padding: 16px;
+  width: 85%;
+  margin: 0 5%;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);

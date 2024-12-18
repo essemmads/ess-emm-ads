@@ -15,6 +15,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import CallIcon from "../images/icons/phone-sm-icon.png";
 import EmailIcon from "../images/icons/mail-sm-icon.png";
 import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
 
 const StyledCard = styled(Card)`
   margin-bottom: 30px;
@@ -50,18 +51,30 @@ const InfoSection = styled(Link)`
 `;
 
 export default function Header() {
+  const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const socialLinks = [
-    { icon: <FacebookRoundedIcon />, label: "Facebook" },
-    { icon: <LinkedInIcon />, label: "LinkedIn" },
-    { icon: <InstagramIcon />, label: "Instagram" },
-    { icon: <YouTubeIcon />, label: "YouTube" },
+    { icon: <FacebookRoundedIcon />, label: "Facebook", link: "https://www.linkedin.com/company/105284338/admin/dashboard/" },
+    { icon: <LinkedInIcon />, label: "LinkedIn", link: "https://www.linkedin.com/company/105284338/admin/dashboard/" },
+    { icon: <InstagramIcon />, label: "Instagram", link: "https://www.instagram.com/ess_arr_ads/" },
+    { icon: <YouTubeIcon />, label: "YouTube", link: "https://www.youtube.com/@EssArrAds" },
   ];
 
   const toggleDrawer = (open) => () => {
+    console.log("Here")
     setDrawerOpen(open);
+  };
+
+  const handleNavigation = () => {
+    toggleDrawer(false)(); 
+    navigate("/");
+    setTimeout(() => {
+      document.getElementById("contactUsSection")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 300);
   };
 
   return (
@@ -89,8 +102,8 @@ export default function Header() {
               >
                 <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
               </IconButton>
-              <Link href="tel:0452-2362201" underline="none" color="white">
-                0452 - 2362201
+              <Link href="tel:+919842108493" underline="none" color="white">
+                98421 08493
               </Link>
               <IconButton
                 size="large"
@@ -120,6 +133,7 @@ export default function Header() {
                 aria-haspopup="true"
                 color="inherit"
                 sx={{ padding: "2px" }}
+                onClick={() => window.open("https://www.linkedin.com/company/105284338/admin/dashboard/", "_blank")}
               >
                 <FacebookRoundedIcon sx={{ fontSize: "30px" }} />
               </IconButton>
@@ -130,6 +144,7 @@ export default function Header() {
                 aria-haspopup="true"
                 color="inherit"
                 sx={{ padding: "2px" }}
+                onClick={() => window.open("https://www.linkedin.com/company/105284338/admin/dashboard/", "_blank")}
               >
                 <LinkedInIcon sx={{ fontSize: "30px" }} />
               </IconButton>
@@ -140,6 +155,8 @@ export default function Header() {
                 aria-haspopup="true"
                 color="inherit"
                 sx={{ padding: "2px" }}
+                onClick={() => window.open("https://www.instagram.com/ess_arr_ads/", "_blank")}
+
               >
                 <InstagramIcon sx={{ fontSize: "30px" }} />
               </IconButton>
@@ -150,6 +167,7 @@ export default function Header() {
                 aria-haspopup="true"
                 color="inherit"
                 sx={{ padding: "2px" }}
+                onClick={() => window.open("https://www.youtube.com/@EssArrAds", "_blank")}
               >
                 <YouTubeIcon sx={{ fontSize: "35px" }} />
               </IconButton>
@@ -191,10 +209,10 @@ export default function Header() {
             >
               <Button
                 variant="contained"
-                onClick={toggleDrawer(true)}
+                onClick={handleNavigation}
                 sx={{ width: "90%" }}
               >
-                Get Quote
+                Get A Quote
               </Button>
             </CardContent>
           </Card>
@@ -232,7 +250,7 @@ export default function Header() {
           <StyledCard>
             <CardContent>
               <Box display="flex" justifyContent="space-around">
-                {socialLinks.map(({ icon, label }, index) => (
+                {socialLinks.map(({ icon, label, link }, index) => (
                   <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -241,6 +259,7 @@ export default function Header() {
                     color="inherit"
                     sx={{ padding: "2px" }}
                     label={label}
+                    onClick={() => window.open(link, "_blank")}
                   >
                     {icon}
                   </IconButton>

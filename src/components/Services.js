@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   Card,
+  CardHeader,
   CardContent,
   Typography,
   Button,
@@ -12,7 +13,6 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Container = styled.div`
-  background-color: #f0f0f0;
   padding: 0 0 120px 0;
 `;
 
@@ -30,7 +30,6 @@ const ServicesWrapper = styled.div`
   @media (max-width: 750px) {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
   }
 `;
 
@@ -47,9 +46,10 @@ const CardContainer = styled.div`
   @media (max-width: 750px) {
     flex: 1 1 100%;
     width: 300px;
+    gap: 60px;
   }
 
-  @media (max-width: 300px) {
+  @media (max-width: 350px) {
     width: auto;
   }
 `;
@@ -59,7 +59,7 @@ const MainCard = styled(Card)`
   text-align: center;
   transition: 0.3s;
   display: flex;
-  height: 20vh;
+  height: 25vh;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -69,19 +69,29 @@ const MainCard = styled(Card)`
   position: relative;
   overflow: visible;
 
+  @media (max-width: 1200px) {
+    height: 30vh;
+  }
+
   @media (max-width: 900px) {
     flex-direction: column;
   }
+
+   @media (max-width: 450px) {
+    width: 80%;
+    height: 35vh;
+  }
 `;
 
+
 const GreyBox = styled.div`
-  width: 15vw;
-  height: 30vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   font-weight: 800;
   font-size: 22px;
+  padding: 10px;
 
   @media (max-width: 1060px) {
     width: 100%;
@@ -89,6 +99,15 @@ const GreyBox = styled.div`
 
   @media (max-width: 900px) {
     display: none;
+  }
+`;
+
+const LeftContent = styled(Typography)`
+  text-align: center;
+  margin-top: 20px!important;
+
+  @media (max-width: 450px) {
+    width: 45vw;
   }
 `;
 
@@ -123,10 +142,14 @@ const MainCardHangingButton = styled(Button)`
   z-index: 1;
   border-radius: 50px;
   text-transform: none;
-  width: 15%;
+  
 
   @media (max-width: 1060px) {
     bottom: -20px;
+  }
+
+  @media (max-width: 320px) {
+    width: 50vw;
   }
 `;
 
@@ -144,15 +167,43 @@ const Title = styled(Typography)`
   font-weight: bold;
 `;
 
+const StyledCardHeader = styled(CardHeader)`
+  background-color: #1976d2;
+  color: white;
+  text-align: center;
+  position: relative;
+  height: 3px;
+
+  .MuiCardHeader-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+     @media (max-width: 600px) {
+        font-size: 1rem;
+      }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+`;
+
 export default function Services() {
-  const isTab = useMediaQuery("(max-width:600px)");
+  const isTab = useMediaQuery("(max-width:900px)");
   const navigate = useNavigate();
   const [currentItem, setCurrentItem] = React.useState("TRAIN BRANDING");
 
   const services = [
-    { id: 1, name: "STATION BRANDING" },
-    { id: 2, name: "OUTDOOR ADVERTISING" },
-    { id: 3, name: "PLATFORM WISE BRANDING" },
+    { id: 1, name: "STATION BRANDING", content: "It transforms high-traffic hubs into impactful advertising spaces, engaging diverse audiences with creative,large scale promotional displays." },
+    { id: 2, name: "OUTDOOR ADVERTISING", content: "It leverages station exteriors, billboards, and transit routes to capture broad audience attention with high-visibility, impactful campaigns." },
+    { id: 3, name: "PLATFORM WISE BRANDING", content: "It targets passengers at specific platforms with tailored messages, ensuring focused and localized audience engagement." },
   ];
 
   const brandingOptions = ["EXTERIOR", "TRAIN BRANDING", "INTERIOR"];
@@ -179,6 +230,13 @@ export default function Services() {
     navigate(`/${formattedService}`);
   };
 
+  React.useEffect(() => {
+    console.log(isTab, "asa")
+    if(!isTab) {
+      setCurrentItem("TRAIN BRANDING");
+    }
+  }, [isTab])
+
   return (
     <Container id="ourServices">
       <Title> Our Services </Title>
@@ -187,19 +245,19 @@ export default function Services() {
           <CardContainer key={service.id}>
             <Card
               sx={{
-                padding: "16px",
                 textAlign: "center",
                 transition: "0.3s",
-                height: "20vh",
+                height: "30vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 overflow: "visible",
               }}
             >
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" fontWeight={700}>
-                  {service.name}
+               <StyledCardHeader title={service.name}/>
+              <CardContent style={{padding: "20px"}} sx={{ flexGrow: 1 }}>
+                <Typography >
+                  {service.content}
                 </Typography>
               </CardContent>
               <HangingButton
@@ -213,7 +271,6 @@ export default function Services() {
           </CardContainer>
         ))}
       </ServicesWrapper>
-
       <div
         style={{
           marginTop: "40px",
@@ -222,9 +279,13 @@ export default function Services() {
           justifyContent: "center",
         }}
       >
-        <MainCard>
-          <GreyBox>EXTERIOR</GreyBox>
-          <CenterTextWrapper>
+        <MainCard sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+          <GreyBox>
+            <div>EXTERIOR</div>
+            <LeftContent>Ensure your message reaches a wide audience with eye-catching designs on the exterior of trains.</LeftContent>
+          </GreyBox>
+
+          <CenterTextWrapper sx={{ flexGrow: 1 }}>
             <CardContent
               sx={{
                 flexGrow: 1,
@@ -241,9 +302,14 @@ export default function Services() {
                 <ArrowBackIosIcon />
               </ArrowButton>
 
+            <div>
               <Typography variant="h6" fontWeight={700}>
                 {currentItem}
               </Typography>
+
+             {currentItem === "INTERIOR" && <LeftContent>Make a lasting impression on passengers as they interact with your brand throughout their ride.</LeftContent>}
+             {currentItem === "EXTERIOR" && <LeftContent>Ensure your message reaches a wide audience with eye-catching designs on the exterior of trains.</LeftContent>}
+            </div>
               <ArrowButton
                 onClick={handleRightArrowClick}
                 disabled={currentItem === "INTERIOR"}
@@ -260,7 +326,12 @@ export default function Services() {
               </MainCardHangingButton>
             </CardContent>
           </CenterTextWrapper>
-          <GreyBox>INTERIOR</GreyBox>
+
+          {/* INTERIOR inside the card */}
+          <GreyBox>
+            <div>INTERIOR</div>
+            <LeftContent>Make a lasting impression on passengers as they interact with your brand throughout their ride.</LeftContent>
+          </GreyBox>
         </MainCard>
       </div>
     </Container>

@@ -59,7 +59,7 @@ import ImageGrid from "../components/ImageGrid";
 const StyledFlexContainer = styled(Box)`
   display: flex;
   flex-wrap: wrap;
-  gap: 20%;
+  gap: 10%;
   justify-content: center;
 
   @media only screen and (max-width: 1000px) {
@@ -76,19 +76,10 @@ const ImageContainer = styled(Box)`
   }
 `;
 
-const ImageOverlay = styled(Box)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-`;
-
 const OverlayText = styled(Box)`
   position: absolute;
   top: 30%;
-  left: 8%;
+  right: 4%;
   text-align: left;
   padding: 20px;
   background-color: rgba(25, 118, 210, 0.5);
@@ -96,14 +87,12 @@ const OverlayText = styled(Box)`
 
   @media (max-width: 900px) {
     top: 30%;
-    left: 8%;
     padding: 15px;
     width: 60%;
   }
 
   @media (max-width: 600px) {
     top: 25%;
-    left: 5%;
     padding: 10px;
   }
 `;
@@ -128,7 +117,7 @@ const LineTextContainer = styled(Box)`
 `;
 
 const ContentContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0 45px;
 `;
 
@@ -140,6 +129,7 @@ const SectionHeading = styled(Typography)`
 const ContentText = styled(Typography)`
   line-height: 1.8;
   font-size: 20px;
+  text-align: justify;
 `;
 
 export default function OutdoorAdvertising() {
@@ -283,7 +273,6 @@ export default function OutdoorAdvertising() {
             objectFit: "cover",
           }}
         />
-        <ImageOverlay />
         <OverlayText>
           <LineTextContainer>
             <Typography variant="subtitle1" sx={TypographyText.subtitle1}>

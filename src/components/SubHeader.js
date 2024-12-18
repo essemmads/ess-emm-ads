@@ -108,8 +108,8 @@ export default function SubHeader() {
 
   const serviceOptions = [
     "Station Branding",
-    "Platform Wise Branding",
     "Outdoor Advertising",
+    "Platform Wise Branding",
     "Train Branding",
   ];
 
