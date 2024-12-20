@@ -76,7 +76,7 @@ const DefaultImage = styled.img`
   height: 100%;
 
   @media (max-width: 600px) {
-    height: auto; /* Adjust for mobile */
+    height: auto;
   }
 `;
 
@@ -86,7 +86,7 @@ const DefaultImageWithoutHeight = styled.img`
   object-fit: cover;
 
   @media (max-width: 600px) {
-    margin-top: 8px; /* Space between stacked images */
+    margin-top: 8px;
   }
 `;
 
@@ -97,8 +97,21 @@ const DefaultTallImage = styled.img`
   object-fit: cover;
 
   @media (max-width: 600px) {
-    height: auto; /* Adjust for mobile */
+    height: auto;
   }
+`;
+
+const FixedHeightWrapper = styled.div`
+  height: ${(props) => props.height || "270vh"};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const ResponsiveImage = styled.img`
+  width: 100%;
+  object-fit: cover;
+  height: ${(props) => props.height || "auto"};
 `;
 
 const GalleryPage = () => {
@@ -106,7 +119,7 @@ const GalleryPage = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <div style={{ margin: "40px 0" }}>
-      <Grid container spacing={isMobile ? 0.5 : 1.5}>
+      <Grid container spacing={isMobile ? 0.5 : 1}>
         <Grid item xs={12}>
           <DefaultImage src={GalleryImg1} alt="First Row" />
         </Grid>
@@ -155,30 +168,32 @@ const GalleryPage = () => {
           </>
         ) : (
           <>
-            <Grid item xs={12} sm={3}>
-              <DefaultImageWithoutHeight
-                src={GalleryImg6}
-                alt="Fourth Row Small"
-              />
-              <DefaultImageWithoutHeight
-                src={GalleryImg8}
-                alt="Below GalleryImg 6"
-                style={{ marginTop: "8px" }}
-              />
-              <DefaultImageWithoutHeight
-                src={GalleryImg11}
-                alt="Below GalleryImg 11"
-                style={{ marginTop: "8px" }}
-              />
-              <DefaultImageWithoutHeight
-                src={GalleryImg12}
-                alt="Below GalleryImg 12"
-                style={{ marginTop: "8px" }}
-              />
+             <Grid item xs={12} sm={3}>
+              <FixedHeightWrapper>
+                <ResponsiveImage src={GalleryImg6} alt="Fourth Row Small"/>
+                <ResponsiveImage
+                  src={GalleryImg8}
+                  alt="Below GalleryImg 6"
+                  style={{ marginTop: "8px" }}
+                  height="120vh"
+                />
+                <ResponsiveImage
+                  src={GalleryImg11}
+                  alt="Below GalleryImg 11"
+                  style={{ marginTop: "8px"}}
+                />
+                <ResponsiveImage
+                  src={GalleryImg12}
+                  alt="Below GalleryImg 12"
+                  style={{ marginTop: "8px" }}
+                  height="100vh"
+
+                />
+              </FixedHeightWrapper>
             </Grid>
 
             <Grid item xs={12} sm={9}>
-              <Grid container direction="column" spacing={0.8}>
+              <Grid container direction="column" spacing={1}>
                 <Grid item>
                   <DefaultTallImage
                     src={GalleryImg7}
@@ -249,6 +264,7 @@ const GalleryPage = () => {
         ) : (
           <>
             <Grid item xs={12} sm={7}>
+          <FixedHeightWrapper height="206vh">
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <DefaultImageWithoutHeight
@@ -261,19 +277,24 @@ const GalleryPage = () => {
                 </Grid>
               </Grid>
 
-              <DefaultImageWithoutHeight
+              <ResponsiveImage
                 src={GalleryImg23}
                 alt="Fourth Row Small"
                 style={{ marginTop: "8px" }}
+                height="100vh"
               />
-              <DefaultImageWithoutHeight
+              <ResponsiveImage
                 src={GalleryImg24}
                 alt="Below GalleryImg 6"
                 style={{ marginTop: "8px" }}
+                height="100vh"
+
               />
+            </FixedHeightWrapper>
+
             </Grid>
             <Grid item xs={12} sm={5}>
-              <Grid container direction="column" spacing={0.8}>
+              <Grid container direction="column" spacing={1.4}>
                 <Grid item>
                   <DefaultTallImage
                     src={GalleryImg22}
@@ -313,40 +334,46 @@ const GalleryPage = () => {
         ) : (
           <>
             <Grid item xs={12} sm={9}>
-              <Grid container direction="column" spacing={0.8}>
-                <DefaultImageWithoutHeight
+              <Grid container direction="column" spacing={1}>
+              <FixedHeightWrapper height="228vh">
+                <ResponsiveImage
                   src={GalleryImg26}
                   alt="Second Row Left"
                   style={{ marginTop: "8px" }}
+                  height="100vh"
                 />
-                <DefaultImageWithoutHeight
+                <ResponsiveImage
                   src={GalleryImg28}
                   alt="Second Row Left"
-                  style={{ marginTop: "18px" }}
+                  style={{ marginTop: "10px" }}
+                  height="100vh"
                 />
-                <Grid container spacing={2} style={{ marginTop: "4px" }}>
+                <Grid container spacing={1} style={{ marginTop: "2px", height: "100vh" }}>
                   <Grid item xs={12} sm={4}>
-                    <DefaultImage src={GalleryImg29} alt="Second Row Left" />
+                    <ResponsiveImage src={GalleryImg29} alt="Second Row Left" height="-webkit-fill-available"/>
                   </Grid>
                   <Grid item xs={12} sm={8}>
-                    <DefaultImage src={GalleryImg30} alt="Second Row Right" />
+                    <ResponsiveImage src={GalleryImg30} alt="Second Row Right" height="-webkit-fill-available"/>
                   </Grid>
                 </Grid>
+              </FixedHeightWrapper>
               </Grid>
             </Grid>
             <Grid item xs={12} sm={3}>
-              <Grid container direction="column" spacing={1}>
+              <FixedHeightWrapper height="226vh">
+              <Grid container direction="column" spacing={0.5}>
                 <Grid item>
-                  <DefaultTallImage
+                  <ResponsiveImage
                     src={GalleryImg27}
                     alt="Fourth Row Tall"
-                    height="180vh"
+                    height="166vh"
                   />
                 </Grid>
-                <Grid item>
-                  <DefaultImage src={GalleryImg31} alt="Fourth Row Tall" />
+                <Grid item height="inherit">
+                  <ResponsiveImage src={GalleryImg31} alt="Fourth Row Tall" height="60vh"/>
                 </Grid>
               </Grid>
+              </FixedHeightWrapper>
             </Grid>
           </>
         )}
@@ -386,22 +413,25 @@ const GalleryPage = () => {
           <>
             <Grid item xs={12} sm={5}>
               <Grid container direction="column">
+                <FixedHeightWrapper height="172vh">
                 <Grid item>
-                  <DefaultTallImage
+                  <ResponsiveImage
                     src={GalleryImg32}
                     alt="Fourth Row Tall"
-                    height="70vh"
+                    height="82vh"
                   />
                 </Grid>
 
-                <Grid item style={{ marginTop: "8px" }}>
-                  <DefaultImage src={GalleryImg34} alt="Fourth Row Tall" />
-                  <DefaultImage
+                <Grid item style={{ marginTop: "8px" }} height="90vh">
+                  <ResponsiveImage src={GalleryImg34} alt="Fourth Row Tall" height="40vh"/>
+                  <ResponsiveImage
                     src={GalleryImg36}
                     alt="Fourth Row Tall"
                     style={{ marginTop: "10px" }}
+                    height="46vh"
                   />
                 </Grid>
+                </FixedHeightWrapper>
               </Grid>
             </Grid>
 
@@ -425,36 +455,36 @@ const GalleryPage = () => {
             </Grid>
 
             <Grid item xs={12} sm={8}>
-              <Grid container direction="column" spacing={8}>
+            <FixedHeightWrapper height="180vh" style={{gap: "7px", justifyContent: "start"}}>
                 <Grid item>
-                  <DefaultImage src={GalleryImg37} alt="Second Row Right" />
+                  <ResponsiveImage src={GalleryImg37} alt="Second Row Right" height="89vh"/>
                 </Grid>
                 <Grid item>
-                  <DefaultImage src={GalleryImg39} alt="Second Row Right" />
+                  <ResponsiveImage src={GalleryImg39} alt="Second Row Right" height="89vh"/>
                 </Grid>
-              </Grid>
+              </FixedHeightWrapper>
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Grid container direction="column" spacing={0.9}>
+                <FixedHeightWrapper height="180vh" style={{gap: "6px"}}>
                 <Grid item>
-                  <DefaultTallImage
-                    src={GalleryImg38}
-                    alt="Second Row Right"
-                    height="40vh"
-                  />
-                </Grid>
-                <Grid item>
-                  <DefaultTallImage
-                    src={GalleryImg40}
-                    alt="Second Row Right"
-                    height="75vh"
-                  />
-                </Grid>
-                <Grid item>
-                  <DefaultTallImage src={GalleryImg41} alt="Second Row Right" />
-                </Grid>
-              </Grid>
+                    <ResponsiveImage
+                      src={GalleryImg38}
+                      alt="Second Row Right"
+                      height="35vh"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <ResponsiveImage
+                      src={GalleryImg40}
+                      alt="Second Row Right"
+                      height="96vh"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <ResponsiveImage src={GalleryImg41} alt="Second Row Right" height="46vh"/>
+                  </Grid>
+                </FixedHeightWrapper>
             </Grid>
           </>
         )}
@@ -493,12 +523,12 @@ const GalleryPage = () => {
             </Grid>
 
             <Grid item xs={12} sm={5}>
-              <Grid container direction="column" spacing={2}>
+              <Grid container direction="column" spacing={0.5}>
                 <Grid item>
                   <DefaultTallImage
                     src={GalleryImg44}
                     alt="First Row"
-                    height="35vh"
+                    height="36vh"
                   />
                 </Grid>
                 <Grid item>
@@ -569,7 +599,7 @@ const GalleryPage = () => {
         ) : (
           <>
             <Grid item xs={12} sm={5}>
-              <Grid container direction="column" spacing={2}>
+              <Grid container direction="column" spacing={1}>
                 <Grid item>
                   <DefaultTallImage
                     src={GalleryImg47}
@@ -586,11 +616,11 @@ const GalleryPage = () => {
                   />
                 </Grid>
               </Grid>
-              <Grid item xs={12} style={{ marginTop: "8px" }}>
+              <Grid item xs={12} style={{ marginTop: "6px" }}>
                 <DefaultTallImage
                   src={GalleryImg54}
                   alt="First Row"
-                  width="70vw"
+                  width="171%"
                   height="57vh"
                 />
               </Grid>
@@ -607,26 +637,26 @@ const GalleryPage = () => {
                 </Grid>
 
                 <Grid item>
-                  <Grid container spacing={2}>
+                  <Grid container spacing={1}>
                     <Grid item xs={6}>
                       <DefaultTallImage
                         src={GalleryImg51}
                         alt="Second Row Left"
-                        height="42vh"
+                        height="41vh"
                       />
                     </Grid>
                     <Grid item xs={6}>
                       <DefaultTallImage
                         src={GalleryImg52}
                         alt="Second Row Right"
-                        height="42vh"
+                        height="41vh"
                       />
                     </Grid>
                   </Grid>
                 </Grid>
 
                 <Grid item>
-                  <Grid container spacing={2}>
+                  <Grid container spacing={1}>
                     <Grid item xs={6}>
                       <DefaultTallImage
                         src={GalleryImg53}
@@ -647,41 +677,43 @@ const GalleryPage = () => {
             </Grid>
 
             <Grid item xs={12} sm={3}>
-              <Grid container direction="column">
+              <FixedHeightWrapper height="150vh" style={{gap: "6px"}}>
                 <Grid item>
-                  <DefaultImage
+                  <ResponsiveImage
                     src={GalleryImg56}
                     alt="First Row"
-                    height="30vh"
+                    height="33vh"
                   />
                 </Grid>
 
-                <Grid item style={{ marginTop: "10px" }}>
-                  <DefaultTallImage
+                <Grid item>
+                  <ResponsiveImage
                     src={GalleryImg58}
                     alt="First Row"
-                    height="121vh"
+                    height="115vh"
                   />
                 </Grid>
-              </Grid>
+                </FixedHeightWrapper>
             </Grid>
 
             <Grid item xs={12} sm={9}>
-              <Grid item>
-                <DefaultImage src={GalleryImg57} alt="First Row" />
+            <FixedHeightWrapper height="150vh">
+              <Grid item height="inherit">
+                <DefaultImage src={GalleryImg57} alt="First Row" height="100vh"/>
               </Grid>
+            </FixedHeightWrapper>
             </Grid>
 
             <Grid item xs={12} sm={3}>
-              <Grid container direction="column" spacing={1.6}>
+            <FixedHeightWrapper height="auto" style={{gap: "6px"}}>
                 <Grid item>
-                  <DefaultImage src={GalleryImg59} alt="First Row" />
+                  <ResponsiveImage src={GalleryImg59} alt="First Row" height="31vh"/>
                 </Grid>
 
                 <Grid item>
-                  <DefaultImage src={GalleryImg61} alt="First Row" />
+                  <ResponsiveImage src={GalleryImg61} alt="First Row" height="31vh"/>
                 </Grid>
-              </Grid>
+                </FixedHeightWrapper>
             </Grid>
 
             <Grid item xs={12} sm={9}>

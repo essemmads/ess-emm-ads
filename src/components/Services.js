@@ -238,7 +238,7 @@ export default function Services() {
   }, [isTab])
 
   return (
-    <Container id="ourServices">
+    <Container id="ourServices" style={{backgroundColor: "#F4F5F9"}}>
       <Title> Our Services </Title>
       <ServicesWrapper>
         {services.map((service) => (
