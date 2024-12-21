@@ -1,60 +1,58 @@
 import * as React from "react";
 import { useRef } from "react";
 import { Typography, Box } from "@mui/material";
-import bannerImage from "../images/banner-images/platform-wise.png";
+import bannerImage from "/public/images/banner-images/platform-wise.png";
 import VideoMarquee from "../components/VideoMarquee";
-import CustomCard from "./CustomCard";
+import CustomCard from "../components/CustomCard";
 import styled from "@emotion/styled";
-import buildingImage from "../images/card-images/entrance-arch-card.png";
-import escalatorCard from "../images/card-images/escalator-branding-card.jpg";
-import liftcard from "../images/card-images/lift-card.png";
-import platformIndicationCard from "../images/card-images/platform-indication-card.png";
-import stationBoardCard from "../images/card-images/station-board-card.png";
-import waterHydrantBoardCard from "../images/card-images/water-hydrant-card.png";
-import escalatorBranding1 from "../images/escalator-branding/escalator-1.png";
-import escalatorBranding2 from "../images/escalator-branding/escalator-2.png";
-import escalatorBranding3 from "../images/escalator-branding/escalator-3.png";
-import escalatorBranding4 from "../images/escalator-branding/escalator-4.png";
-import escalatorBranding5 from "../images/escalator-branding/escalator-5.png";
-import escalatorBranding6 from "../images/escalator-branding/escalator-6.png";
+import escalatorCard from "/public/images/card-images/escalator-branding-card.jpg";
+import liftcard from "/public/images/card-images/lift-card.png";
+import platformIndicationCard from "/public/images/card-images/platform-indication-card.png";
+import stationBoardCard from "/public/images/card-images/station-board-card.png";
+import waterHydrantBoardCard from "/public/images/card-images/water-hydrant-card.png";
+import escalatorBranding1 from "/public/images/escalator-branding/escalator-1.png";
+import escalatorBranding2 from "/public/images/escalator-branding/escalator-2.png";
+import escalatorBranding3 from "/public/images/escalator-branding/escalator-3.png";
+import escalatorBranding4 from "/public/images/escalator-branding/escalator-4.png";
+import escalatorBranding5 from "/public/images/escalator-branding/escalator-5.png";
+import escalatorBranding6 from "/public/images/escalator-branding/escalator-6.png";
 
-import liftBranding1 from "../images/lift-branding/lift-1.png";
-import liftBranding2 from "../images/lift-branding/lift-2.png";
-import liftBranding3 from "../images/lift-branding/lift-3.png";
-import liftBranding4 from "../images/lift-branding/lift-4.png";
-import liftBranding5 from "../images/lift-branding/lift-5.png";
-import liftBranding6 from "../images/lift-branding/lift-6.png";
+import liftBranding1 from "/public/images/lift-branding/lift-1.png";
+import liftBranding2 from "/public/images/lift-branding/lift-2.png";
+import liftBranding3 from "/public/images/lift-branding/lift-3.png";
+import liftBranding4 from "/public/images/lift-branding/lift-4.png";
+import liftBranding5 from "/public/images/lift-branding/lift-5.png";
+import liftBranding6 from "/public/images/lift-branding/lift-6.png";
 
-import roofBranding1 from "../images/roof-board-branding/roof-1.png";
-import roofBranding2 from "../images/roof-board-branding/roof-2.png";
-import roofBranding3 from "../images/roof-board-branding/roof-3.png";
-import roofBranding4 from "../images/roof-board-branding/roof-4.png";
-import roofBranding5 from "../images/roof-board-branding/roof-5.png";
-import roofBranding6 from "../images/roof-board-branding/roof-6.png";
+import roofBranding1 from "/public/images/roof-board-branding/roof-1.png";
+import roofBranding2 from "/public/images/roof-board-branding/roof-2.png";
+import roofBranding3 from "/public/images/roof-board-branding/roof-3.png";
+import roofBranding4 from "/public/images/roof-board-branding/roof-4.png";
+import roofBranding5 from "/public/images/roof-board-branding/roof-5.png";
+import roofBranding6 from "/public/images/roof-board-branding/roof-6.png";
 
-import stationBranding1 from "../images/station-boards/station-board-1.png";
-import stationBranding2 from "../images/station-boards/station-board-2.png";
-import stationBranding3 from "../images/station-boards/station-board-3.png";
-import stationBranding4 from "../images/station-boards/station-board-4.png";
-import stationBranding5 from "../images/station-boards/station-board-5.png";
-import stationBranding6 from "../images/station-boards/station-board-6.png";
+import stationBranding1 from "/public/images/station-boards/station-board-1.png";
+import stationBranding2 from "/public/images/station-boards/station-board-2.png";
+import stationBranding3 from "/public/images/station-boards/station-board-3.png";
+import stationBranding4 from "/public/images/station-boards/station-board-4.png";
+import stationBranding5 from "/public/images/station-boards/station-board-5.png";
+import stationBranding6 from "/public/images/station-boards/station-board-6.png";
 
-import waterHydrant1 from "../images/water-hydrant-boards/water-hydrant-1.png";
-import waterHydrant2 from "../images/water-hydrant-boards/water-hydrant-2.png";
-import waterHydrant3 from "../images/water-hydrant-boards/water-hydrant-3.png";
-import waterHydrant4 from "../images/water-hydrant-boards/water-hydrant-4.png";
-import waterHydrant5 from "../images/water-hydrant-boards/water-hydrant-5.png";
-import waterHydrant6 from "../images/water-hydrant-boards/water-hydrant-6.png";
+import waterHydrant1 from "/public/images/water-hydrant-boards/water-hydrant-1.png";
+import waterHydrant2 from "/public/images/water-hydrant-boards/water-hydrant-2.png";
+import waterHydrant3 from "/public/images/water-hydrant-boards/water-hydrant-3.png";
+import waterHydrant4 from "/public/images/water-hydrant-boards/water-hydrant-4.png";
+import waterHydrant5 from "/public/images/water-hydrant-boards/water-hydrant-5.png";
+import waterHydrant6 from "/public/images/water-hydrant-boards/water-hydrant-6.png";
 
-import platformBranding1 from "../images/platform-branding/platform-1.png";
-import platformBranding2 from "../images/platform-branding/platform-2.png";
-import platformBranding3 from "../images/platform-branding/platform-3.png";
-import platformBranding4 from "../images/platform-branding/platform-4.png";
-import platformBranding5 from "../images/platform-branding/platform-5.png";
-import platformBranding6 from "../images/platform-branding/platform-6.png";
-
-
+import platformBranding1 from "/public/images/platform-branding/platform-1.png";
+import platformBranding2 from "/public/images/platform-branding/platform-2.png";
+import platformBranding3 from "/public/images/platform-branding/platform-3.png";
+import platformBranding4 from "/public/images/platform-branding/platform-4.png";
+import platformBranding5 from "/public/images/platform-branding/platform-5.png";
+import platformBranding6 from "/public/images/platform-branding/platform-6.png";
 import ImageGrid from "../components/ImageGrid";
+import Image from "next/image";
 
 const StyledFlexContainer = styled(Box)`
   display: flex;
@@ -71,10 +69,7 @@ const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
-
-  @media only screen and (max-width: 1400px) {
-    height: 60vh;
-  }
+  height: 70vh;
 `;
 
 const OverlayText = styled(Box)`
@@ -122,11 +117,20 @@ const LineTextContainer = styled(Box)`
 const ContentContainer = styled.div`
   width: 90%;
   margin: 0 45px;
+
+  @media (max-width: 750px) {
+    margin: 0 auto;
+  }
 `;
 
 const SectionHeading = styled(Typography)`
   font-weight: 700;
   padding: 40px 0px 15px 45px;
+
+  @media (max-width: 750px) {
+    padding: 40px 0px 15px 0px;
+    text-align: center;
+  }
 `;
 
 const ContentText = styled(Typography)`
@@ -275,16 +279,21 @@ export default function PlatformWiseBranding() {
   return (
     <div style={{ backgroundColor: "#f0f0f0" }}>
       <ImageContainer>
-        <Box
-          component="img"
-          src={bannerImage}
-          alt="Banner"
+       <Box
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            position: "relative",
           }}
-        />
+        >
+          <Image
+            src={bannerImage}
+            alt="Banner"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            quality={100}
+          />
         <OverlayText>
           <LineTextContainer>
             <Typography variant="subtitle1" sx={TypographyText.subtitle1}>
@@ -302,6 +311,7 @@ export default function PlatformWiseBranding() {
             engagement among passengers.
           </Typography>
         </OverlayText>
+        </Box>
       </ImageContainer>
       <Typography
         variant="h4"

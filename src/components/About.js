@@ -1,12 +1,13 @@
 import * as React from "react";
 import { Card, CardContent, Typography, Button, Box } from "@mui/material";
 import styled from "@emotion/styled";
-import aboutImage from "../images/bg-vector.png";
-import sideImage from "../images/illustrator.png";
-import essArrLogo from "../images/ess-arr-logo.png";
-import { useNavigate } from "react-router-dom";
+import aboutImage from "/public/images/bg-vector.png";
+import sideImage from "/public/images/illustrator.png";
+import essArrLogo from "/public/images/ess-arr-logo.png";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
-
+// Styled container for the full background image
 const StyledContainer = styled(Box)`
   display: flex;
   justify-content: space-around;
@@ -15,31 +16,29 @@ const StyledContainer = styled(Box)`
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   margin: 80px 0;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 900px) {
     flex-direction: column-reverse;
     height: auto;
   }
 `;
 
-const BackgroundImage = styled(Box)`
-  background-image: url(${aboutImage});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
+// Container for content positioning
+const ContentWrapper = styled(Box)`
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 0.9;
-
-  @media only screen and (max-width: 750px) {
-    display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  
+  @media only screen and (max-width: 900px) {
+    padding: 0;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -52,12 +51,12 @@ const StyledCard = styled(Card)`
   z-index: 2;
   border-radius: 10px;
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 900px) {
     width: 60%;
   }
   
   @media only screen and (max-width: 500px) {
-    width: 100%;
+    width: auto;
     padding: 20px;
   }
 `;
@@ -72,7 +71,7 @@ const SideImageContainer = styled(Box)`
     height: auto;
   }
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 900px) {
     width: 80%;
     padding-left: 0;
     margin-bottom: 20px;
@@ -109,44 +108,66 @@ const StyledButton = styled(Button)`
   }
 `;
 
+const BackgroundImageContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
 export default function About() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <StyledContainer id="aboutUsSection">
-      <BackgroundImage />
+      <BackgroundImageContainer>
+        <Image
+          src={aboutImage}
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          quality={100}
+          priority
+        />
+      </BackgroundImageContainer>
 
-      <StyledCard variant="outlined">
-        <CardContent>
-        <img src={essArrLogo} alt="Ess Emm Railway Ads" style={{display: "flex", justifySelf: "center", width: "50%"}}/>
+      <ContentWrapper>
+        <StyledCard variant="outlined">
+          <CardContent>
+            <Image
+              src={essArrLogo}
+              alt="Ess Emm Railway Ads"
+              style={{ display: "flex", justifySelf: "center", width: "50%", height: "50%" }}
+            />
 
+            <Box display="flex" alignItems="center" sx={{ marginBottom: "16px", paddingTop: "50px" }}>
+              <Divider variant="h6">|</Divider>
+              <Title variant="h6">About</Title>
+            </Box>
 
-          <Box display="flex" alignItems="center" sx={{ marginBottom: "16px", paddingTop: "50px" }}>
-            <Divider variant="h6">|</Divider>
-            <Title variant="h6">About</Title>
-          </Box>
+            <Description variant="body2">
+              In the ever-evolving world of advertising, staying ahead of the curve is essential. With 25 years of experience, we’ve carved out a niche that merges creativity with strategic solutions. Our journey began in the vibrant city of Madurai, where our passion for innovative advertising took root. Today, we proudly oversee operations in more than 25 railway stations across Tamil Nadu, transforming the way brands connect with their audiences.
+            </Description>
 
-          <Description variant="body2">
-            In the ever-evolving world of advertising, staying ahead of the
-            curve is essential. With 25 years of experience, we’ve carved out a
-            niche that merges creativity with strategic solutions. Our journey
-            began in the vibrant city of Madurai, where our passion for
-            innovative advertising took root. Today, we proudly oversee
-            operations in more than 25 railway stations across Tamil Nadu,
-            transforming the way brands connect with their audiences.
-          </Description>
+            <Box display="flex" justifyContent="center">
+              <StyledButton variant="contained" onClick={() => router.push('/about-us')}>
+                MORE ABOUT US
+              </StyledButton>
+            </Box>
+          </CardContent>
+        </StyledCard>
 
-          <Box display="flex" justifyContent="center">
-            <StyledButton variant="contained" onClick={() => navigate('/about-us')}>
-              MORE ABOUT US
-            </StyledButton>
-          </Box>
-        </CardContent>
-      </StyledCard>
-
-      <SideImageContainer>
-        <img src={sideImage} alt="Side Graphic" />
-      </SideImageContainer>
+        <SideImageContainer>
+          <Image src={sideImage} alt="Side Graphic" />
+        </SideImageContainer>
+      </ContentWrapper>
     </StyledContainer>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
@@ -11,11 +11,13 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import essArrLogo from "../images/ess-arr-logo.png";
+import essArrLogo from "/public/images/ess-arr-logo.png";
 import styled from "@emotion/styled";
 import { Menu, MenuItem, useMediaQuery } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import Image from "next/image";
+
 
 const Container = styled.div`
   display: flex;
@@ -100,7 +102,7 @@ const TextButton = styled(Button)`
 `;
 
 export default function SubHeader() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [serviceMenuAnchor, setServiceMenuAnchor] = useState(null);
   const [serviceMenuOpen, setServiceMenuOpen] = useState(false);
@@ -125,7 +127,7 @@ export default function SubHeader() {
     setDrawerOpen(false);
     setServiceMenuAnchor(null);
     const formattedService = service.toLowerCase().replace(/\s+/g, "-");
-    navigate(`/${formattedService}`);
+    router.push(`/${formattedService}`);
   };
 
   const toggleDrawer = (open) => (event) => {
@@ -160,7 +162,7 @@ export default function SubHeader() {
           <ListItemButton
             onClick={(event) => {
               if (event.target.tagName !== "svg") toggleDrawer(false)(event);
-              navigate("/");
+              router.push("/");
             }}
           >
             <ListItemText primary="Home" />
@@ -170,7 +172,7 @@ export default function SubHeader() {
           <ListItemButton
             onClick={(event) => {
               if (event.target.tagName !== "svg") toggleDrawer(false)(event);
-              navigate("/about-us");
+              router.push("/about-us");
             }}
           >
             <ListItemText primary="About Us" />
@@ -194,7 +196,7 @@ export default function SubHeader() {
           <ListItemButton
             onClick={(event) => {
               if (event.target.tagName !== "svg") toggleDrawer(false)(event);
-              navigate("/gallery");
+              router.push("/gallery");
             }}
           >
             <ListItemText primary="Gallery" />
@@ -204,7 +206,7 @@ export default function SubHeader() {
           <ListItemButton
             onClick={(event) => {
               if (event.target.tagName !== "svg") toggleDrawer(false)(event);
-              navigate("/contact-us");
+              router.push("/contact-us");
             }}
           >
             <ListItemText primary="Contact Us" />
@@ -233,17 +235,17 @@ export default function SubHeader() {
       )}
 
       <ImageContainer>
-        <img
+        <Image
           src={essArrLogo}
           alt="Ess Emm Railway Ads"
           style={{ cursor: "pointer" }}
-          onClick={() => navigate("/")}
+          onClick={() => router.push("/")}
         />
       </ImageContainer>
 
       <DesktopMenu>
-        <TextButton onClick={() => navigate("/")}>Home</TextButton>
-        <TextButton onClick={() => navigate("/about-us")}>About us</TextButton>
+        <TextButton onClick={() => router.push("/")}>Home</TextButton>
+        <TextButton onClick={() => router.push("/about-us")}>About us</TextButton>
         <TextButton onClick={handleServiceClick}>
           Services <ArrowDropDownIcon />
         </TextButton>
@@ -262,14 +264,14 @@ export default function SubHeader() {
             </MenuItem>
           ))}
         </Menu>
-        <TextButton onClick={() => navigate("/gallery")}>Gallery</TextButton>
-        <TextButton onClick={() => navigate("/contact-us")}>
+        <TextButton onClick={() => router.push("/gallery")}>Gallery</TextButton>
+        <TextButton onClick={() => router.push("/contact-us")}>
           Contact us
         </TextButton>
 
         <GetAQuoteButton
           onClick={() => {
-            navigate("/");
+            router.push("/");
             setTimeout(() => {
               document.getElementById("contactUsSection")?.scrollIntoView({
                 behavior: "smooth",

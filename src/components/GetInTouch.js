@@ -14,7 +14,9 @@ const Container = styled(Box)`
   }
 `;
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button, {
+  shouldForwardProp: (prop) => prop !== 'isContactUsSection',
+})`
   position: relative;
   width: auto;
   top: ${({ isContactUsSection }) => (isContactUsSection ? "120px" : "")};
@@ -24,7 +26,9 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const StyledGrid = styled(Grid)`
+const StyledGrid = styled(Grid, {
+  shouldForwardProp: (prop) => prop !== 'isContactUsSection',
+})`
   padding-left: ${({ isContactUsSection }) =>
     isContactUsSection ? "0%" : "15%"};
 
@@ -69,6 +73,7 @@ export default function GetInTouch({ isContactUsSection = false }) {
   };
 
   const handleSubmit = (event) => {
+    console.log("Here: " + process.env)
     event.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
@@ -85,13 +90,16 @@ export default function GetInTouch({ isContactUsSection = false }) {
       from_phone: formValues.phone,
       message: formValues.message,
     };
+    console.log("formData: ". formData)
+    console.log("process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID: ", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID)
+
 
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         formData,
-        process.env.REACT_APP_EMAILJS_API_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID
       )
       .then(
         (response) => {

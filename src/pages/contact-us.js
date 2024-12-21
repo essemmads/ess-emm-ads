@@ -1,28 +1,19 @@
 import * as React from "react";
 import { Typography, Box, Container, Grid } from "@mui/material";
-import contactImage from "../images/contact-us-banner.jpg";
-import contactUsIllustrator from "../images/contact-us-illustrator.png";
-import GetInTouch from "./GetInTouch";
-import CardSection from "./CardSection";
+import bannerImage from "/public/images/contact-us-banner.jpg";
+import contactUsIllustrator from "/public/images/contact-us-illustrator.png";
+import GetInTouch from "../components/GetInTouch";
+import CardSection from "../components/CardSection";
 import styled from "@emotion/styled";
 import VideoMarquee from "../components/VideoMarquee";
+import Image from "next/image";
+
 
 const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
-  overflow: hidden;
   margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 900px) {
-    height: 300px;
-  }
-
-  @media (max-width: 600px) {
-    height: 250px;
-  }
+  height: 70vh;
 `;
 
 const BannerImage = styled(Box)`
@@ -69,18 +60,22 @@ const LineTextContainer = styled(Box)`
   }
 `;
 
-const IllustratorContainer = styled(Box)`
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const StyledImage = styled(Image)`
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
 
   @media (max-width: 900px) {
     display: none;
   }
+`;
+
+const IllustratorContainer = styled(Grid)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledBox = styled(Box)`
@@ -115,7 +110,21 @@ export default function ContactUs() {
   return (
     <div>
       <ImageContainer>
-        <BannerImage component="img" src={contactImage} alt="Banner" />
+        <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+              position: "relative",
+            }}
+          >
+            <Image
+              src={bannerImage}
+              alt="Banner"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              quality={100}
+            />
         <OverlayText>
           <LineTextContainer>
             <Typography
@@ -142,6 +151,7 @@ export default function ContactUs() {
             Assisting You
           </Typography>
         </OverlayText>
+        </Box>
       </ImageContainer>
 
       <Typography
@@ -162,22 +172,15 @@ export default function ContactUs() {
         justifyContent="space-around"
         sx={{ margin: "10% auto", width: "100%" }}
       >
-        <Grid
-          item
-          xs={12}
-          md={4}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <IllustratorContainer
-            component="img"
-            src={contactUsIllustrator}
-            alt="Contact Illustration"
-          />
-        </Grid>
+      <IllustratorContainer item xs={12} md={4}>
+        <StyledImage
+          src={contactUsIllustrator}
+          alt="Contact Illustration"
+          width="100%"
+          height="auto"
+        />
+      </IllustratorContainer>
+
 
         <Grid
           item

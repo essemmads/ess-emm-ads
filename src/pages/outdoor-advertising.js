@@ -1,59 +1,59 @@
 import * as React from "react";
 import { useRef } from "react";
 import { Typography, Box } from "@mui/material";
-import bannerImage from "../images/banner-images/outdoor-ad.png";
+import bannerImage from "/public/images/banner-images/outdoor-ad.png";
 import VideoMarquee from "../components/VideoMarquee";
-import CustomCard from "./CustomCard";
+import CustomCard from "../components/CustomCard";
 import styled from "@emotion/styled";
-import pathwayCard from "../images/card-images/pathway-card.png";
-import billBoardCard from "../images/card-images/billboard-card.png";
-import entranceArchCard from "../images/card-images/entrance-arch-card.png";
-import fourSidePoleCard from "../images/card-images/four-side-pole-card.png";
-import poleKioskCard from "../images/card-images/pole-kiosk-card.png";
-import railwayCrossingCard from "../images/card-images/railway-crossing-card.png";
+import pathwayCard from "/public/images/card-images/pathway-card.png";
+import billBoardCard from "/public/images/card-images/billboard-card.png";
+import entranceArchCard from "/public/images/card-images/entrance-arch-card.png";
+import fourSidePoleCard from "/public/images/card-images/four-side-pole-card.png";
+import poleKioskCard from "/public/images/card-images/pole-kiosk-card.png";
+import railwayCrossingCard from "/public/images/card-images/railway-crossing-card.png";
 
-import pathway1 from "../images/pathway/pathway-1.png";
-import pathway2 from "../images/pathway/pathway-2.png";
-import pathway3 from "../images/pathway/pathway-3.png";
-import pathway4 from "../images/pathway/pathway-4.png";
-import pathway5 from "../images/pathway/pathway-5.png";
-import pathway6 from "../images/pathway/pathway-6.png";
+import pathway1 from "/public/images/pathway/pathway-1.png";
+import pathway2 from "/public/images/pathway/pathway-2.png";
+import pathway3 from "/public/images/pathway/pathway-3.png";
+import pathway4 from "/public/images/pathway/pathway-4.png";
+import pathway5 from "/public/images/pathway/pathway-5.png";
+import pathway6 from "/public/images/pathway/pathway-6.png";
 
-import billboard1 from "../images/billboard/billboard-1.png";
-import billboard2 from "../images/billboard/billboard-2.png";
-import billboard3 from "../images/billboard/billboard-3.png";
-import billboard4 from "../images/billboard/billboard-4.png";
-import billboard5 from "../images/billboard/billboard-5.png";
-import billboard6 from "../images/billboard/billboard-6.png";
+import billboard1 from "/public/images/billboard/billboard-1.png";
+import billboard2 from "/public/images/billboard/billboard-2.png";
+import billboard3 from "/public/images/billboard/billboard-3.png";
+import billboard4 from "/public/images/billboard/billboard-4.png";
+import billboard5 from "/public/images/billboard/billboard-5.png";
+import billboard6 from "/public/images/billboard/billboard-6.png";
 
-import entranceArch1 from "../images/entrance-arch/entrance-arch-1.png";
-import entranceArch2 from "../images/entrance-arch/entrance-arch-2.png";
-import entranceArch3 from "../images/entrance-arch/entrance-arch-3.png";
-import entranceArch4 from "../images/entrance-arch/entrance-arch-4.png";
-import entranceArch5 from "../images/entrance-arch/entrance-arch-5.png";
-import entranceArch6 from "../images/entrance-arch/entrance-arch-6.png";
+import entranceArch1 from "/public/images/entrance-arch/entrance-arch-1.png";
+import entranceArch2 from "/public/images/entrance-arch/entrance-arch-2.png";
+import entranceArch3 from "/public/images/entrance-arch/entrance-arch-3.png";
+import entranceArch4 from "/public/images/entrance-arch/entrance-arch-4.png";
+import entranceArch5 from "/public/images/entrance-arch/entrance-arch-5.png";
+import entranceArch6 from "/public/images/entrance-arch/entrance-arch-6.png";
 
-import fourSidePole1 from "../images/four-side-pole/pole-1.png";
-import fourSidePole2 from "../images/four-side-pole/pole-2.png";
-import fourSidePole3 from "../images/four-side-pole/pole-3.png";
-import fourSidePole4 from "../images/four-side-pole/pole-4.png";
-import fourSidePole5 from "../images/four-side-pole/pole-5.png";
-import fourSidePole6 from "../images/four-side-pole/pole-6.png";
+import fourSidePole1 from "/public/images/four-side-pole/pole-1.png";
+import fourSidePole2 from "/public/images/four-side-pole/pole-2.png";
+import fourSidePole3 from "/public/images/four-side-pole/pole-3.png";
+import fourSidePole4 from "/public/images/four-side-pole/pole-4.png";
+import fourSidePole5 from "/public/images/four-side-pole/pole-5.png";
+import fourSidePole6 from "/public/images/four-side-pole/pole-6.png";
 
-import poleKiosk1 from "../images/pole-kiosk/pole-kiosk-1.png";
-import poleKiosk2 from "../images/pole-kiosk/pole-kiosk-2.png";
-import poleKiosk3 from "../images/pole-kiosk/pole-kiosk-3.png";
-import poleKiosk4 from "../images/pole-kiosk/pole-kiosk-4.png";
-import poleKiosk5 from "../images/pole-kiosk/pole-kiosk-5.png";
-import poleKiosk6 from "../images/pole-kiosk/pole-kiosk-6.png";
+import poleKiosk1 from "/public/images/pole-kiosk/pole-kiosk-1.png";
+import poleKiosk2 from "/public/images/pole-kiosk/pole-kiosk-2.png";
+import poleKiosk3 from "/public/images/pole-kiosk/pole-kiosk-3.png";
+import poleKiosk4 from "/public/images/pole-kiosk/pole-kiosk-4.png";
+import poleKiosk5 from "/public/images/pole-kiosk/pole-kiosk-5.png";
+import poleKiosk6 from "/public/images/pole-kiosk/pole-kiosk-6.png";
 
-import railwayCrossing1 from "../images/railway-crossing/crossing-1.png";
-import railwayCrossing2 from "../images/railway-crossing/crossing-2.png";
-import railwayCrossing3 from "../images/railway-crossing/crossing-3.png";
-import railwayCrossing4 from "../images/railway-crossing/crossing-4.png";
-import railwayCrossing5 from "../images/railway-crossing/crossing-5.png";
-import railwayCrossing6 from "../images/railway-crossing/crossing-6.png";
-
+import railwayCrossing1 from "/public/images/railway-crossing/crossing-1.png";
+import railwayCrossing2 from "/public/images/railway-crossing/crossing-2.png";
+import railwayCrossing3 from "/public/images/railway-crossing/crossing-3.png";
+import railwayCrossing4 from "/public/images/railway-crossing/crossing-4.png";
+import railwayCrossing5 from "/public/images/railway-crossing/crossing-5.png";
+import railwayCrossing6 from "/public/images/railway-crossing/crossing-6.png";
+import Image from "next/image";
 import ImageGrid from "../components/ImageGrid";
 
 const StyledFlexContainer = styled(Box)`
@@ -70,10 +70,7 @@ const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
-
-  @media only screen and (max-width: 1300px) {
-    height: 60vh;
-  }
+  height: 70vh;
 `;
 
 const OverlayText = styled(Box)`
@@ -119,11 +116,20 @@ const LineTextContainer = styled(Box)`
 const ContentContainer = styled.div`
   width: 90%;
   margin: 0 45px;
+
+  @media (max-width: 750px) {
+    margin: 0 auto;
+  }
 `;
 
 const SectionHeading = styled(Typography)`
   font-weight: 700;
   padding: 40px 0px 15px 45px;
+
+  @media (max-width: 750px) {
+    padding: 40px 0px 15px 0px;
+    text-align: center;
+  }
 `;
 
 const ContentText = styled(Typography)`
@@ -263,15 +269,20 @@ export default function OutdoorAdvertising() {
   return (
     <div style={{ backgroundColor: "#f0f0f0" }}>
       <ImageContainer>
-        <Box
-          component="img"
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+        }}
+      >
+        <Image
           src={bannerImage}
           alt="Banner"
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          quality={100}
         />
         <OverlayText>
           <LineTextContainer>
@@ -290,6 +301,7 @@ export default function OutdoorAdvertising() {
             outdoor advertisements.
           </Typography>
         </OverlayText>
+      </Box>
       </ImageContainer>
 
       <Typography

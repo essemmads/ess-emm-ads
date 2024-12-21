@@ -1,60 +1,60 @@
 import * as React from "react";
 import { useRef } from "react";
 import { Typography, Box, Chip } from "@mui/material";
-import bannerImage from "../images/banner-images/train-branding.png";
+import bannerImage from "/public/images/banner-images/train-branding.png";
 import VideoMarquee from "../components/VideoMarquee";
-import CustomCard from "./CustomCard";
+import CustomCard from "../components/CustomCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/react";
-import interiorMirrorCard from "../images/card-images/mirror-branding-card.png";
-import interiorPanelCard from "../images/card-images/panel-branding-card.png";
-import glassdoorCard from "../images/card-images/glassdoor-branding-card.png";
-import foodTrayCard from "../images/card-images/food-tray-card.png";
-import trainWrappingCard from "../images/card-images/train-wrapping-card.png";
-import trainEnginePaintingCard from "../images/card-images/train-engine-painting-card.png";
+import interiorMirrorCard from "/public/images/card-images/mirror-branding-card.png";
+import interiorPanelCard from "/public/images/card-images/panel-branding-card.png";
+import glassdoorCard from "/public/images/card-images/glassdoor-branding-card.png";
+import foodTrayCard from "/public/images/card-images/food-tray-card.png";
+import trainWrappingCard from "/public/images/card-images/train-wrapping-card.png";
+import trainEnginePaintingCard from "/public/images/card-images/train-engine-painting-card.png";
 
-import mirrorBranding1 from "../images/mirror-branding/mirror-1.png";
-import mirrorBranding2 from "../images/mirror-branding/mirror-2.png";
-import mirrorBranding3 from "../images/mirror-branding/mirror-3.png";
-import mirrorBranding4 from "../images/mirror-branding/mirror-4.png";
-import mirrorBranding5 from "../images/mirror-branding/mirror-5.png";
-import mirrorBranding6 from "../images/mirror-branding/mirror-6.png";
+import mirrorBranding1 from "/public/images/mirror-branding/mirror-1.png";
+import mirrorBranding2 from "/public/images/mirror-branding/mirror-2.png";
+import mirrorBranding3 from "/public/images/mirror-branding/mirror-3.png";
+import mirrorBranding4 from "/public/images/mirror-branding/mirror-4.png";
+import mirrorBranding5 from "/public/images/mirror-branding/mirror-5.png";
+import mirrorBranding6 from "/public/images/mirror-branding/mirror-6.png";
 
-import panelBranding1 from "../images/panel-branding/panel-1.png";
-import panelBranding2 from "../images/panel-branding/panel-2.png";
-import panelBranding3 from "../images/panel-branding/panel-3.png";
-import panelBranding4 from "../images/panel-branding/panel-4.png";
-import panelBranding5 from "../images/panel-branding/panel-5.png";
-import panelBranding6 from "../images/panel-branding/panel-6.png";
+import panelBranding1 from "/public/images/panel-branding/panel-1.png";
+import panelBranding2 from "/public/images/panel-branding/panel-2.png";
+import panelBranding3 from "/public/images/panel-branding/panel-3.png";
+import panelBranding4 from "/public/images/panel-branding/panel-4.png";
+import panelBranding5 from "/public/images/panel-branding/panel-5.png";
+import panelBranding6 from "/public/images/panel-branding/panel-6.png";
 
-import glassdoorBranding1 from "../images/door-branding/door-1.png";
-import glassdoorBranding2 from "../images/door-branding/door-2.png";
-import glassdoorBranding3 from "../images/door-branding/door-3.png";
-import glassdoorBranding4 from "../images/door-branding/door-4.png";
-import glassdoorBranding5 from "../images/door-branding/door-5.png";
-import glassdoorBranding6 from "../images/door-branding/door-6.png";
+import glassdoorBranding1 from "/public/images/door-branding/door-1.png";
+import glassdoorBranding2 from "/public/images/door-branding/door-2.png";
+import glassdoorBranding3 from "/public/images/door-branding/door-3.png";
+import glassdoorBranding4 from "/public/images/door-branding/door-4.png";
+import glassdoorBranding5 from "/public/images/door-branding/door-5.png";
+import glassdoorBranding6 from "/public/images/door-branding/door-6.png";
 
-import foodTray1 from "../images/food-tray/tray-1.png";
-import foodTray2 from "../images/food-tray/tray-2.png";
-import foodTray3 from "../images/food-tray/tray-3.png";
-import foodTray4 from "../images/food-tray/tray-4.jpg";
-import foodTray5 from "../images/food-tray/tray-5.png";
-import foodTray6 from "../images/food-tray/tray-6.png";
+import foodTray1 from "/public/images/food-tray/tray-1.png";
+import foodTray2 from "/public/images/food-tray/tray-2.png";
+import foodTray3 from "/public/images/food-tray/tray-3.png";
+import foodTray4 from "/public/images/food-tray/tray-4.jpg";
+import foodTray5 from "/public/images/food-tray/tray-5.png";
+import foodTray6 from "/public/images/food-tray/tray-6.png";
 
-import trainWrapping1 from "../images/exterior-wrapping/exterior-1.png";
-import trainWrapping2 from "../images/exterior-wrapping/exterior-2.png";
-import trainWrapping3 from "../images/exterior-wrapping/exterior-3.png";
-import trainWrapping4 from "../images/exterior-wrapping/exterior-4.png";
-import trainWrapping5 from "../images/exterior-wrapping/exterior-5.png";
-import trainWrapping6 from "../images/exterior-wrapping/exterior-6.png";
+import trainWrapping1 from "/public/images/exterior-wrapping/exterior-1.png";
+import trainWrapping2 from "/public/images/exterior-wrapping/exterior-2.png";
+import trainWrapping3 from "/public/images/exterior-wrapping/exterior-3.png";
+import trainWrapping4 from "/public/images/exterior-wrapping/exterior-4.png";
+import trainWrapping5 from "/public/images/exterior-wrapping/exterior-5.png";
+import trainWrapping6 from "/public/images/exterior-wrapping/exterior-6.png";
 
-import enginePainting1 from "../images/engine-painting/engine-painting-1.png";
-import enginePainting2 from "../images/engine-painting/engine-painting-2.png";
-import enginePainting3 from "../images/engine-painting/engine-painting-3.png";
-
+import enginePainting1 from "/public/images/engine-painting/engine-painting-1.png";
+import enginePainting2 from "/public/images/engine-painting/engine-painting-2.png";
+import enginePainting3 from "/public/images/engine-painting/engine-painting-3.png";
+import Image from "next/image";
 import ImageGrid from "../components/ImageGrid";
 
 const StyledSliderContainer = styled(Box)`
@@ -98,28 +98,29 @@ const StyledFlexContainer = styled(Box)`
     width: 60%;
   }
 
-  @media only screen and (max-width: 1000px) {
-    width: auto;
+  @media only screen and (max-width: 900px) {
+    width: 100%;
     flex-direction: column;
-    justify-self: center;
-    margin: 0;
+    margin: 0 auto;
+    gap: 20px;
+    align-content: center;
 
     & > div {
       width: 100%;
       height: auto;
+      display: flex;
+      justify-content: center;
     }
   }
 `;
+
 
 
 const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
-
-  @media only screen and (max-width: 1200px) {
-    height: 60vh;
-  }
+  height: 70vh;
 `;
 
 const OverlayText = styled(Box)`
@@ -168,45 +169,60 @@ const GlobalSlickDotsStyles = () => (
   <Global
     styles={css`
       .slick-dots {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 70px;
-        background-color: #bfbfbf;
-        border-radius: 20px;
-        padding-left: 6px;
-        margin: 0 auto;
-        position: relative;
-        bottom: -20px;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 70px !important; /* Auto-width based on content */
+        background-color: #bfbfbf !important;
+        border-radius: 20px !important;
+        padding-top: 6px !important; /* Space around the dots */
+        padding-left: 6px !important; /* Space around the dots */
+        margin: 0 auto !important;
+        position: relative !important;
+        bottom: -15px !important; /* Adjust the vertical positioning */
       }
+
       .slick-dots li {
-        margin: 0 3px;
+        margin: 0 4px !important; /* Slightly larger spacing for balance */
       }
+
       .slick-dots li button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: grey;
-        border: none;
+        width: 12px !important;
+        height: 12px !important;
+        border-radius: 50% !important;
+        background-color: grey !important;
+        border: none !important;
       }
+
       .slick-dots li.slick-active button {
-        background-color: #1976d2;
+        background-color: #1976d2 !important;
       }
+
       .slick-dots li button:before {
-        font-size: 0;
+        font-size: 0 !important;
       }
     `}
   />
 );
 
+
 const ContentContainer = styled.div`
   width: 90%;
   margin: 0 6%;
+
+  @media (max-width: 750px) {
+    margin: 0 auto;
+  }
 `;
 
 const SectionHeading = styled(Typography)`
   font-weight: 700;
   padding: 40px 0px 15px 0px;
+
+  @media (max-width: 750px) {
+    padding: 40px 0px 15px 0px;
+    text-align: center;
+  }
 `;
 
 const ContentText = styled(Typography)`
@@ -379,15 +395,20 @@ export default function TrainBranding() {
   return (
     <ResponsiveBackground>
       <ImageContainer>
-        <Box
-          component="img"
+       <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+        }}
+      >
+        <Image
           src={bannerImage}
           alt="Banner"
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          quality={100}
         />
         <OverlayText>
           <LineTextContainer>
@@ -401,6 +422,7 @@ export default function TrainBranding() {
             Interior & Exterior Branding
           </Typography>
         </OverlayText>
+        </Box>
       </ImageContainer>
       <Typography
         variant="h4"
