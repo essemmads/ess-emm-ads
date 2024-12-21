@@ -7,7 +7,7 @@ import {
   Button,
   useMediaQuery,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import styled from "@emotion/styled";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -25,6 +25,10 @@ const ServicesWrapper = styled.div`
 
   @media (max-width: 1550px) {
     gap: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding: 0;
   }
 
   @media (max-width: 750px) {
@@ -176,7 +180,7 @@ const StyledCardHeader = styled(CardHeader)`
   height: 3px;
 
   .MuiCardHeader-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
 
      @media (max-width: 600px) {
@@ -198,7 +202,7 @@ const StyledCardHeader = styled(CardHeader)`
 
 export default function Services() {
   const isTab = useMediaQuery("(max-width:900px)");
-  const navigate = useNavigate();
+  const router = useRouter();
   const [currentItem, setCurrentItem] = React.useState("TRAIN BRANDING");
 
   const services = [
@@ -228,7 +232,7 @@ export default function Services() {
 
   const handleViewMore = (service) => {
     const formattedService = service.toLowerCase().replace(/\s+/g, "-");
-    navigate(`/${formattedService}`);
+    router.push(`/${formattedService}`);
   };
 
   React.useEffect(() => {
@@ -257,7 +261,7 @@ export default function Services() {
             >
                <StyledCardHeader title={service.name}/>
               <CardContent style={{padding: "20px"}} sx={{ flexGrow: 1 }}>
-                <Typography >
+                <Typography>
                   {service.content}
                 </Typography>
               </CardContent>
@@ -282,7 +286,7 @@ export default function Services() {
       >
         <MainCard sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
           <GreyBox>
-            <div>EXTERIOR</div>
+            <Typography variant="h5" fontWeight="bold">EXTERIOR</Typography>
             <LeftContent>Ensure your message reaches a wide audience with eye-catching designs on the exterior of trains.</LeftContent>
           </GreyBox>
 
@@ -329,7 +333,7 @@ export default function Services() {
           </CenterTextWrapper>
 
           <GreyBox>
-            <div>INTERIOR</div>
+          <Typography variant="h5" fontWeight="bold">INTERIOR</Typography>
             <LeftContent>Make a lasting impression on passengers as they interact with your brand throughout their ride.</LeftContent>
           </GreyBox>
         </MainCard>

@@ -2,7 +2,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import { Typography, Button } from "@mui/material";
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 const videoSources = [
   "https://www.youtube.com/embed/sAAx2pOpIdM?si=85Qti1S0xLwjvtDC",
@@ -27,7 +27,9 @@ const StyledMarquee = styled(Marquee)`
   }
 `;
 
-const Title = styled(Typography)`
+const Title = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "isHome",
+})`
   font-weight: 400;
   padding: 40px;
   text-align: ${({ isHome }) => (isHome ? "center" : "left")};
@@ -65,7 +67,7 @@ const SectionTitle = styled(Typography)`
 `;
 
 export default function VideoMarquee({ isHome = false }) {
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <Container>
       {!isHome && <Title variant="h5">Get Started Now!</Title>}
@@ -74,7 +76,7 @@ export default function VideoMarquee({ isHome = false }) {
         <StyledButton
           variant="contained"
           color="primary"
-          onClick={() => navigate("/contact-us")}
+          onClick={() => router.push("/contact-us")}
         >
           REQUEST A QUOTE
         </StyledButton>

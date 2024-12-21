@@ -2,32 +2,33 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import styled from "@emotion/styled";
-import client_logo_1 from "../images/client-logo/client_logo_1.png";
-import client_logo_2 from "../images/client-logo/client_logo_2.png";
-import client_logo_3 from "../images/client-logo/client_logo_3.png";
-import client_logo_4 from "../images/client-logo/client_logo_4.png";
-import client_logo_5 from "../images/client-logo/client_logo_5.png";
-import client_logo_6 from "../images/client-logo/client_logo_6.png";
-import client_logo_7 from "../images/client-logo/client_logo_7.png";
-import client_logo_8 from "../images/client-logo/client_logo_8.png";
-import client_logo_9 from "../images/client-logo/client_logo_9.png";
-import client_logo_10 from "../images/client-logo/client_logo_10.png";
-import client_logo_11 from "../images/client-logo/client_logo_11.png";
-import client_logo_12 from "../images/client-logo/client_logo_12.png";
-import client_logo_13 from "../images/client-logo/client_logo_13.png";
-import client_logo_14 from "../images/client-logo/client_logo_14.png";
-import client_logo_15 from "../images/client-logo/client_logo_15.png";
-import client_logo_16 from "../images/client-logo/client_logo_16.png";
-import client_logo_17 from "../images/client-logo/client_logo_17.png";
-import client_logo_18 from "../images/client-logo/client_logo_18.png";
-import client_logo_19 from "../images/client-logo/client_logo_19.png";
-import client_logo_20 from "../images/client-logo/client_logo_20.png";
-import client_logo_21 from "../images/client-logo/client_logo_21.png";
-import client_logo_22 from "../images/client-logo/client_logo_22.png";
-import client_logo_23 from "../images/client-logo/client_logo_23.png";
-import client_logo_24 from "../images/client-logo/client_logo_24.png";
-import client_logo_25 from "../images/client-logo/client_logo_25.png";
-import client_logo_26 from "../images/client-logo/client_logo_26.png";
+import client_logo_1 from "/public/images/client-logo/client_logo_1.png";
+import client_logo_2 from "/public/images/client-logo/client_logo_2.png";
+import client_logo_3 from "/public/images/client-logo/client_logo_3.png";
+import client_logo_4 from "/public/images/client-logo/client_logo_4.png";
+import client_logo_5 from "/public/images/client-logo/client_logo_5.png";
+import client_logo_6 from "/public/images/client-logo/client_logo_6.png";
+import client_logo_7 from "/public/images/client-logo/client_logo_7.png";
+import client_logo_8 from "/public/images/client-logo/client_logo_8.png";
+import client_logo_9 from "/public/images/client-logo/client_logo_9.png";
+import client_logo_10 from "/public/images/client-logo/client_logo_10.png";
+import client_logo_11 from "/public/images/client-logo/client_logo_11.png";
+import client_logo_12 from "/public/images/client-logo/client_logo_12.png";
+import client_logo_13 from "/public/images/client-logo/client_logo_13.png";
+import client_logo_14 from "/public/images/client-logo/client_logo_14.png";
+import client_logo_15 from "/public/images/client-logo/client_logo_15.png";
+import client_logo_16 from "/public/images/client-logo/client_logo_16.png";
+import client_logo_17 from "/public/images/client-logo/client_logo_17.png";
+import client_logo_18 from "/public/images/client-logo/client_logo_18.png";
+import client_logo_19 from "/public/images/client-logo/client_logo_19.png";
+import client_logo_20 from "/public/images/client-logo/client_logo_20.png";
+import client_logo_21 from "/public/images/client-logo/client_logo_21.png";
+import client_logo_22 from "/public/images/client-logo/client_logo_22.png";
+import client_logo_23 from "/public/images/client-logo/client_logo_23.png";
+import client_logo_24 from "/public/images/client-logo/client_logo_24.png";
+import client_logo_25 from "/public/images/client-logo/client_logo_25.png";
+import client_logo_26 from "/public/images/client-logo/client_logo_26.png";
+import Image from "next/image";
 
 const imagesRow1 = [
   client_logo_1,
@@ -118,7 +119,7 @@ const CardContentWrapper = styled(CardContent)`
   padding: 20px;
 `;
 
-const ClientImage = styled("img")`
+const ClientImage = styled(Image)`
   width: 100%;
   height: auto;
 `;

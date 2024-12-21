@@ -2,11 +2,12 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import Slider from "react-slick";
 import styled from "@emotion/styled";
-import defaultProfileImage from "../images/icons/profile-icon.png";
+import defaultProfileImage from "/public/images/icons/profile-icon.png";
 import { IconButton } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Global, css } from "@emotion/react";
+import Image from "next/image";
 
 const Container = styled.div`
   padding: 80px 0;
@@ -28,7 +29,7 @@ const Title = styled(Typography)`
   font-weight: bold;
 `;
 
-const ProfileImage = styled.img`
+const ProfileImage = styled(Image)`
   border-radius: 50%;
   width: 250px;
   height: 250px;
@@ -84,20 +85,20 @@ export default function Testimonials() {
     <Global
       styles={css`
         .slick-dots {
-          bottom: -30px;
+          bottom: -30px !important;
         }
         .slick-dots li button {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background-color: grey;
-          border: none;
+          width: 12px !important;
+          height: 12px !important;
+          border-radius: 50% !important;
+          background-color: grey !important;
+          border: none !important;
         }
         .slick-dots li.slick-active button {
-          background-color: #1976d2;
+          background-color: #1976d2 !important;
         }
         .slick-dots li button:before {
-          font-size: 0;
+          font-size: 0 !important;
         }
 
         @media (max-width: 750px) {
@@ -122,7 +123,7 @@ export default function Testimonials() {
         <Box sx={{ width: "70%", margin: "0 auto" }}>
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
-              <div>
+              <div key={index}>
                 <Box
                   sx={{
                     display: "flex",

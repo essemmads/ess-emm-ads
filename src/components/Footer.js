@@ -5,7 +5,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 const FooterContainer = styled.div`
   display: flex;
@@ -17,9 +17,13 @@ const FooterContainer = styled.div`
   flex-direction: column;
   min-height: 100px;
 
-  @media (max-width: 750px) {
+  @media (max-width: 900px) {
     padding: 20px 10px;
     margin-top: 50%;
+  }
+  
+  @media (max-width: 350px) {
+    margin-top: 90%;
   }
 `;
 
@@ -68,7 +72,7 @@ const SocialIcons = styled.div`
 `;
 
 const Footer = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleNavigation = (path) => {
     document.getElementById(path)?.scrollIntoView({
@@ -93,7 +97,7 @@ const Footer = () => {
             variant="body2"
             sx={{ marginTop: "10px", marginBottom: "10px", cursor: "pointer" }}
             onClick={() => {
-              navigate("/");
+              router.push("/");
               setTimeout(() => {
                 handleNavigation("header");
               }, 300);
@@ -105,7 +109,7 @@ const Footer = () => {
             variant="body2"
             sx={{ marginBottom: "10px", cursor: "pointer" }}
             onClick={() => {
-              navigate("/");
+              router.push("/");
               setTimeout(() => {
                 handleNavigation("aboutUsSection");
               }, 300);
@@ -117,7 +121,7 @@ const Footer = () => {
             variant="body2"
             sx={{ marginBottom: "10px", cursor: "pointer" }}
             onClick={() => {
-              navigate("/");
+              router.push("/");
               setTimeout(() => {
                 handleNavigation("ourServices");
               }, 300);
@@ -129,7 +133,7 @@ const Footer = () => {
             variant="body2"
             sx={{ marginBottom: "10px", cursor: "pointer" }}
             onClick={() => {
-              navigate("/");
+              router.push("/");
               setTimeout(() => {
                 handleNavigation("contactUsSection");
               }, 300);
