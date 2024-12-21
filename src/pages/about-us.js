@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import * as React from "react";
 import { Typography, Box, Grid } from "@mui/material";
 import styled from "@emotion/styled";

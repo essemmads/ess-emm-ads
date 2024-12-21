@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, Button, Box } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import PropTypes from 'prop-types';
 
 
 const CardContainer = styled(Box)`
@@ -79,7 +80,7 @@ const CustomCard = ({ title, image, description, onViewMore }) => {
         <CardContentWrapper>
           <Image
             src={image}
-            alt={description}
+            alt={description || "Card Image"}
             style={{ width: "100%", height: "100%" }}
           />
         </CardContentWrapper>
@@ -92,6 +93,17 @@ const CustomCard = ({ title, image, description, onViewMore }) => {
       </ButtonContainer>
     </CardContainer>
   );
+};
+
+CustomCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  description: PropTypes.string,
+  onViewMore: PropTypes.func.isRequired,
+};
+
+CustomCard.defaultProps = {
+  description: "No description available",
 };
 
 export default CustomCard;

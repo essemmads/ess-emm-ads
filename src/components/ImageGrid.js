@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import PropTypes from 'prop-types';
 
 const GridContainer = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'isTrainBranding',
@@ -45,5 +46,10 @@ const ImageGrid = ({ images, isTrainBranding = false }) => (
     ))}
   </GridContainer>
 );
+
+ImageGrid.propTypes = {
+  images: PropTypes.array.isRequired,
+  isTrainBranding: PropTypes.bool,
+};
 
 export default ImageGrid;

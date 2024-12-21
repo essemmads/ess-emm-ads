@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { Typography, Box, useMediaQuery, Link } from "@mui/material";
 import GetInTouch from "./GetInTouch";

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import * as React from "react";
 import { useState } from "react";
 import { Box, Grid, TextField, Button, CircularProgress } from "@mui/material";
@@ -5,6 +6,7 @@ import emailjs from "emailjs-com";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "@emotion/styled";
+import PropTypes from 'prop-types';
 
 const Container = styled(Box)`
   margin: 30px 20px -20px 20px;
@@ -73,7 +75,6 @@ export default function GetInTouch({ isContactUsSection = false }) {
   };
 
   const handleSubmit = (event) => {
-    console.log("Here: " + process.env)
     event.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
@@ -90,9 +91,6 @@ export default function GetInTouch({ isContactUsSection = false }) {
       from_phone: formValues.phone,
       message: formValues.message,
     };
-    console.log("formData: ". formData)
-    console.log("process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID: ", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID)
-
 
     emailjs
       .send(
@@ -267,3 +265,7 @@ export default function GetInTouch({ isContactUsSection = false }) {
     </div>
   );
 }
+
+GetInTouch.propTypes = {
+  isContactUsSection: PropTypes.bool,
+};

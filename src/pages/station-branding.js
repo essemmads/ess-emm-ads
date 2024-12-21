@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import * as React from "react";
 import { useRef } from "react";
 import { Typography, Box } from "@mui/material";

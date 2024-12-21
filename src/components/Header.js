@@ -253,6 +253,7 @@ export default function Header() {
               <Box display="flex" justifyContent="space-around">
                 {socialLinks.map(({ icon, label, link }, index) => (
                   <IconButton
+                    key={index}
                     size="large"
                     aria-label="account of current user"
                     aria-controls="menu-appbar"
