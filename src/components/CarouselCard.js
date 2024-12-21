@@ -1,17 +1,18 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import adImg1 from "../images/carousel/carousel-img-1.png";
-import adImg2 from "../images/carousel/carousel-img-2.png";
-import adImg3 from "../images/carousel/carousel-img-3.png";
-import adImg4 from "../images/carousel/carousel-img-4.png";
-import adImg5 from "../images/carousel/carousel-img-5.png";
+import adImg1 from "/public/images/carousel/carousel-img-1.png";
+import adImg2 from "/public/images/carousel/carousel-img-2.png";
+import adImg3 from "/public/images/carousel/carousel-img-3.png";
+import adImg4 from "/public/images/carousel/carousel-img-4.png";
+import adImg5 from "/public/images/carousel/carousel-img-5.png";
 import { IconButton, Box } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import styled from "@emotion/styled";
+import Image from "next/image";
 
-const CarouselImage = styled.img`
+const CarouselImage = styled(Image)`
   width: 100%;
   height: auto;
   object-fit: cover;

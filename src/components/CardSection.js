@@ -1,9 +1,10 @@
 import React from "react";
 import { Box, Card, CardContent, Typography, Link } from "@mui/material";
-import { styled } from "@mui/system";
-import PhoneIcon from "../images/icons/phone-icon.png";
-import AddressIcon from "../images/icons/location-icon.png";
-import EmailIcon from "../images/icons/mail-icon.png";
+import styled from "@emotion/styled";
+import PhoneIcon from "/public/images/icons/phone-icon.png";
+import AddressIcon from "/public/images/icons/location-icon.png";
+import EmailIcon from "/public/images/icons/mail-icon.png";
+import Image from "next/image";
 
 const FadingCard = styled(Card)`
   border-radius: 25px;
@@ -74,13 +75,13 @@ const CenterCard = styled(Card)`
   }
 `;
 
-const StyledIcon = styled("img")`
+const StyledIcon = styled(Image)`
   width: 50px;
   height: auto;
   margin-top: 20%;
 `;
 
-const StyledCenterIcon = styled("img")`
+const StyledCenterIcon = styled(Image)`
   width: 50px;
   height: auto;
   margin-top: 5%;

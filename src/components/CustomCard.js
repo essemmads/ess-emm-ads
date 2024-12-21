@@ -2,6 +2,8 @@ import React from "react";
 import { Card, CardContent, CardHeader, Button, Box } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import styled from "@emotion/styled";
+import Image from "next/image";
+
 
 const CardContainer = styled(Box)`
   display: flex;
@@ -75,7 +77,7 @@ const CustomCard = ({ title, image, description, onViewMore }) => {
       <StyledCard>
         <StyledCardHeader title={title} />
         <CardContentWrapper>
-          <img
+          <Image
             src={image}
             alt={description}
             style={{ width: "100%", height: "100%" }}

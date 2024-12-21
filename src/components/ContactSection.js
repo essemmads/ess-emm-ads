@@ -1,10 +1,11 @@
 import React from "react";
 import { Typography, Box, useMediaQuery, Link } from "@mui/material";
-import GetInTouch from "../pages/GetInTouch";
-import blackPhoneIcon from "../images/icons/black-phone.png";
-import blackMailIcon from "../images/icons/black-mail.png";
-import blackLocationIcon from "../images/icons/black-location.png";
+import GetInTouch from "./GetInTouch";
+import blackPhoneIcon from "/public/images/icons/black-phone.png";
+import blackMailIcon from "/public/images/icons/black-mail.png";
+import blackLocationIcon from "/public/images/icons/black-location.png";
 import styled from "@emotion/styled";
+import Image from "next/image";
 
 const ContactContainer = styled(Box)`
   display: flex;
@@ -127,23 +128,28 @@ const SectionTitle = styled(Typography)`
   font-weight: bold;
 `;
 
-const IconContainer = styled.img`
+const IconContainer = styled(Image)`
   width: 10%;
+  height: 10%;
 
   @media (max-width: 1200px) {
     width: 15%;
+    height: 15%;
   }
 
   @media (max-width: 830px) {
     width: 7%;
+    height: 7%;
   }
 
   @media (max-width: 600px) {
     width: 10%;
+    height: 10%;
   }
 
   @media (max-width: 350px) {
     width: 15%;
+    height: 15%;
   }
 `;
 

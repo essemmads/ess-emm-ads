@@ -12,10 +12,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useMediaQuery, Card, CardContent, Button } from "@mui/material";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import CloseIcon from "@mui/icons-material/Close";
-import CallIcon from "../images/icons/phone-sm-icon.png";
-import EmailIcon from "../images/icons/mail-sm-icon.png";
+import CallIcon from "/public/images/icons/phone-sm-icon.png";
+import EmailIcon from "/public/images/icons/mail-sm-icon.png";
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 const StyledCard = styled(Card)`
   margin-bottom: 30px;
@@ -51,7 +52,7 @@ const InfoSection = styled(Link)`
 `;
 
 export default function Header() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
 
@@ -69,7 +70,7 @@ export default function Header() {
 
   const handleNavigation = () => {
     toggleDrawer(false)(); 
-    navigate("/");
+    router.push("/");
     setTimeout(() => {
       document.getElementById("contactUsSection")?.scrollIntoView({
         behavior: "smooth",
@@ -100,7 +101,7 @@ export default function Header() {
                 color="inherit"
                 aria-label="menu"
               >
-                <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
+                <Image src={CallIcon} alt="Ess Emm Railway Ads Phone" />
               </IconButton>
               <Link href="tel:+919842108493" underline="none" color="white">
                 98421 08493
@@ -112,7 +113,7 @@ export default function Header() {
                 aria-label="menu"
                 sx={{ ml: "20px" }}
               >
-                <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
+                <Image src={EmailIcon} alt="Ess Emm Railway Ads Email" />
               </IconButton>
               <Link
                 href="mailto:essarrads@gmail.com"
@@ -226,7 +227,7 @@ export default function Header() {
                   color="inherit"
                   aria-label="phone"
                 >
-                  <img src={CallIcon} alt="Ess Emm Railway Ads Phone" />
+                  <Image src={CallIcon} alt="Ess Emm Railway Ads Phone" />
                 </StyledIconButton>
                 <StyledLink href="tel:0452-2362201">0452 - 2362201</StyledLink>
               </InfoSection>
@@ -238,7 +239,7 @@ export default function Header() {
                   color="inherit"
                   aria-label="email"
                 >
-                  <img src={EmailIcon} alt="Ess Emm Railway Ads Email" />
+                  <Image src={EmailIcon} alt="Ess Emm Railway Ads Email" />
                 </StyledIconButton>
                 <StyledLink href="mailto:essarrads@gmail.com">
                   essarrads@gmail.com

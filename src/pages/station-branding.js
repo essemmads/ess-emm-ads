@@ -1,37 +1,35 @@
 import * as React from "react";
 import { useRef } from "react";
 import { Typography, Box } from "@mui/material";
-import bannerImage from "../images/banner-images/station-branding.png";
-import stationBuildingCard from "../images/card-images/station-building-card.png";
-import reservationCounterCard from "../images/card-images/reservation-counter-card.png";
-import stationBranding1 from "../images/station-building/station-branding-1.png";
-import stationBranding2 from "../images/station-building/station-branding-2.png";
-import stationBranding3 from "../images/station-building/station-branding-3.png";
-import stationBranding4 from "../images/station-building/station-branding-4.png";
-import stationBranding5 from "../images/station-building/station-branding-5.png";
-import stationBranding6 from "../images/station-building/station-branding-6.png";
-import stationBranding7 from "../images/station-building/station-branding-7.png";
-import stationBranding8 from "../images/station-building/station-branding-8.png";
-import stationBranding9 from "../images/station-building/station-branding-9.png";
-import reservationCounter1 from "../images/reservation-counter/counter-1.png";
-import reservationCounter2 from "../images/reservation-counter/counter-2.png";
-import reservationCounter3 from "../images/reservation-counter/counter-3.png";
-import reservationCounter4 from "../images/reservation-counter/counter-4.png";
-import reservationCounter5 from "../images/reservation-counter/counter-5.jpg";
-import reservationCounter6 from "../images/reservation-counter/counter-6.jpg";
+import bannerImage from "/public/images/banner-images/station-branding.png";
+import stationBuildingCard from "/public/images/card-images/station-building-card.png";
+import reservationCounterCard from "/public/images/card-images/reservation-counter-card.png";
+import stationBranding1 from "/public/images/station-building/station-branding-1.png";
+import stationBranding2 from "/public/images/station-building/station-branding-2.png";
+import stationBranding3 from "/public/images/station-building/station-branding-3.png";
+import stationBranding4 from "/public/images/station-building/station-branding-4.png";
+import stationBranding5 from "/public/images/station-building/station-branding-5.png";
+import stationBranding6 from "/public/images/station-building/station-branding-6.png";
+import stationBranding7 from "/public/images/station-building/station-branding-7.png";
+import stationBranding8 from "/public/images/station-building/station-branding-8.png";
+import stationBranding9 from "/public/images/station-building/station-branding-9.png";
+import reservationCounter1 from "/public/images/reservation-counter/counter-1.png";
+import reservationCounter2 from "/public/images/reservation-counter/counter-2.png";
+import reservationCounter3 from "/public/images/reservation-counter/counter-3.png";
+import reservationCounter4 from "/public/images/reservation-counter/counter-4.png";
+import reservationCounter5 from "/public/images/reservation-counter/counter-5.jpg";
+import reservationCounter6 from "/public/images/reservation-counter/counter-6.jpg";
 import VideoMarquee from "../components/VideoMarquee";
 import ImageGrid from "../components/ImageGrid";
-import CustomCard from "./CustomCard";
+import CustomCard from "../components/CustomCard";
 import styled from "@emotion/styled";
+import Image from "next/image";
 
 const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
-
-  @media only screen and (max-width: 1200px) {
-    height: 60vh;
-  }
+  height: 70vh;
 `;
 
 const StyledFlexContainer = styled(Box)`
@@ -90,12 +88,22 @@ const LineTextContainer = styled(Box)`
 const ContentContainer = styled.div`
   width: 90%;
   margin: 0 45px;
+
+  @media (max-width: 750px) {
+    margin: 0 auto;
+  }
 `;
 
 const SectionHeading = styled(Typography)`
   font-weight: 700;
   padding: 40px 0px 15px 45px;
+
+  @media (max-width: 750px) {
+    padding: 40px 0px 15px 25px;
+    text-align: center;
+  }
 `;
+
 
 const ContentText = styled(Typography)`
   line-height: 1.8;
@@ -173,15 +181,20 @@ export default function StationBranding() {
     <div style={{ backgroundColor: "#f0f0f0" }}>
       <ImageContainer>
         <Box
-          component="img"
-          src={bannerImage}
-          alt="Banner"
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            position: "relative",
           }}
-        />
+        >
+          <Image
+            src={bannerImage}
+            alt="Banner"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            quality={100}
+          />
         <OverlayText>
           <LineTextContainer>
             <Typography variant="subtitle1" sx={TypographyText.subtitle1}>
@@ -199,6 +212,7 @@ export default function StationBranding() {
             high-traffic railway hubs.
           </Typography>
         </OverlayText>
+        </Box>
       </ImageContainer>
 
       <Typography

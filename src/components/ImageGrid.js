@@ -1,8 +1,11 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styled from "@emotion/styled";
+import Image from "next/image";
 
-const GridContainer = styled(Box)`
+const GridContainer = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'isTrainBranding',
+})`
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(3, 1fr);
@@ -16,6 +19,9 @@ const GridContainer = styled(Box)`
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    width: ${({ isTrainBranding }) => (isTrainBranding ? "100%" : "92%")};
+  margin: ${({ isTrainBranding }) => (isTrainBranding ? "0 0" : "0 4%")};
+
   }
 `;
 
@@ -34,7 +40,7 @@ const ImageGrid = ({ images, isTrainBranding = false }) => (
   <GridContainer isTrainBranding={isTrainBranding}>
     {images.map((image, index) => (
       <GridItem key={index}>
-        <img src={image} alt={`${index + 1}`} />
+        <Image src={image} alt={`${index + 1}`} />
       </GridItem>
     ))}
   </GridContainer>

@@ -1,18 +1,19 @@
 import * as React from "react";
 import { Typography, Box, Grid } from "@mui/material";
-import { styled } from "@mui/system";
-import AboutUsBgImg from "../images/about-us/about-us.png";
-import AboutUsImg1 from "../images/about-us/about-us-1.png";
-import AboutUsImg2 from "../images/about-us/about-us-2.png";
-import AboutUsImg3 from "../images/about-us/about-us-3.png";
-import AboutUsImg4 from "../images/about-us/about-us-4.png";
-import AboutUsImg5 from "../images/about-us/about-us-5.png";
-import AboutUsImg6 from "../images/about-us/about-us-6.png";
-import AboutUsImg7 from "../images/about-us/about-us-7.png";
-import AboutUsImg8 from "../images/about-us/about-us-8.png";
-import AboutUsImg9 from "../images/about-us/about-us-9.png";
-import essArrLogo from "../images/ess-arr-logo-white.png";
-import VideoMarquee from "../components/VideoMarquee";  
+import styled from "@emotion/styled";
+import AboutUsBgImg from "/public/images/about-us/about-us-bg.png";
+import AboutUsImg1 from "/public/images/about-us/about-us-1.png";
+import AboutUsImg2 from "/public/images/about-us/about-us-2.png";
+import AboutUsImg3 from "/public/images/about-us/about-us-3.png";
+import AboutUsImg4 from "/public/images/about-us/about-us-4.png";
+import AboutUsImg5 from "/public/images/about-us/about-us-5.png";
+import AboutUsImg6 from "/public/images/about-us/about-us-6.png";
+import AboutUsImg7 from "/public/images/about-us/about-us-7.png";
+import AboutUsImg8 from "/public/images/about-us/about-us-8.png";
+import AboutUsImg9 from "/public/images/about-us/about-us-9.png";
+import essArrLogo from "/public/images/ess-arr-logo-white.png";
+import VideoMarquee from "../components/VideoMarquee";
+import Image from "next/image";
 
 
 const StyledTextGridContainer = styled(Grid)`
@@ -52,19 +53,27 @@ const ImageContainer = styled(Box)`
     height: 100vh;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     height: 150vh;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 470px) {
     height: 200vh;
+  }
+
+  @media (max-width: 350px) {
+    height: 240vh;
   }
 `;
 
-const StyledBackgroundImage = styled(Box)`
+const ImageWrapper = styled(Box)`
+  position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  top: 0;
+  left: 0;
+  object-fit: cover; 
+  object-position: center;
 `;
 
 const TextOverlay = styled(Box)`
@@ -74,7 +83,7 @@ const TextOverlay = styled(Box)`
   color: #ffffff;
   padding: 20px;
   max-width: 85%;
-
+  
   @media (max-width: 1000px) {
     max-width: 90%;
   }
@@ -85,6 +94,12 @@ const StyledHeading = styled(Typography)`
   margin-top: 40px;
   margin-bottom: 20px;
   align-text: left;
+
+  @media (max-width: 400px) {
+    font-size: 35px;
+  }
+
+
 `;
 
 const StyledSubText = styled(Typography)`
@@ -105,8 +120,9 @@ const StyledGridContainer = styled(Grid)`
   margin-top: 20px;
 `;
 
-const StyledImage = styled("img")`
+const StyledImage = styled(Image)`
   width: 100%;
+  height: 100%;
 `;
 
 const LogoContainer = styled("div")`
@@ -143,7 +159,7 @@ export default function AboutUs() {
 
       <Box sx={{ backgroundColor: "#1976D2", padding: "20px" }}>
       <LogoContainer>
-        <img
+        <Image
           src={essArrLogo}
           alt="Ess Emm Railway Ads"
           style={{ cursor: "pointer" }}
@@ -269,7 +285,16 @@ export default function AboutUs() {
       </Box>
 
       <ImageContainer>
-        <StyledBackgroundImage component="img" src={AboutUsBgImg} />
+        <ImageWrapper>
+          <Image
+            src={AboutUsBgImg}
+            alt="About Us Background"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            quality={100}
+          />
+        </ImageWrapper>
         <TextOverlay>
           <StyledHeading variant="h3">Management</StyledHeading>
           <StyledSubText>
