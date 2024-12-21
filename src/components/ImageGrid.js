@@ -6,8 +6,9 @@ const GridContainer = styled(Box)`
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(3, 1fr);
-  width: 85%;
-  margin: 0 5%;
+  width: ${({ isTrainBranding }) => (isTrainBranding ? "100%" : "90%")};
+  margin: ${({ isTrainBranding }) => (isTrainBranding ? "0 0" : "0 3%")};
+  padding-top: 25px;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -29,8 +30,8 @@ const GridItem = styled(Box)`
   }
 `;
 
-const ImageGrid = ({ images }) => (
-  <GridContainer>
+const ImageGrid = ({ images, isTrainBranding = false }) => (
+  <GridContainer isTrainBranding={isTrainBranding}>
     {images.map((image, index) => (
       <GridItem key={index}>
         <img src={image} alt={`${index + 1}`} />

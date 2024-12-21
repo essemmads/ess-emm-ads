@@ -179,7 +179,7 @@ const ContactSection = () => {
               <InfoText>
                 <span>Address</span>
                 <span>
-                  2, Shanmugam Pillai Thoppu 2nd Street, <br />
+                  2, Shanmugam Pillai Thoppu 2nd Street,
                   West Ponnagaram Main Road, Madurai&nbsp;-&nbsp;625&nbsp;016.
                 </span>
               </InfoText>

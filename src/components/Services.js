@@ -142,6 +142,7 @@ const MainCardHangingButton = styled(Button)`
   z-index: 1;
   border-radius: 50px;
   text-transform: none;
+  width: 150px;
   
 
   @media (max-width: 1060px) {
@@ -327,7 +328,6 @@ export default function Services() {
             </CardContent>
           </CenterTextWrapper>
 
-          {/* INTERIOR inside the card */}
           <GreyBox>
             <div>INTERIOR</div>
             <LeftContent>Make a lasting impression on passengers as they interact with your brand throughout their ride.</LeftContent>

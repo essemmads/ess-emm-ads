@@ -10,6 +10,9 @@ import stationBranding3 from "../images/station-building/station-branding-3.png"
 import stationBranding4 from "../images/station-building/station-branding-4.png";
 import stationBranding5 from "../images/station-building/station-branding-5.png";
 import stationBranding6 from "../images/station-building/station-branding-6.png";
+import stationBranding7 from "../images/station-building/station-branding-7.png";
+import stationBranding8 from "../images/station-building/station-branding-8.png";
+import stationBranding9 from "../images/station-building/station-branding-9.png";
 import reservationCounter1 from "../images/reservation-counter/counter-1.png";
 import reservationCounter2 from "../images/reservation-counter/counter-2.png";
 import reservationCounter3 from "../images/reservation-counter/counter-3.png";
@@ -119,6 +122,9 @@ export default function StationBranding() {
         stationBranding4,
         stationBranding5,
         stationBranding6,
+        stationBranding7,
+        stationBranding8,
+        stationBranding9,
       ],
       description:
         "Description for Station Building goes here. This can include key features, specifications, etc.",

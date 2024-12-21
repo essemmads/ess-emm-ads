@@ -79,14 +79,12 @@ const Footer = () => {
   return (
     <FooterContainer>
       <ColumnContainer>
-        <Column
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
+      <Column>
           <Typography variant="body1">| About ESS ARR ADS</Typography>
+          <Typography variant="body2" sx={{marginTop: "12px" }}>
+            In the ever-evolving world of advertising, we proudly oversee operations in more than 25 railway stations across Tamil Nadu, 
+            transforming the way brands connect with their audiences.
+          </Typography>
         </Column>
 
         <Column>

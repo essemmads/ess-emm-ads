@@ -12,6 +12,7 @@ import AboutUsImg7 from "../images/about-us/about-us-7.png";
 import AboutUsImg8 from "../images/about-us/about-us-8.png";
 import AboutUsImg9 from "../images/about-us/about-us-9.png";
 import essArrLogo from "../images/ess-arr-logo-white.png";
+import VideoMarquee from "../components/VideoMarquee";  
 
 
 const StyledTextGridContainer = styled(Grid)`
@@ -29,14 +30,12 @@ const StyledTypographyLeft = styled(Typography)`
   font-size: 24px;
   color: #ffffff;
   font-weight: 100;
-  font-family: "Poppins, sans-serif";
 `;
 
 const StyledRightTypography = styled(Typography)`
   font-size: 20px;
   color: #ffffff;
   line-height: 1.6;
-  font-family: "Poppins, sans-serif";
 `;
 
 const ImageContainer = styled(Box)`
@@ -83,7 +82,6 @@ const TextOverlay = styled(Box)`
 
 const StyledHeading = styled(Typography)`
   font-weight: 700;
-  font-family: "Poppins, sans-serif";
   margin-top: 40px;
   margin-bottom: 20px;
   align-text: left;
@@ -92,7 +90,6 @@ const StyledHeading = styled(Typography)`
 const StyledSubText = styled(Typography)`
   font-size: 18px;
   font-weight: 400;
-  font-family: "Poppins, sans-serif";
 `;
 
 const StyledBox = styled(Box)`
@@ -360,6 +357,7 @@ export default function AboutUs() {
           </Grid>
         </StyledGridContainer>
       </StyledBox>
+      <VideoMarquee/>
     </Box>
   );
 }

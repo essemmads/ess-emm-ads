@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography, Link } from "@mui/material";
 import { styled } from "@mui/system";
 import PhoneIcon from "../images/icons/phone-icon.png";
 import AddressIcon from "../images/icons/location-icon.png";
@@ -101,9 +101,9 @@ const CardSection = () => {
       <FadingCard side="right">
         <StyledIcon src={PhoneIcon} alt="Phone Icon" />
         <CardContent sx={{ textAlign: "center", marginTop: "20px" }}>
-          <Typography variant="h5">Phone Number</Typography>
+        <Typography variant="h5" sx={{marginBottom: "10px"}}>Phone Number</Typography>
           <Typography variant="h5" marginTop={1}>
-            98421 08493
+          <Link href="tel:+919842108493" underline="none" color="white">98421 08493</Link>
           </Typography>
         </CardContent>
       </FadingCard>
@@ -112,20 +112,20 @@ const CardSection = () => {
         <StyledCenterIcon src={AddressIcon} alt="Address Icon" />
         <CardContent sx={{ textAlign: "center", marginTop: "20px" }}>
           <Typography variant="h5">Address</Typography>
-          <Typography variant="h5" marginTop={2}>
-            2, Shanmugam Pillai Thoppu 2nd Street,
-            <br /> West Ponnagaram Main Road. Madurai - 625 016.
+          <Typography variant="h6" sx={{ marginTop: 2, textAlign: "center" }}>
+            2, Shanmugam Pillai Thoppu 2nd Street, West Ponnagaram Main Road. Madurai&nbsp;-&nbsp;625&nbsp;016.
           </Typography>
         </CardContent>
       </CenterCard>
 
+
       <FadingCard side="left">
         <StyledIcon src={EmailIcon} alt="Email Icon" />
         <CardContent sx={{ textAlign: "center", marginTop: "20px" }}>
-          <Typography variant="h5">Email Address</Typography>
-          <Typography variant="h5" marginTop={1}>
+          <Typography variant="h5" sx={{marginBottom: "10px"}}>Email Address</Typography>
+          <Link href="mailto:essarrads@gmail.com" color="#fff" underline="none" fontSize={24}>
             essarrads@gmail.com
-          </Typography>
+          </Link>
         </CardContent>
       </FadingCard>
     </Box>

@@ -79,27 +79,38 @@ const ResponsiveBackground = styled.div`
 `;
 
 const StyledFlexContainer = styled(Box)`
+  width: 50%;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 40px;
   justify-content: center;
 
   & > div {
-    width: 300px;
+    width: 100px;
     height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
+  @media only screen and (max-width: 1300px) {
+    width: 60%;
+  }
+
   @media only screen and (max-width: 1000px) {
+    width: auto;
     flex-direction: column;
+    justify-self: center;
+    margin: 0;
+
     & > div {
       width: 100%;
       height: auto;
     }
   }
 `;
+
 
 const ImageContainer = styled(Box)`
   position: relative;
@@ -195,7 +206,7 @@ const ContentContainer = styled.div`
 
 const SectionHeading = styled(Typography)`
   font-weight: 700;
-  padding: 40px 0px 15px 45px;
+  padding: 40px 0px 15px 0px;
 `;
 
 const ContentText = styled(Typography)`
@@ -234,9 +245,9 @@ export default function TrainBranding() {
     },
     {
       label: "EXTERIOR TRAIN BRANDING",
-      title: "Branding That Travels with You",
+      title: "Branding that Travels Far",
       description:
-        "Make a lasting impression on passengers as they interact with your brand throughout their ride.",
+        "Ensure your message reaches a wide audience with eye-catching designs on the exterior of trains.",
     },
   ];
 
@@ -384,7 +395,6 @@ export default function TrainBranding() {
               Our services
             </Typography>
           </LineTextContainer>
-          <br />
 
           <Typography variant="h4" sx={TypographyText.h4}>
             Train Branding <br />
@@ -424,14 +434,26 @@ export default function TrainBranding() {
               <Typography variant="h6" sx={{ fontWeight: "bold", mt: 2 }}>
                 {slide.title}
               </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: "black" }}>
-                {slide.description}
-              </Typography>
+              <div
+                style={{
+                  width: "40%",
+                  margin: "0 auto",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                <Typography variant="body2" sx={{ mt: 1, color: "black" }}>
+                  {slide.description}
+                </Typography>
+              </div>
             </Box>
           ))}
         </Slider>
         <GlobalSlickDotsStyles />
       </StyledSliderContainer>
+
 
       <Typography variant="h5" sx={{ fontWeight: 700, padding: "40px" }}>
         Interior Train Branding
@@ -522,7 +544,7 @@ export default function TrainBranding() {
           offering a unique advertising opportunity within the train
           environment.
         </ContentText>
-      <ImageGrid images={interiorTrainBrandingCardData[0].images} />
+      <ImageGrid images={interiorTrainBrandingCardData[0].images} isTrainBranding={true}/>
 
       <SectionHeading ref={interiorPanelBrandingRef} variant="h5">
         Interior Panel Branding
@@ -549,7 +571,7 @@ export default function TrainBranding() {
           overall aesthetic appeal, ensuring long-lasting visibility for brands
           throughout the ride.
         </ContentText>
-      <ImageGrid images={interiorTrainBrandingCardData[1].images} />
+      <ImageGrid images={interiorTrainBrandingCardData[1].images} isTrainBranding={true}/>
 
       <SectionHeading ref={interiorGlassdoorBrandingRef} variant="h5">
         Interior Glassdoor Branding
@@ -579,7 +601,7 @@ export default function TrainBranding() {
           that would otherwise remain empty, making it an innovative and
           engaging advertising medium.
         </ContentText>
-      <ImageGrid images={interiorTrainBrandingCardData[2].images} />
+      <ImageGrid images={interiorTrainBrandingCardData[2].images} isTrainBranding={true}/>
 
       <SectionHeading ref={foodTraybrandingRef} variant="h5">
         Food Tray Branding
@@ -608,7 +630,7 @@ export default function TrainBranding() {
           way to promote products or services while enhancing the overall
           passenger experience.
         </ContentText>
-      <ImageGrid images={interiorTrainBrandingCardData[3].images} />
+      <ImageGrid images={interiorTrainBrandingCardData[3].images} isTrainBranding={true}/>
 
       </ContentContainer>
 
@@ -649,7 +671,7 @@ export default function TrainBranding() {
           elements, making it a versatile and impactful medium for both
           short-term promotions and long-term brand awareness.
         </ContentText>
-      <ImageGrid images={exteriorTrainBrandingCardData[0].images} />
+      <ImageGrid images={exteriorTrainBrandingCardData[0].images} isTrainBranding={true}/>
 
       <SectionHeading ref={trainEnginePaintingRef} variant="h5">
         Train Engine Painting
@@ -679,7 +701,7 @@ export default function TrainBranding() {
           medium for brand promotion and creating a memorable impression among
           commuters and bystanders.
         </ContentText>
-      <ImageGrid images={exteriorTrainBrandingCardData[1].images} />
+      <ImageGrid images={exteriorTrainBrandingCardData[1].images} isTrainBranding={true}/>
       </ContentContainer>
 
 
