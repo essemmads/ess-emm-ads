@@ -8,6 +8,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Global, css } from "@emotion/react";
 import Image from "next/image";
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   padding: 80px 0;
@@ -202,4 +203,13 @@ const CustomNextArrow = (props) => {
       <ChevronRightIcon sx={{ color: "white", fontSize: "2rem" }} />
     </IconButton>
   );
+};
+
+CustomPrevArrow.propTypes = {
+  onClick: PropTypes.func,
+};
+
+
+CustomNextArrow.propTypes = {
+  onClick: PropTypes.func,
 };

@@ -16,12 +16,6 @@ const ImageContainer = styled(Box)`
   height: 70vh;
 `;
 
-const BannerImage = styled(Box)`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
 const OverlayText = styled(Box)`
   position: absolute;
   top: 30%;

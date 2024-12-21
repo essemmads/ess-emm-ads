@@ -3,6 +3,7 @@ import Marquee from "react-fast-marquee";
 import { Typography, Button } from "@mui/material";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import PropTypes from 'prop-types';
 
 const videoSources = [
   "https://www.youtube.com/embed/sAAx2pOpIdM?si=85Qti1S0xLwjvtDC",
@@ -104,3 +105,7 @@ export default function VideoMarquee({ isHome = false }) {
     </Container>
   );
 }
+
+VideoMarquee.propTypes = {
+  isHome: PropTypes.bool.isRequired,
+};

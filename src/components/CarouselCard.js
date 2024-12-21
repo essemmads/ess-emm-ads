@@ -1,3 +1,4 @@
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +12,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import PropTypes from 'prop-types';
 
 const CarouselImage = styled(Image)`
   width: 100%;
@@ -108,3 +110,13 @@ const CustomNextArrow = (props) => {
     </IconButton>
   );
 };
+
+CustomPrevArrow.propTypes = {
+  onClick: PropTypes.func,
+};
+
+
+CustomNextArrow.propTypes = {
+  onClick: PropTypes.func,
+};
+
