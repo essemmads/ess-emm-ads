@@ -47,15 +47,11 @@ const ImageContainer = styled(Box)`
   overflow: hidden;
 
   @media (max-width: 1600px) {
-    height: 90vh;
-  }
-
-  @media (max-width: 1000px) {
-    height: 100vh;
+    height: 110vh;
   }
 
   @media (max-width: 800px) {
-    height: 150vh;
+    height: 160vh;
   }
 
   @media (max-width: 470px) {
@@ -67,15 +63,6 @@ const ImageContainer = styled(Box)`
   }
 `;
 
-const ImageWrapper = styled(Box)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover; 
-  object-position: center;
-`;
 
 const TextOverlay = styled(Box)`
   position: absolute;
@@ -99,8 +86,6 @@ const StyledHeading = styled(Typography)`
   @media (max-width: 400px) {
     font-size: 35px;
   }
-
-
 `;
 
 const StyledSubText = styled(Typography)`
@@ -162,7 +147,7 @@ export default function AboutUs() {
       <LogoContainer>
         <Image
           src={essArrLogo}
-          alt="Ess Emm Railway Ads"
+          alt="Ess Emm Railway Ads logo"
           style={{ cursor: "pointer" }}
         />
       </LogoContainer>
@@ -286,7 +271,6 @@ export default function AboutUs() {
       </Box>
 
       <ImageContainer>
-        <ImageWrapper>
           <Image
             src={AboutUsBgImg}
             alt="About Us Background"
@@ -295,7 +279,6 @@ export default function AboutUs() {
             objectPosition="center"
             quality={100}
           />
-        </ImageWrapper>
         <TextOverlay>
           <StyledHeading variant="h3">Management</StyledHeading>
           <StyledSubText>

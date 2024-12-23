@@ -104,7 +104,8 @@ const CardSection = () => {
         <CardContent sx={{ textAlign: "center", marginTop: "20px" }}>
         <Typography variant="h5" sx={{marginBottom: "10px"}}>Phone Number</Typography>
           <Typography variant="h5" marginTop={1}>
-          <Link href="tel:+919842108493" underline="none" color="white">98421 08493</Link>
+          <Link href="tel:+919842108493" underline="none" color="white">
+          <Typography variant="h6" sx={{ marginTop: 2, textAlign: "center" }}>98421 08493</Typography></Link>
           </Typography>
         </CardContent>
       </FadingCard>
@@ -125,7 +126,7 @@ const CardSection = () => {
         <CardContent sx={{ textAlign: "center", marginTop: "20px" }}>
           <Typography variant="h5" sx={{marginBottom: "10px"}}>Email Address</Typography>
           <Link href="mailto:essarrads@gmail.com" color="#fff" underline="none" fontSize={24}>
-            essarrads@gmail.com
+          <Typography variant="h6" sx={{ marginTop: 2, textAlign: "center" }}>essarrads@gmail.com</Typography>
           </Link>
         </CardContent>
       </FadingCard>

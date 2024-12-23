@@ -236,7 +236,6 @@ export default function Services() {
   };
 
   React.useEffect(() => {
-    console.log(isTab, "asa")
     if(!isTab) {
       setCurrentItem("TRAIN BRANDING");
     }
@@ -270,7 +269,7 @@ export default function Services() {
                 color="primary"
                 onClick={() => handleViewMore(service.name)}
               >
-                <Typography fontWeight={700}>View more</Typography>
+                <Typography fontWeight={700}>View More</Typography>
               </HangingButton>
             </Card>
           </CardContainer>
@@ -302,7 +301,7 @@ export default function Services() {
             >
               <ArrowButton
                 onClick={handleLeftArrowClick}
-                disabled={currentItem === "EXTERIOR"}
+                disabled={currentItem === "EXTERIOR" || !isTab}
               >
                 <ArrowBackIosIcon />
               </ArrowButton>
@@ -317,7 +316,7 @@ export default function Services() {
             </div>
               <ArrowButton
                 onClick={handleRightArrowClick}
-                disabled={currentItem === "INTERIOR"}
+                disabled={currentItem === "INTERIOR" || !isTab}
               >
                 <ArrowForwardIosIcon />
               </ArrowButton>

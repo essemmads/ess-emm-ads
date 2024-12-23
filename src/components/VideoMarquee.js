@@ -67,13 +67,13 @@ const SectionTitle = styled(Typography)`
   font-weight: bold;
 `;
 
-export default function VideoMarquee({ isHome = false }) {
+export default function VideoMarquee({ isHome = false, isContactUsSection = false }) {
   const router = useRouter();
   return (
     <Container>
-      {!isHome && <Title variant="h5">Get Started Now!</Title>}
+      {(!isHome && !isContactUsSection) && <Title variant="h5">Get Started Now!</Title>}
 
-      {!isHome && (
+      {(!isHome && !isContactUsSection) && (
         <StyledButton
           variant="contained"
           color="primary"
@@ -108,4 +108,5 @@ export default function VideoMarquee({ isHome = false }) {
 
 VideoMarquee.propTypes = {
   isHome: PropTypes.bool.isRequired,
+  isContactUsSection: PropTypes.bool.isRequired,
 };

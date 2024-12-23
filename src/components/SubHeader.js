@@ -237,7 +237,7 @@ export default function SubHeader() {
       <ImageContainer>
         <Image
           src={essArrLogo}
-          alt="Ess Emm Railway Ads"
+          alt="Ess Emm Railway Ads logo"
           style={{ cursor: "pointer" }}
           onClick={() => router.push("/")}
         />

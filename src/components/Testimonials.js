@@ -45,27 +45,33 @@ const ProfileImage = styled(Image)`
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "John Doe",
+      name: "Pranav srinath",
       designation: "CEO, Company A",
-      feedback: "This is an amazing service! Highly recommend.",
+      feedback: "We are delighted with the results of our railway advertising campaign managed by Ess Arr Ads. Their team’s expertise, innovative designs, and seamless execution made the entire process stress-free. They truly understand the nuances of impactful advertising.",
       profileImage: defaultProfileImage,
     },
     {
-      name: "Jane Smith",
+      name: "Anand rajan",
       designation: "Manager, Company B",
-      feedback: "Fantastic experience! Will use again.",
+      feedback: "Ess Arr Ads took our railway advertising campaign to new heights. Their team’s creativity and strategic planning helped us make a strong impression on commuters. We saw a noticeable increase in engagement, and their professionalism ensured the process was seamless.",
       profileImage: defaultProfileImage,
     },
     {
-      name: "Michael Brown",
+      name: "Praveen kumar",
       designation: "Developer, Company C",
-      feedback: "Very satisfied with the service and support.",
+      feedback: "Ess Arr Ads delivered outstanding railway advertising solutions that gave our brand the visibility it needed. Their strategic placements and creative designs helped us reach a broad, engaged audience. We were thoroughly impressed with their dedication and results.",
       profileImage: defaultProfileImage,
     },
     {
-      name: "Emily Davis",
-      designation: "Designer, Company D",
-      feedback: "A game changer for our business!",
+      name: "Anand rajan",
+      designation: "Developer, Company C",
+      feedback: "Working with Ess Arr Ads has been a transformative experience for our brand. Their expertise in railway advertising ensured our message reached the right audience effectively. The team’s dedication and innovative ideas have significantly enhanced our market presence.",
+      profileImage: defaultProfileImage,
+    },
+    {
+      name: "Mark johnson",
+      designation: "Developer, Company C",
+      feedback: "Ess Arr Ads exceeded our expectations with their railway advertising services. Their unique concepts, flawless execution, and excellent customer support helped us connect with our target audience effectively. We highly recommend their services!",
       profileImage: defaultProfileImage,
     },
   ];
@@ -138,13 +144,13 @@ export default function Testimonials() {
                   />
                 </Box>
                 <Typography variant="h6">{testimonial.name}</Typography>
-                <Typography
+                {/* <Typography
                   variant="subtitle1"
                   sx={{ fontStyle: "italic", marginBottom: "16px" }}
                 >
                   {testimonial.designation}
-                </Typography>
-                <Typography variant="body2">{testimonial.feedback}</Typography>
+                </Typography> */}
+                <Typography variant="body2" width="60%" style={{margin: "0 auto"}} textAlign="center">{testimonial.feedback}</Typography>
               </div>
             ))}
           </Slider>
