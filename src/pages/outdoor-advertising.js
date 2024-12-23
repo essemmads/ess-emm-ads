@@ -71,7 +71,7 @@ const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
-  height: 70vh;
+  height: 70%;
 `;
 
 const OverlayText = styled(Box)`
@@ -279,11 +279,11 @@ export default function OutdoorAdvertising() {
       >
         <Image
           src={bannerImage}
-          alt="Banner"
-          layout="fill"
+          alt="Outdoor Banner"
           objectFit="cover"
           objectPosition="center"
           quality={100}
+          height="100%"
         />
         <OverlayText>
           <LineTextContainer>

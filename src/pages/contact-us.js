@@ -197,7 +197,7 @@ export default function ContactUs() {
           </StyledBox>
         </Grid>
       </Grid>
-      <VideoMarquee />
+      <VideoMarquee isContactUsSection={true}/>
     </div>
   );
 }

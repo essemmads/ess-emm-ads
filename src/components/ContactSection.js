@@ -27,15 +27,12 @@ const ContactContainer = styled(Box)`
 const BlueContainer = styled(Box)`
   flex: 0 0 35%;
   position: relative;
-  bottom: 15%;
   left: 20px;
   background-color: #1976d2;
   color: white;
   z-index: 1;
-  height: 65vh;
   margin-left: 10%;
   padding: 20px;
-  bottom: 40px;
 
   @media (max-width: 830px) {
     flex: none;
@@ -52,7 +49,6 @@ const GetInTouchContainer = styled(Box)`
   flex: 1;
   background-color: #f4f5f9;
   position: relative;
-  height: 65vh;
   width: 50%;
   margin-left: -20%;
   display: flex;
@@ -187,7 +183,7 @@ const ContactSection = () => {
                 <span>Address</span>
                 <span>
                   2, Shanmugam Pillai Thoppu 2nd Street,
-                  West Ponnagaram Main Road, Madurai&nbsp;-&nbsp;625&nbsp;016.
+                  West Ponnagaram Main Road, Madurai.&nbsp;625&nbsp;016.
                 </span>
               </InfoText>
             </InfoItem>
