@@ -51,7 +51,7 @@ export default function Testimonials() {
       profileImage: defaultProfileImage,
     },
     {
-      name: "Anand rajan",
+      name: "Swetha",
       designation: "Manager, Company B",
       feedback: "Ess Arr Ads took our railway advertising campaign to new heights. Their team’s creativity and strategic planning helped us make a strong impression on commuters. We saw a noticeable increase in engagement, and their professionalism ensured the process was seamless.",
       profileImage: defaultProfileImage,
@@ -63,13 +63,13 @@ export default function Testimonials() {
       profileImage: defaultProfileImage,
     },
     {
-      name: "Anand rajan",
+      name: "Manimaran",
       designation: "Developer, Company C",
       feedback: "Working with Ess Arr Ads has been a transformative experience for our brand. Their expertise in railway advertising ensured our message reached the right audience effectively. The team’s dedication and innovative ideas have significantly enhanced our market presence.",
       profileImage: defaultProfileImage,
     },
     {
-      name: "Mark johnson",
+      name: "Jeyaraj",
       designation: "Developer, Company C",
       feedback: "Ess Arr Ads exceeded our expectations with their railway advertising services. Their unique concepts, flawless execution, and excellent customer support helped us connect with our target audience effectively. We highly recommend their services!",
       profileImage: defaultProfileImage,

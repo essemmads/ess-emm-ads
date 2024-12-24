@@ -89,7 +89,6 @@ const StyledFlexContainer = styled(Box)`
 
   & > div {
     width: 100px;
-    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

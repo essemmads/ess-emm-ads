@@ -18,9 +18,8 @@ const ContactContainer = styled(Box)`
 
   @media (max-width: 830px) {
     flex-direction: column;
-    padding: 0 0 30% 0;
+    padding: 0 0 10% 0;
     margin: 15px 20px 50px 20px;
-    height: 100vh;
   }
 `;
 

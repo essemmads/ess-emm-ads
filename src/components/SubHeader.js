@@ -180,7 +180,7 @@ export default function SubHeader() {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton onClick={toggleServiceMenu}>
-            <ListItemText primary="Services" />
+            <ListItemText primary="Our services" />
             {serviceMenuOpen ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
           </ListItemButton>
         </ListItem>
@@ -247,7 +247,7 @@ export default function SubHeader() {
         <TextButton onClick={() => router.push("/")}>Home</TextButton>
         <TextButton onClick={() => router.push("/about-us")}>About us</TextButton>
         <TextButton onClick={handleServiceClick}>
-          Services <ArrowDropDownIcon />
+          Our services <ArrowDropDownIcon />
         </TextButton>
         <Menu
           anchorEl={serviceMenuAnchor}
@@ -276,7 +276,7 @@ export default function SubHeader() {
               document.getElementById("contactUsSection")?.scrollIntoView({
                 behavior: "smooth",
               });
-            }, 300);
+            }, 3000);
           }}
           sx={{ marginLeft: "40px" }}
         >

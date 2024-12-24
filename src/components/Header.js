@@ -64,7 +64,6 @@ export default function Header() {
   ];
 
   const toggleDrawer = (open) => () => {
-    console.log("Here")
     setDrawerOpen(open);
   };
 
@@ -75,7 +74,7 @@ export default function Header() {
       document.getElementById("contactUsSection")?.scrollIntoView({
         behavior: "smooth",
       });
-    }, 300);
+    }, 3000);
   };
 
   return (
