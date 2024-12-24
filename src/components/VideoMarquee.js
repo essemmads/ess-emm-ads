@@ -110,5 +110,5 @@ export default function VideoMarquee({ isHome = false, isContactUsSection = fals
 
 VideoMarquee.propTypes = {
   isHome: PropTypes.bool.isRequired,
-  isContactUsSection: PropTypes.bool.isRequired,
+  isContactUsSection: PropTypes.bool,
 };

@@ -59,6 +59,7 @@ const SocialIcons = styled.div`
   justify-content: flex-start;
   margin-top: 10px;
   margin-left: 5%;
+  gap: 8px;
 
   @media (max-width: 750px) {
     justify-content: center;
@@ -98,7 +99,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("header");
-              }, 3000);
+              }, 2000);
             }}
           >
             Home
@@ -110,7 +111,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("aboutUsSection");
-              }, 3000);
+              }, 2000);
             }}
           >
             About Us
@@ -122,7 +123,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("ourServices");
-              }, 3000);
+              }, 2000);
             }}
           >
             Our Services
@@ -134,7 +135,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("contactUsSection");
-              }, 3000);
+              }, 2000);
             }}
           >
             Contact Us
@@ -143,27 +144,16 @@ const Footer = ({isHome = false}) => {
 
         <Column>
           <Typography variant="body1">| Company</Typography>
-          <Typography
-            variant="body2"
-            sx={{ fontWeight: "bold", marginTop: "10px" }}
-          >
-            Madurai
-          </Typography>
           <Typography variant="body2" sx={{marginTop: "12px" }}>
+            <b>Madurai</b><br/>
             2, Shanmugam Pillai Thoppu 2nd Street,
             <br />
             West Ponnagaram Main Road, Madurai.
             <br />
             625 016
           </Typography>
-
-          <Typography
-            variant="body2"
-            sx={{ fontWeight: "bold", marginTop: "10px" }}
-          >
-            Trichy
-          </Typography>
           <Typography variant="body2" sx={{marginTop: "12px" }}>
+          <b style={{marginTop: "10px"}}>Trichy</b><br/>
             17, Arockiasamy Pillai Street, 
             <br />
             Crawford Colony, Trichy.
