@@ -22,11 +22,6 @@ const FooterContainer = styled("div", {
 
   @media (max-width: 900px) {
     padding: 20px 10px;
-    margin-top: ${({ isHome }) => (isHome ? "50%" : "0")};
-  }
-  
-  @media (max-width: 350px) {
-    margin-top: ${({ isHome }) => (isHome ? "90%" : "0")};
   }
 `;
 
@@ -103,7 +98,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("header");
-              }, 300);
+              }, 3000);
             }}
           >
             Home
@@ -115,7 +110,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("aboutUsSection");
-              }, 300);
+              }, 3000);
             }}
           >
             About Us
@@ -127,7 +122,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("ourServices");
-              }, 300);
+              }, 3000);
             }}
           >
             Our Services
@@ -139,7 +134,7 @@ const Footer = ({isHome = false}) => {
               router.push("/");
               setTimeout(() => {
                 handleNavigation("contactUsSection");
-              }, 300);
+              }, 3000);
             }}
           >
             Contact Us

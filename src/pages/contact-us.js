@@ -164,7 +164,7 @@ export default function ContactUs() {
         container
         spacing={1}
         justifyContent="space-around"
-        sx={{ margin: "10% auto", width: "100%" }}
+        sx={{ width: "100%" }}
       >
       <IllustratorContainer item xs={12} md={4}>
         <StyledImage

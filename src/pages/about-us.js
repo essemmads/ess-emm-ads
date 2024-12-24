@@ -51,11 +51,11 @@ const ImageContainer = styled(Box)`
   }
 
   @media (max-width: 800px) {
-    height: 160vh;
+    height: 150vh;
   }
 
   @media (max-width: 470px) {
-    height: 200vh;
+    height: 190vh;
   }
 
   @media (max-width: 350px) {
@@ -66,22 +66,32 @@ const ImageContainer = styled(Box)`
 
 const TextOverlay = styled(Box)`
   position: absolute;
-  top: 1%;
-  left: 5%;
+  top: 0;
+  left: 0;
+  right: 0;;
+  bottom: 0;
   color: #ffffff;
-  padding: 20px;
-  max-width: 85%;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
   @media (max-width: 1000px) {
-    max-width: 90%;
+    width: 100%;
   }
 `;
 
+
 const StyledHeading = styled(Typography)`
   font-weight: 700;
-  margin-top: 40px;
   margin-bottom: 20px;
-  align-text: left;
+  text-align: left;
+  margin-left: 90px;
+
+   @media (max-width: 750px) {
+    text-align: center;
+    margin-left: 0px;
+  }
 
   @media (max-width: 400px) {
     font-size: 35px;
@@ -91,6 +101,12 @@ const StyledHeading = styled(Typography)`
 const StyledSubText = styled(Typography)`
   font-size: 18px;
   font-weight: 400;
+  text-align: justify;
+  margin: 0 90px;
+
+  @media (max-width: 750px) {
+    margin: 0 20px;
+  }
 `;
 
 const StyledBox = styled(Box)`
@@ -156,7 +172,7 @@ export default function AboutUs() {
           <StyledLeftGrid item xs={12} md={5}>
             <StyledTypographyLeft variant="body1">
               “ Our Journey from Madurai to{" "}
-              <span style={{ color: "#B31F58" }}>Tamil Nadu</span> ”
+              <span style={{ color: "#B31F58" }}>Tamil&nbsp;Nadu</span>&nbsp;”
             </StyledTypographyLeft>
           </StyledLeftGrid>
           <Grid item xs={12} md={6}>
@@ -271,15 +287,7 @@ export default function AboutUs() {
       </Box>
 
       <ImageContainer>
-          <Image
-            src={AboutUsBgImg}
-            alt="About Us Background"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            quality={100}
-          />
-        <TextOverlay>
+        <TextOverlay style={{backgroundImage:`url(${AboutUsBgImg.src})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", width: "100%"}}>
           <StyledHeading variant="h3">Management</StyledHeading>
           <StyledSubText>
             ESS ARR ADS, owned and managed by Soosairaj Antonysamy for the past
@@ -295,7 +303,7 @@ export default function AboutUs() {
             Soosairaj's effective leadership and vision for growth, positioning
             the company for further expansion in the future.
           </StyledSubText>
-          <StyledHeading variant="h3">Our Team</StyledHeading>
+          <StyledHeading variant="h3" style={{marginTop: "40px"}}>Our Team</StyledHeading>
           <StyledSubText>
             The team at ESS ARR ADS plays a crucial role in the company’s
             success, driven by a culture of creativity, collaboration, and
