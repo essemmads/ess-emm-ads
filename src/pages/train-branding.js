@@ -123,7 +123,7 @@ const ImageContainer = styled(Box)`
 
 const OverlayText = styled(Box)`
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 8%;
   text-align: left;
   padding: 20px;
@@ -266,12 +266,12 @@ export default function TrainBranding() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, // Show only one slide at a time
+    slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    centerMode: false, // Don't center the slide
-    variableWidth: false, // Disable variable width to avoid partial card visibility
-    adaptiveHeight: true, // Allow adaptive height for content change (optional)
+    centerMode: false,
+    variableWidth: false,
+    adaptiveHeight: true,
   };
 
   const slides = [
@@ -400,17 +400,17 @@ export default function TrainBranding() {
     subtitle1: {
       fontWeight: 300,
       color: "white",
-      fontSize: { xs: "0.8rem", sm: "1.2rem", md: "1.5rem" },
+      fontSize: { xs: "0.8rem", sm: "1.2rem", md: "1.3rem" },
     },
     h4: {
       fontWeight: 700,
       color: "white",
-      fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2rem" },
+      fontSize: { xs: "1.2rem", sm: "1.8rem", md: "1.8rem" },
       paddingTop: "20px",
     },
     h6: {
       color: "white",
-      fontSize: { xs: "0.8rem", sm: "1rem", md: "1.3rem" },
+      fontSize: { xs: "0.8rem", sm: "1rem", md: "1.1rem" },
     },
   };
 

@@ -276,7 +276,7 @@ export default function SubHeader() {
               document.getElementById("contactUsSection")?.scrollIntoView({
                 behavior: "smooth",
               });
-            }, 3000);
+            }, 2000);
           }}
           sx={{ marginLeft: "40px" }}
         >

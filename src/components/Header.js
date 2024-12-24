@@ -17,6 +17,7 @@ import EmailIcon from "/public/images/icons/mail-sm-icon.png";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const StyledCard = styled(Card)`
   margin-bottom: 30px;
@@ -54,6 +55,7 @@ const InfoSection = styled(Link)`
 export default function Header() {
   const router = useRouter();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const socialLinks = [
@@ -68,13 +70,15 @@ export default function Header() {
   };
 
   const handleNavigation = () => {
+    setLoading(true);
     toggleDrawer(false)(); 
     router.push("/");
     setTimeout(() => {
       document.getElementById("contactUsSection")?.scrollIntoView({
         behavior: "smooth",
       });
-    }, 3000);
+    setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -211,8 +215,9 @@ export default function Header() {
                 variant="contained"
                 onClick={handleNavigation}
                 sx={{ width: "90%" }}
+                disabled={loading}
               >
-                Get A Quote
+              {loading ? <CircularProgress size={24} color="inherit" /> : "Get A Quote"}
               </Button>
             </CardContent>
           </Card>
@@ -228,7 +233,7 @@ export default function Header() {
                 >
                   <Image src={CallIcon} alt="Ess Emm Railway Ads Phone" />
                 </StyledIconButton>
-                <StyledLink href="tel:0452-2362201">0452 - 2362201</StyledLink>
+                <StyledLink href="tel:+919842108493">98421 08493</StyledLink>
               </InfoSection>
               <br />
               <InfoSection>

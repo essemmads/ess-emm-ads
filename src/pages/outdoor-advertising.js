@@ -76,7 +76,7 @@ const ImageContainer = styled(Box)`
 
 const OverlayText = styled(Box)`
   position: absolute;
-  top: 30%;
+  top: 25%;
   right: 4%;
   text-align: left;
   padding: 20px;
@@ -253,17 +253,17 @@ export default function OutdoorAdvertising() {
     subtitle1: {
       fontWeight: 300,
       color: "white",
-      fontSize: { xs: "0.8rem", sm: "1.2rem", md: "1.5rem" },
+      fontSize: { xs: "0.8rem", sm: "1.2rem", md: "1.3rem" },
     },
     h4: {
       fontWeight: 700,
       color: "white",
-      fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2rem" },
+      fontSize: { xs: "1.2rem", sm: "1.8rem", md: "1.8rem" },
       paddingTop: "20px",
     },
     h6: {
       color: "white",
-      fontSize: { xs: "0.8rem", sm: "1rem", md: "1.3rem" },
+      fontSize: { xs: "0.8rem", sm: "1rem", md: "1.1rem" },
     },
   };
 

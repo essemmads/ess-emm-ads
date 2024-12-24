@@ -115,7 +115,7 @@ const CardSection = () => {
         <CardContent sx={{ textAlign: "center", marginTop: "20px" }}>
           <Typography variant="h5">Address</Typography>
           <Typography variant="h6" sx={{ marginTop: 2, textAlign: "center" }}>
-            2, Shanmugam Pillai Thoppu 2nd Street, West Ponnagaram Main Road. Madurai&nbsp;-&nbsp;625&nbsp;016.
+            2, Shanmugam Pillai Thoppu 2nd Street, West Ponnagaram Main Road, Madurai&nbsp;-&nbsp;625&nbsp;016.
           </Typography>
         </CardContent>
       </CenterCard>
