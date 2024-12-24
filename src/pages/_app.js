@@ -15,6 +15,7 @@ const theme = createTheme({
   },
 });
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
@@ -23,7 +24,7 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <SubHeader />
         <Component {...pageProps} />
-        <Footer />
+        <Footer isHome = { Component.name === "Home" ? true : false}/>
       </div>
     </ThemeProvider>
   );

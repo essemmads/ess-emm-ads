@@ -6,8 +6,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import PropTypes from 'prop-types';
 
-const FooterContainer = styled.div`
+const FooterContainer = styled("div", {
+  shouldForwardProp: (prop) => prop !== "isHome",
+})`
   display: flex;
   justify-content: center;
   background-color: #000000;
@@ -19,11 +22,11 @@ const FooterContainer = styled.div`
 
   @media (max-width: 900px) {
     padding: 20px 10px;
-    margin-top: 50%;
+    margin-top: ${({ isHome }) => (isHome ? "50%" : "0")};
   }
   
   @media (max-width: 350px) {
-    margin-top: 90%;
+    margin-top: ${({ isHome }) => (isHome ? "90%" : "0")};
   }
 `;
 
@@ -71,7 +74,7 @@ const SocialIcons = styled.div`
   }
 `;
 
-const Footer = () => {
+const Footer = ({isHome = false}) => {
   const router = useRouter();
 
   const handleNavigation = (path) => {
@@ -81,7 +84,7 @@ const Footer = () => {
   };
 
   return (
-    <FooterContainer>
+    <FooterContainer isHome={isHome}>
       <ColumnContainer>
       <Column>
           <Typography variant="body1">| About ESS ARR ADS</Typography>
@@ -211,6 +214,10 @@ const Footer = () => {
       </SocialIcons>
     </FooterContainer>
   );
+};
+
+Footer.propTypes = {
+  isHome: PropTypes.bool.isRequired,
 };
 
 export default Footer;

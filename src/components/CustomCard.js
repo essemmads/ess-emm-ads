@@ -81,7 +81,8 @@ const CustomCard = ({ title, image, description, onViewMore }) => {
           <Image
             src={image}
             alt={description || "Card Image"}
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "100%", cursor: "pointer" }}
+            onClick={onViewMore}
           />
         </CardContentWrapper>
       </StyledCard>
