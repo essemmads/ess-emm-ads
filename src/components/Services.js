@@ -22,6 +22,7 @@ const ServicesWrapper = styled.div`
   justify-content: center;
   gap: 50px;
   padding: 0 16px;
+  height: auto;
 
   @media (max-width: 1550px) {
     gap: 50px;
@@ -251,7 +252,7 @@ export default function Services() {
               sx={{
                 textAlign: "center",
                 transition: "0.3s",
-                height: "30vh",
+                height: "100%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -259,7 +260,7 @@ export default function Services() {
               }}
             >
                <StyledCardHeader title={service.name}/>
-              <CardContent style={{padding: "20px"}} sx={{ flexGrow: 1 }}>
+              <CardContent style={{paddingBottom: "50px"}} sx={{ flexGrow: 1 }}>
                 <Typography>
                   {service.content}
                 </Typography>

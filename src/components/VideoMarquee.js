@@ -14,10 +14,12 @@ const videoSources = [
   "https://www.youtube.com/embed/4ln7e5lCJMg?si=qxx-Xnp5jE3fM1F-",
 ];
 
-const Container = styled("div")`
+const Container = styled("div", {
+  shouldForwardProp: (prop) => prop !== "isHome",
+})`
   overflow: hidden;
   width: 100%;
-  padding-bottom: 70px;
+  padding-bottom: ${({ isHome }) => (isHome ? "70px" : "0px")};
 `;
 
 const StyledMarquee = styled(Marquee)`
@@ -28,9 +30,9 @@ const StyledMarquee = styled(Marquee)`
   }
 `;
 
-const Title = styled(Typography, {
-  shouldForwardProp: (prop) => prop !== "isHome",
-})`
+  const Title = styled(Typography, {
+    shouldForwardProp: (prop) => prop !== "isHome",
+  })`
   font-weight: 400;
   padding: 40px;
   text-align: ${({ isHome }) => (isHome ? "center" : "left")};
@@ -70,7 +72,7 @@ const SectionTitle = styled(Typography)`
 export default function VideoMarquee({ isHome = false, isContactUsSection = false }) {
   const router = useRouter();
   return (
-    <Container>
+    <Container isHome={isHome}>
       {(!isHome && !isContactUsSection) && <Title variant="h5">Get Started Now!</Title>}
 
       {(!isHome && !isContactUsSection) && (

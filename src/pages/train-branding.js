@@ -115,13 +115,11 @@ const StyledFlexContainer = styled(Box)`
   }
 `;
 
-
-
 const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
-  height: 70%;
+  height: 70vh;
 `;
 
 const OverlayText = styled(Box)`
@@ -232,6 +230,27 @@ const ContentText = styled(Typography)`
   text-align: justify;
 `;
 
+const StyledCard = styled(Box)`
+  padding: 30px 0;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90% !important;
+  margin-left: 5% !important;
+
+  @media (max-width: 500px) {
+    height: 200px;
+  }
+
+  @media (max-width: 380px) {
+    height: 280px;
+  }
+`;
+
 export default function TrainBranding() {
   const interiorMirrorBrandingRef = useRef(null);
   const interiorPanelBrandingRef = useRef(null);
@@ -248,9 +267,12 @@ export default function TrainBranding() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 1, // Show only one slide at a time
     slidesToScroll: 1,
     arrows: false,
+    centerMode: false, // Don't center the slide
+    variableWidth: false, // Disable variable width to avoid partial card visibility
+    adaptiveHeight: true, // Allow adaptive height for content change (optional)
   };
 
   const slides = [
@@ -406,10 +428,10 @@ export default function TrainBranding() {
         <Image
           src={bannerImage}
           alt="Train Banner"
+          layout="fill"
           objectFit="cover"
           objectPosition="center"
           quality={100}
-          height="100%"
         />
         <OverlayText>
           <LineTextContainer>
@@ -436,15 +458,7 @@ export default function TrainBranding() {
       <StyledSliderContainer>
         <Slider {...settings} style={{ margin: "10px" }}>
           {slides.map((slide, index) => (
-            <Box
-              key={index}
-              sx={{
-                padding: "30px 0 30px 0",
-                backgroundColor: "#D9D9D9",
-                borderRadius: "10px",
-                textAlign: "center",
-              }}
-            >
+            <StyledCard key={index}>
               <Chip
                 label={slide.label}
                 sx={{
@@ -454,7 +468,7 @@ export default function TrainBranding() {
                   mb: 1,
                 }}
               />
-              <Typography variant="h6" sx={{ fontWeight: "bold", mt: 2 }}>
+              <Typography variant="h6" sx={{ fontWeight: "bold", mt: 2, padding: "0 10px" }}>
                 {slide.title}
               </Typography>
               <div
@@ -471,7 +485,7 @@ export default function TrainBranding() {
                   {slide.description}
                 </Typography>
               </div>
-            </Box>
+            </StyledCard>
           ))}
         </Slider>
         <GlobalSlickDotsStyles />

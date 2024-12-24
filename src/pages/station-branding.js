@@ -30,7 +30,7 @@ const ImageContainer = styled(Box)`
   position: relative;
   width: 100%;
   margin-bottom: 40px;
-  height: 70%;
+  height: 70vh;
 `;
 
 const StyledFlexContainer = styled(Box)`
@@ -192,9 +192,9 @@ export default function StationBranding() {
             src={bannerImage}
             alt=" Station Banner"
             objectFit="cover"
+            layout="fill"
             objectPosition="center"
             quality={100}
-            height="100%"
           />
         <OverlayText>
           <LineTextContainer>
