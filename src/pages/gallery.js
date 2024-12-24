@@ -288,14 +288,14 @@ const GalleryPage = () => {
                 src={GalleryImg24}
                 alt="Gallery Image 24"
                 style={{ marginTop: "8px" }}
-                height="77vh"
+                height="68vh"
 
               />
             </FixedHeightWrapper>
 
             </Grid>
             <Grid item xs={12} sm={5}>
-              <Grid container direction="column" spacing={1.4}>
+              <Grid container direction="column" spacing={1}>
                 <Grid item>
                   <DefaultTallImage
                     src={GalleryImg22}
