@@ -96,6 +96,15 @@ const StyledBox = styled(Box)`
   }
 `;
 
+const StyledGrid = styled(Grid)`
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    margin: 20% auto;
+  }
+`;
+
 export default function ContactUs() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -160,12 +169,7 @@ export default function ContactUs() {
         <CardSection />
       </Container>
 
-      <Grid
-        container
-        spacing={1}
-        justifyContent="space-around"
-        sx={{ width: "100%" }}
-      >
+      <StyledGrid container spacing={1} justifyContent="space-around">
       <IllustratorContainer item xs={12} md={4}>
         <StyledImage
           src={contactUsIllustrator}
@@ -196,7 +200,7 @@ export default function ContactUs() {
             <GetInTouch isContactUsSection={true} />
           </StyledBox>
         </Grid>
-      </Grid>
+      </StyledGrid >
       <VideoMarquee isContactUsSection={true}/>
     </div>
   );
