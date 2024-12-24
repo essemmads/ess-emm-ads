@@ -158,7 +158,7 @@ const Footer = ({isHome = false}) => {
             <br />
             Crawford Colony, Trichy.
             <br />
-            620012
+            620 012
           </Typography>
 
         </Column>
