@@ -75,10 +75,11 @@ const MainCard = styled(Card)`
   overflow: visible;
 
   @media (max-width: 1200px) {
-    height: 30vh;
+    height: auto;
   }
 
   @media (max-width: 900px) {
+    height: 30vh;
     flex-direction: column;
   }
 
