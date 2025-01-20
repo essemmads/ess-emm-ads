@@ -192,7 +192,7 @@ const Footer = ({isHome = false}) => {
       </ColumnContainer>
 
       <SocialIcons>
-        <FacebookIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.linkedin.com/company/105284338/admin/dashboard/", "_blank")}/>
+        <FacebookIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.facebook.com/profile.php?id=61572087698728", "_blank")}/>
         <LinkedInIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.linkedin.com/company/105284338/admin/dashboard/", "_blank")}/>
         <InstagramIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.instagram.com/ess_arr_ads/", "_blank")}/>
         <YouTubeIcon sx={{ cursor: "pointer" }} onClick={() => window.open("https://www.youtube.com/@EssArrAds", "_blank")}/>
