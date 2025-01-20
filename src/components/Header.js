@@ -59,7 +59,7 @@ export default function Header() {
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const socialLinks = [
-    { icon: <FacebookRoundedIcon />, label: "Facebook", link: "https://www.linkedin.com/company/105284338/admin/dashboard/" },
+    { icon: <FacebookRoundedIcon />, label: "Facebook", link: "https://www.facebook.com/profile.php?id=61572087698728" },
     { icon: <LinkedInIcon />, label: "LinkedIn", link: "https://www.linkedin.com/company/105284338/admin/dashboard/" },
     { icon: <InstagramIcon />, label: "Instagram", link: "https://www.instagram.com/ess_arr_ads/" },
     { icon: <YouTubeIcon />, label: "YouTube", link: "https://www.youtube.com/@EssArrAds" },
@@ -137,7 +137,7 @@ export default function Header() {
                 aria-haspopup="true"
                 color="inherit"
                 sx={{ padding: "2px" }}
-                onClick={() => window.open("https://www.linkedin.com/company/105284338/admin/dashboard/", "_blank")}
+                onClick={() => window.open("https://www.facebook.com/profile.php?id=61572087698728", "_blank")}
               >
                 <FacebookRoundedIcon sx={{ fontSize: "30px" }} />
               </IconButton>

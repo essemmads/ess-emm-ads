@@ -42,6 +42,17 @@ const ProfileImage = styled(Image)`
   }
 `;
 
+const StyledTypography = styled(Typography)`
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+
+   @media (max-width: 600px) {
+    margin: 0 0;
+    width: 100%;
+  }
+`;
+
 export default function Testimonials() {
   const testimonials = [
     {
@@ -150,7 +161,7 @@ export default function Testimonials() {
                 >
                   {testimonial.designation}
                 </Typography> */}
-                <Typography variant="body2" width="60%" style={{margin: "0 auto"}} textAlign="center">{testimonial.feedback}</Typography>
+                <StyledTypography variant="body2">{testimonial.feedback}</StyledTypography>
               </div>
             ))}
           </Slider>
